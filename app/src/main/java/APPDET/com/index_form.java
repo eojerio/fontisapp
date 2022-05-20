@@ -1,65 +1,67 @@
 package APPDET.com;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class index_form extends AppCompatActivity {
-    ImageButton btnCart, btnHistory, btnAccount;
-    Intent intentCart, intentHistory, intentAccount;
+
+    private BottomNavigationView bot_nav;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index_form);
 
-        history();
-        cart();
-        account();
+        bot_nav = findViewById(R.id.bottomNav);
+
+        bot_nav.setOnItemSelectedListener(bottom_nav);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_botnav, new homeFragment()).commit();
+
     }
 
-    //going to history page
-    public void history(){
-        btnHistory = (ImageButton) findViewById(R.id.btnHistory);
-        intentHistory = new Intent (this, history_form.class);
+    private BottomNavigationView.OnItemSelectedListener bottom_nav = new BottomNavigationView.OnItemSelectedListener() {
+        @Override
 
-        btnHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intentHistory);
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            Fragment fragment = null;
+
+            switch(item.getItemId()){
+
+                case R.id.home:
+                fragment = new homeFragment();
+                break;
+
+                case R.id.history:
+                    fragment = new historyFragment();
+                    break;
+
+                case R.id.cart:
+                    fragment = new cartFragment();
+                    break;
+
+                case R.id.account:
+                    fragment = new accountFragment();
+                    break;
             }
-        });
-    }
 
-    //going to cart page
-    public void cart(){
-        btnCart = (ImageButton) findViewById(R.id.btnCart);
-        intentCart = new Intent (this, cart_form.class);
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_botnav, fragment).commit();
 
-        btnCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intentCart);
-            }
-        });
-    }
-
-    //going to account page
-    public void account(){
-        btnAccount = (ImageButton) findViewById(R.id.btnAccount);
-        intentAccount = new Intent (this, account_form.class);
-
-        btnAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intentAccount);
-            }
-        });
-    }
+            return true;
+        }
+    };
 
 
 }

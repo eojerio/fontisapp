@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginBottom="40dp"
+        tools:context=".homeFragment">
+
+        <TextView
+            android:id="@+id/tvProductName5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Gallon Mineral Water"
+            android:textColor="#6A6666"
+            android:textSize="12sp"
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.055"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.925" />
+
+        <TextView
+            android:id="@+id/tvProductName6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Gallon Mineral Water"
+            android:textColor="#6A6666"
+            android:textSize="12sp"
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.773"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.925" />
+
+        <ImageView
+            android:id="@+id/ivProduct6"
+            android:layout_width="100dp"
+            android:layout_height="92dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.698"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.841"
+            app:srcCompat="@drawable/water_gallon" />
+
+        <TextView
+            android:id="@+id/tvProductName4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Gallon Mineral Water"
+            android:textColor="#6A6666"
+            android:textSize="12sp"
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.773"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.699" />
+
+        <TextView
+            android:id="@+id/tvPrice4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₱150.00"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.61"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.67" />
+
+        <TextView
+            android:id="@+id/tvTitleInside"
+            android:layout_width="229dp"
+            android:layout_height="64dp"
+            android:gravity="center"
+            android:text="OUR PRODUCTS"
+            android:textColor="#38649A"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.184" />
+
+        <TextView
+            android:id="@+id/tvPrice1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₱150.00"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.448" />
+
+        <TextView
+            android:id="@+id/tvPrice3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₱150.00"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.674" />
+
+        <TextView
+            android:id="@+id/tvPrice5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₱150.00"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.901" />
+
+        <TextView
+            android:id="@+id/tvPrice6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₱150.00"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.61"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.899" />
+
+        <TextView
+            android:id="@+id/tvPrice2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₱150.00"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.61"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.449" />
+
+        <TextView
+            android:id="@+id/tvProductName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Gallon Mineral Water"
+            android:textColor="#6A6666"
+            android:textSize="12sp"
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.055"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.475" />
+
+        <TextView
+            android:id="@+id/tvProductName3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Gallon Mineral Water"
+            android:textColor="#6A6666"
+            android:textSize="12sp"
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.055"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.699" />
+
+        <TextView
+            android:id="@+id/tvProductName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Gallon Mineral Water"
+            android:textColor="#6A6666"
+            android:textSize="12sp"
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.76"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.477" />
+
+        <Button
+            android:id="@+id/btnIncrease1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="+"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.385"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.395" />
+
+        <Button
+            android:id="@+id/btnIncrease3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="+"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.385"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.629" />
+
+        <Button
+            android:id="@+id/btnIncrease5"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="+"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.385"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.865" />
+
+        <Button
+            android:id="@+id/btnIncrease6"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="+"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.922"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.865" />
+
+        <Button
+            android:id="@+id/btnIncrease4"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="+"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.922"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.629" />
+
+        <Button
+            android:id="@+id/btnDecrease1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="-"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.382"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.302" />
+
+        <Button
+            android:id="@+id/btnDecrease3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="-"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.385"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.531" />
+
+        <Button
+            android:id="@+id/btnDecrease5"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="-"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.385"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.771" />
+
+        <Button
+            android:id="@+id/btnDecrease6"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="-"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.922"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.771" />
+
+        <Button
+            android:id="@+id/btnDecrease4"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="-"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.922"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.531" />
+
+        <Button
+            android:id="@+id/btnDecrease2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="-"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.922"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.297" />
+
+        <Button
+            android:id="@+id/btnIncrease2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/roundedbutton"
+            android:text="+"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.922"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.395" />
+
+        <ImageView
+            android:id="@+id/ivProduct1"
+            android:layout_width="100dp"
+            android:layout_height="92dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.058"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.338"
+            app:srcCompat="@drawable/water_gallon" />
+
+        <ImageView
+            android:id="@+id/ivProduct3"
+            android:layout_width="100dp"
+            android:layout_height="92dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.058"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.581"
+            app:srcCompat="@drawable/water_gallon" />
+
+        <ImageView
+            android:id="@+id/ivProduct5"
+            android:layout_width="100dp"
+            android:layout_height="92dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.058"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.841"
+            app:srcCompat="@drawable/water_gallon" />
+
+        <ImageView
+            android:id="@+id/ivProduct4"
+            android:layout_width="100dp"
+            android:layout_height="92dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.713"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.585"
+            app:srcCompat="@drawable/water_gallon" />
+
+        <ImageView
+            android:id="@+id/ivProduct2"
+            android:layout_width="100dp"
+            android:layout_height="92dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.713"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.333"
+            app:srcCompat="@drawable/water_gallon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

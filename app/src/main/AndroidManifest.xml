@@ -10,18 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APPDET_ANDROIDBOTS_BLUEAPP">
         <activity
-            android:name=".edit_account_form"
-            android:exported="false" />
-        <activity
-            android:name=".account_form"
-            android:exported="false" />
-        <activity
-            android:name=".history_form"
-            android:exported="false" />
-        <activity
-            android:name=".cart_form"
-            android:exported="false" />
-        <activity
             android:name=".index_form"
             android:exported="false" />
         <activity
