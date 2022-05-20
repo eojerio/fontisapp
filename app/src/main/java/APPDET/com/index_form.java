@@ -9,15 +9,30 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 public class index_form extends AppCompatActivity {
-    ImageButton btnHome, btnCart;
-    Intent intentHome, intentCart;
+    ImageButton btnCart, btnHistory, btnAccount;
+    Intent intentCart, intentHistory, intentAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index_form);
 
+        history();
         cart();
+        account();
+    }
+
+    //going to history page
+    public void history(){
+        btnHistory = (ImageButton) findViewById(R.id.btnHistory);
+        intentHistory = new Intent (this, history_form.class);
+
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentHistory);
+            }
+        });
     }
 
     //going to cart page
@@ -29,6 +44,19 @@ public class index_form extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intentCart);
+            }
+        });
+    }
+
+    //going to account page
+    public void account(){
+        btnAccount = (ImageButton) findViewById(R.id.btnAccount);
+        intentAccount = new Intent (this, account_form.class);
+
+        btnAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentAccount);
             }
         });
     }

@@ -3,15 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/activity_index_form.xml" value="0.4" />
+        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/drawable/roundedbutton.xml" value="0.2265" />
+        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/activity_account_form.xml" value="0.22826086956521738" />
+        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/activity_cart_form.xml" value="0.25" />
+        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/activity_edit_account_form.xml" value="0.22826086956521738" />
+        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/activity_history_form.xml" value="0.22826086956521738" />
+        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/activity_index_form.xml" value="0.264" />
         <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/activity_registration_form.xml" value="0.25" />
-        <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/activity_account_form.xml" value="0.23097826086956522" />
-        <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/activity_cart_form.xml" value="0.23097826086956522" />
-        <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/activity_edit_account_form.xml" value="0.23097826086956522" />
-        <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/activity_history_form.xml" value="0.23097826086956522" />
-        <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/activity_index_form.xml" value="0.23097826086956522" />
-        <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/activity_main.xml" value="0.23097826086956522" />
       </map>
     </option>
   </component>
