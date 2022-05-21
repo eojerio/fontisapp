@@ -1,5 +1,6 @@
 package APPDET.com;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -48,18 +49,40 @@ public class homeFragment extends Fragment {
         return fragment;
     }
 
+    Button product1_increase, product1_decrease;
+    int product1_amount=0;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //RETRIEVE FROM DATABASE VALUES
+
+
+
+
+
+
+        if (savedInstanceState != null) {
+            // Restore value of members from saved state
+            product1_amount = savedInstanceState.getInt("saved", 0);
+        }
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("saved", product1_amount);
+    }
+
     /*================================================ OKAY BEN DITO TAYO MAG C'CODE HA =====================================================================*/
 
-    Button product1_increase, product1_decrease;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,7 +94,16 @@ public class homeFragment extends Fragment {
         product1_increase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity().getApplication(), "ITEM ADDED!", Toast.LENGTH_SHORT).show();
+                product1_amount++;
+                Toast.makeText(getActivity().getApplication(), "ITEM ADDED! " + product1_amount, Toast.LENGTH_SHORT).show();
+
+                Bundle result = new Bundle();
+                result.putString("ID", Integer.toString(product1_amount));
+
+
+                getParentFragmentManager().setFragmentResult("dataFromHome", result);
+
+
             }
         });
 
@@ -79,11 +111,21 @@ public class homeFragment extends Fragment {
         product1_decrease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity().getApplication(), "ITEM REMOVED!", Toast.LENGTH_SHORT).show();
+                product1_amount--;
+                Toast.makeText(getActivity().getApplication(), "ITEM REMOVED! " + product1_amount, Toast.LENGTH_SHORT).show();
+
+                Bundle result = new Bundle();
+                result.putString("ID", Integer.toString(product1_amount));
+
+
+                getParentFragmentManager().setFragmentResult("dataFromHome", result);
+
             }
         });
 
-        //dont touch!! returns values
+        //don't touch!! returns values
         return v;
     }
+
+
 }

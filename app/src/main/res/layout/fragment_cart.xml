@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cartFragment"
-    android:background="#38649A">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cart" />
+        android:padding="10dp"
+        android:layout_marginBottom="40dp"
+        tools:context=".homeFragment">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tvTitleInside"
+            android:layout_width="229dp"
+            android:layout_height="64dp"
+            android:gravity="center"
+            android:text="MY CART"
+            android:textColor="#38649A"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.184" />
+
+        <TextView
+            android:id="@+id/tvCartTest"
+            android:layout_width="107dp"
+            android:layout_height="93dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Cart"
+            android:textColor="#38649A"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
