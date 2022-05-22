@@ -97,13 +97,15 @@ public class homeFragment extends Fragment {
                 product1_amount++;
                 Toast.makeText(getActivity().getApplication(), "ITEM ADDED! " + product1_amount, Toast.LENGTH_SHORT).show();
 
-                Bundle result = new Bundle();
-                result.putString("ID", Integer.toString(product1_amount));
+                //fragment to homeActivity.java
+                /*Intent intent = new Intent(getActivity().getBaseContext(), index_form.class);
 
+                intent.putExtra("data", "mark"/*Integer.toString(product1_amount));
+                getActivity().startActivity(intent);
+                getActivity().finish();*/
 
-                getParentFragmentManager().setFragmentResult("dataFromHome", result);
-
-
+                index_form send = (index_form) getActivity();
+                send.getDataFromIndex(product1_amount);
             }
         });
 
@@ -114,11 +116,10 @@ public class homeFragment extends Fragment {
                 product1_amount--;
                 Toast.makeText(getActivity().getApplication(), "ITEM REMOVED! " + product1_amount, Toast.LENGTH_SHORT).show();
 
-                Bundle result = new Bundle();
-                result.putString("ID", Integer.toString(product1_amount));
-
-
-                getParentFragmentManager().setFragmentResult("dataFromHome", result);
+                //fragment to homeActivity.java
+                Intent intent = new Intent(getActivity().getBaseContext(), index_form.class);
+                intent.putExtra("data", Integer.toString(product1_amount));
+                getActivity().startActivity(intent);
 
             }
         });

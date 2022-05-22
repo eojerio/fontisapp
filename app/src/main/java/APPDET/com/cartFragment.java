@@ -88,21 +88,13 @@ public class cartFragment extends Fragment {
 
         tvCart = (TextView) v.findViewById(R.id.tvCartTest);
 
-        getParentFragmentManager().setFragmentResultListener("dataFromHome", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+        String strtext = getArguments().getString("data");
 
-                data = result.getString("ID");
-                if(test_holder > 0){
-                    test_holder += Integer.parseInt(data);
-                }else{
-                    test_holder = Integer.parseInt(data);
-                }
-                tvCart.setText(Integer.toString(test_holder));
+        test_holder = Integer.parseInt(strtext);
 
+        Toast.makeText(getActivity().getApplication(), "ITEM ADDED! " + strtext, Toast.LENGTH_SHORT).show();
 
-            }
-        });
+        tvCart.setText(Integer.toString(test_holder));
 
         //don't touch!! returns values
         return v;
