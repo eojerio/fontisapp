@@ -78,7 +78,7 @@ public class cartFragment extends Fragment {
 
     /*================================================ OKAY BEN DITO TAYO MAG C'CODE HA =====================================================================*/
     int test_holder = 0;
-
+    String strtext = "0";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -88,11 +88,17 @@ public class cartFragment extends Fragment {
 
         tvCart = (TextView) v.findViewById(R.id.tvCartTest);
 
-        String strtext = getArguments().getString("data");
+        strtext = getArguments().getString("data");
 
-        test_holder = Integer.parseInt(strtext);
+        if(strtext != null){
+            test_holder += Integer.parseInt(strtext);
+        }else{
+            test_holder += 0;
+        }
 
-        Toast.makeText(getActivity().getApplication(), "ITEM ADDED! " + strtext, Toast.LENGTH_SHORT).show();
+
+
+        Toast.makeText(getActivity().getApplication(), "ITEM ADDED! " + test_holder, Toast.LENGTH_SHORT).show();
 
         tvCart.setText(Integer.toString(test_holder));
 
