@@ -4,9 +4,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,11 +63,52 @@ public class historyFragment extends Fragment {
 
     /*================================================ OKAY BEN DITO TAYO MAG C'CODE HA =====================================================================*/
 
+    private static final String TAG= "MainActivity";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View v = inflater.inflate(R.layout.fragment_history, container, false);
+
+        Log.d(TAG, "onCreate: Started");
+
+        ListView lv = (ListView) v.findViewById(R.id.lvList);
+
+        //generateListContent();
+        HistoryOJB account1 = new HistoryOJB("12-20-2021", "6 Items", "P1200","drawable://" + R.drawable.alvarez);
+        HistoryOJB account2 = new HistoryOJB("12-20-2021", "4 Items", "P6200","drawable://" + R.drawable.alvarez);
+        HistoryOJB account3 = new HistoryOJB("12-20-2021", "8 Items", "P4200","drawable://" + R.drawable.alvarez);
+        HistoryOJB account4 = new HistoryOJB("12-20-2021", "2 Items", "P2200","drawable://" + R.drawable.alvarez);
+
+
+
+        ArrayList<HistoryOJB> data = new ArrayList<>();
+
+
+        data.add(account1);
+        data.add(account2);
+        data.add(account3);
+        data.add(account4);
+        data.add(account1);
+        data.add(account2);
+        data.add(account3);
+        data.add(account4);
+        data.add(account1);
+        data.add(account2);
+        data.add(account3);
+        data.add(account4);
+
+        PersonListAdapter arrayAdapter = new PersonListAdapter(getActivity(), R.layout.adapter_historyview_layout, data);
+        lv.setAdapter(arrayAdapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history, container, false);
+        return v;
+
+    }
+
+    public void generateListContent(){
+        for(int i = 1; i<20; i++){
+            //data.add("This is test example " + i);
+        }
     }
 }

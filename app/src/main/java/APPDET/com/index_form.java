@@ -1,34 +1,35 @@
 package APPDET.com;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class index_form extends AppCompatActivity {
 
     private BottomNavigationView bot_nav;
-
+    public String message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index_form);
 
+
         bot_nav = findViewById(R.id.bottomNav);
 
         bot_nav.setOnItemSelectedListener(bottom_nav);
         getSupportFragmentManager().beginTransaction().replace(R.id.container_botnav, new homeFragment()).commit();
+    }
 
+    public void getDataFromIndex(int id){
+        message = Integer.toString(id);
     }
 
     private BottomNavigationView.OnItemSelectedListener bottom_nav = new BottomNavigationView.OnItemSelectedListener() {
@@ -50,6 +51,11 @@ public class index_form extends AppCompatActivity {
 
                 case R.id.cart:
                     fragment = new cartFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("data", message);
+
+                    fragment.setArguments(bundle);
+
                     break;
 
                 case R.id.account:
@@ -57,7 +63,7 @@ public class index_form extends AppCompatActivity {
                     break;
             }
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_botnav, fragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container_botnav, fragment).commit();
 
             return true;
         }

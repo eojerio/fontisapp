@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APPDET_ANDROIDBOTS_BLUEAPP">
         <activity
+            android:name=".homeActivities"
+            android:exported="false" />
+        <activity
             android:name=".index_form"
             android:exported="false" />
         <activity

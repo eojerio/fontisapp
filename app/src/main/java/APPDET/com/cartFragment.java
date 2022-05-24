@@ -1,12 +1,17 @@
 package APPDET.com;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,21 +51,58 @@ public class cartFragment extends Fragment {
         return fragment;
     }
 
+    TextView tvCart;
+    String data;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            // Restore value of members from saved state
+            data = savedInstanceState.getString("saved", "");
+        }
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
-    /*================================================ OKAY BEN DITO TAYO MAG C'CODE HA =====================================================================*/
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putString("saved", data);
+    }
+
+    /*================================================ OKAY BEN DITO TAYO MAG C'CODE HA =====================================================================*/
+    int test_holder = 0;
+    String strtext = "0";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cart, container, false);
+        View v = inflater.inflate(R.layout.fragment_cart, container, false);
+
+        tvCart = (TextView) v.findViewById(R.id.tvCartTest);
+
+        strtext = getArguments().getString("data");
+
+        if(strtext != null){
+            test_holder += Integer.parseInt(strtext);
+        }else{
+            test_holder += 0;
+        }
+
+
+
+        Toast.makeText(getActivity().getApplication(), "ITEM ADDED! " + test_holder, Toast.LENGTH_SHORT).show();
+
+        tvCart.setText(Integer.toString(test_holder));
+
+        //don't touch!! returns values
+        return v;
     }
 }
