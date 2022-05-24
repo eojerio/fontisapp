@@ -28,6 +28,7 @@ public class index_form extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.container_botnav, new homeFragment()).commit();
     }
 
+    //passing id from index to cart
     public void getDataFromIndex(int id){
         message = Integer.toString(id);
     }
