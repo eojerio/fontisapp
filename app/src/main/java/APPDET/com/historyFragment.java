@@ -75,7 +75,13 @@ public class historyFragment extends Fragment {
 
         ListView lv = (ListView) v.findViewById(R.id.lvList);
 
-        //generateListContent();
+        /*
+        SDASDSA
+        while(){
+
+        HistoryOJB account.concat('-') = new HistoryOJB(variable date, variable amount, variable total,variable dirImage);
+        }
+         */
         HistoryOJB account1 = new HistoryOJB("12-20-2021", "6 Items", "P1200","drawable://" + R.drawable.alvarez);
         HistoryOJB account2 = new HistoryOJB("12-20-2021", "4 Items", "P6200","drawable://" + R.drawable.alvarez);
         HistoryOJB account3 = new HistoryOJB("12-20-2021", "8 Items", "P4200","drawable://" + R.drawable.alvarez);
@@ -99,16 +105,10 @@ public class historyFragment extends Fragment {
         data.add(account3);
         data.add(account4);
 
-        PersonListAdapter arrayAdapter = new PersonListAdapter(getActivity(), R.layout.adapter_historyview_layout, data);
+        HistoryListAdapter arrayAdapter = new HistoryListAdapter(getActivity(), R.layout.adapter_historyview_layout, data);
         lv.setAdapter(arrayAdapter);
         // Inflate the layout for this fragment
         return v;
 
-    }
-
-    public void generateListContent(){
-        for(int i = 1; i<20; i++){
-            //data.add("This is test example " + i);
-        }
     }
 }
