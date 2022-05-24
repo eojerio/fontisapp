@@ -11,10 +11,10 @@ import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link accountFragment#newInstance} factory method to
+ * Use the {@link account_edit#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class accountFragment extends Fragment {
+public class account_edit extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +25,7 @@ public class accountFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public accountFragment() {
+    public account_edit() {
         // Required empty public constructor
     }
 
@@ -35,19 +35,17 @@ public class accountFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment accountFragment.
+     * @return A new instance of fragment account_edit.
      */
     // TODO: Rename and change types and number of parameters
-    public static accountFragment newInstance(String param1, String param2) {
-        accountFragment fragment = new accountFragment();
+    public static account_edit newInstance(String param1, String param2) {
+        account_edit fragment = new account_edit();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
-
-    /*================================================ OKAY BEN DITO TAYO MAG C'CODE HA =====================================================================*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,23 +55,21 @@ public class accountFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    Button btnEditAccount;
+    Button btnSaveAccount;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_account, container, false);
+        View v = inflater.inflate(R.layout.fragment_account_edit, container, false);
 
-            btnEditAccount = (Button) v.findViewById(R.id.btnSaveAccount);
-            btnEditAccount.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                  Fragment edit_account = new account_edit();
-                  getParentFragmentManager().beginTransaction().replace(R.id.container_botnav,edit_account).commit();
-
-                }
-            });
-
+        btnSaveAccount = (Button) v.findViewById(R.id.btnSaveAccount);
+        btnSaveAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment save_account = new accountFragment();
+                getParentFragmentManager().beginTransaction().replace(R.id.container_botnav,save_account).commit();
+            }
+        });
 
         return v;
     }

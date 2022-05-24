@@ -15,7 +15,7 @@
         tools:context=".homeFragment">
 
         <TextView
-            android:id="@+id/tvTitleInside"
+            android:id="@+id/tvFirstName"
             android:layout_width="229dp"
             android:layout_height="64dp"
             android:gravity="center"

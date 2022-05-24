@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:layout_marginBottom="40dp"
-        tools:context="accountFragment">
+        tools:context="account_edit">
 
         <TextView
             android:id="@+id/tvFirstName"
@@ -54,28 +54,42 @@
             android:gravity="center"
             android:text="Address:"
             android:textColor="#38649A"
-            android:textSize="20dp"
-            android:textStyle="bold"
+            android:textSize="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.006"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvFirstName"
-            app:layout_constraintVertical_bias="0.048" />
+            app:layout_constraintVertical_bias="0.066" />
 
         <Button
             android:id="@+id/btnSaveAccount"
             android:layout_width="106dp"
             android:layout_height="66dp"
-            android:text="EDIT"
+            android:text="SAVE"
             android:textSize="20sp"
             app:backgroundTint="#692D94"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.983"
+            app:layout_constraintHorizontal_bias="0.907"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.152" />
+            app:layout_constraintVertical_bias="0.16" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvCartTest"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.337" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -8,7 +8,7 @@
     tools:context=".homeFragment">
 
         <TextView
-            android:id="@+id/tvTitleInside"
+            android:id="@+id/tvFirstName"
             android:layout_width="229dp"
             android:layout_height="64dp"
             android:layout_marginTop="4dp"
@@ -42,10 +42,10 @@
             android:textColor="#38649A"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/tvTitleInside"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFirstName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tvTitleInside"
+            app:layout_constraintStart_toEndOf="@+id/tvFirstName"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
