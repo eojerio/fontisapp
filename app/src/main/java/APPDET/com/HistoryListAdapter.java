@@ -24,13 +24,13 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonListAdapter extends ArrayAdapter<HistoryOJB> {
+public class HistoryListAdapter extends ArrayAdapter<HistoryOJB> {
     private static final String TAG =  "HistoryListAdapter";
 
     private Context mContext;
     int mResource;
 
-    public PersonListAdapter(Context context, int resource, ArrayList<HistoryOJB> objects){
+    public HistoryListAdapter(Context context, int resource, ArrayList<HistoryOJB> objects){
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
@@ -50,14 +50,17 @@ public class PersonListAdapter extends ArrayAdapter<HistoryOJB> {
         //Creating account object
         HistoryOJB account = new HistoryOJB(date, amount, total, imgURL);
 
+        //creating layout inflater
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
 
+        //assigning text views to xml design
         TextView tvDate = (TextView) convertView.findViewById(R.id.tvDateHistory);
         TextView tvAmount = (TextView) convertView.findViewById(R.id.tvAmountHistory);
         TextView tvTotal = (TextView) convertView.findViewById(R.id.tvTotalCostHistory);
         ImageView historyCartImg = (ImageView) convertView.findViewById(R.id.ivHistoryImg);
 
+        //instances of image loader for loadign images
         ImageLoader imageLoader = ImageLoader.getInstance();
 
         int defaultImage = mContext.getResources().getIdentifier("@drawable/image_failed", null, mContext.getPackageName());
