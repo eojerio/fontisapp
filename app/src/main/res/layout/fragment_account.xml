@@ -48,8 +48,8 @@
 
         <TextView
             android:id="@+id/tvAddress"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Address:"
@@ -64,9 +64,60 @@
             app:layout_constraintVertical_bias="0.048" />
 
         <TextView
+            android:id="@+id/tvAddress2"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Address:"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvAddress"
+            app:layout_constraintTop_toBottomOf="@+id/tvFirstName"
+            app:layout_constraintVertical_bias="0.048" />
+
+        <TextView
+            android:id="@+id/tvAccountDescription"
+            android:layout_width="120dp"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Description"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.003"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmploymentStatus"
+            app:layout_constraintVertical_bias="0.044" />
+
+        <TextView
+            android:id="@+id/tvAccountDescriptionSub"
+            android:layout_width="347dp"
+            android:layout_height="72dp"
+            android:layout_centerInParent="true"
+            android:gravity="left"
+            android:text="          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an"
+            android:textColor="#38649A"
+            android:textSize="15dp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAccountDescription"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
             android:id="@+id/tvContactNo"
             android:layout_width="120dp"
-            android:layout_height="50dp"
+            android:layout_height="38dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Contact No.:"
@@ -78,6 +129,159 @@
             app:layout_constraintHorizontal_bias="0.003"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvContactNo2"
+            android:layout_width="120dp"
+            android:layout_height="38dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Contact No.:"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvContactNo"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvEmailAddress"
+            android:layout_width="161dp"
+            android:layout_height="38dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Email Address:"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.006"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContactNo"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvEmailAddress2"
+            android:layout_width="161dp"
+            android:layout_height="38dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Email Address:"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvEmailAddress"
+            app:layout_constraintTop_toBottomOf="@+id/tvContactNo"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvBirthdate"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Birthdate:"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.004"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailAddress"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvBirthdate2"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Birthdate:"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.005"
+            app:layout_constraintStart_toEndOf="@+id/tvBirthdate"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailAddress"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvMaritalStatus"
+            android:layout_width="150dp"
+            android:layout_height="38dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Marital Status:"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.006"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBirthdate"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvMaritalStatus2"
+            android:layout_width="150dp"
+            android:layout_height="38dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Marital Status:"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvMaritalStatus"
+            app:layout_constraintTop_toBottomOf="@+id/tvBirthdate"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvEmploymentStatus"
+            android:layout_width="191dp"
+            android:layout_height="38dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Employment Status:"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.007"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMaritalStatus"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvEmploymentStatus2"
+            android:layout_width="191dp"
+            android:layout_height="38dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Employment Status:"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintStart_toEndOf="@+id/tvEmploymentStatus"
+            app:layout_constraintTop_toBottomOf="@+id/tvMaritalStatus"
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
