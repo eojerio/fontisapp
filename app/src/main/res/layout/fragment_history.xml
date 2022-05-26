@@ -8,20 +8,19 @@
     tools:context=".homeFragment">
 
         <TextView
-            android:id="@+id/tvFirstName"
+            android:id="@+id/tvFragmentName"
             android:layout_width="229dp"
             android:layout_height="64dp"
-            android:layout_marginTop="4dp"
             android:gravity="center"
             android:text="HISTORY"
             android:textColor="#38649A"
             android:textSize="30sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/lvList"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.187" />
 
         <ListView
             android:id="@+id/lvList"
@@ -30,9 +29,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/tvFragmentName"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/tvTotalHistory"
@@ -42,12 +40,12 @@
             android:textColor="#38649A"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/tvFirstName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvFragmentName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tvFirstName"
+            app:layout_constraintStart_toEndOf="@+id/tvFragmentName"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.957" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -63,12 +63,13 @@ public class historyFragment extends Fragment {
 
     /*================================================ OKAY BEN DITO TAYO MAG C'CODE HA =====================================================================*/
 
-    private static final String TAG= "MainActivity";
+    private static final String TAG= "HistoryFrag";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_history, container, false);
 
         Log.d(TAG, "onCreate: Started");
@@ -76,7 +77,7 @@ public class historyFragment extends Fragment {
         ListView lv = (ListView) v.findViewById(R.id.lvList);
 
         /*
-        SDASDSA
+        database insert here
         while(){
 
         HistoryOJB account.concat('-') = new HistoryOJB(variable date, variable amount, variable total,variable dirImage);

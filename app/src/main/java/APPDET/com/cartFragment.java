@@ -4,11 +4,16 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -76,6 +81,9 @@ public class cartFragment extends Fragment {
     /*================================================ OKAY BEN DITO TAYO MAG C'CODE HA =====================================================================*/
     int test_holder = 0;
     String strtext = "0";
+
+    private static final String TAG= "CartFrag";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -83,22 +91,45 @@ public class cartFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_cart, container, false);
 
-        tvCart = (TextView) v.findViewById(R.id.tvAddress);
+        Log.d(TAG, "onCreate: Started");
 
-        strtext = getArguments().getString("data");
+        ListView lv = (ListView) v.findViewById(R.id.lvList);
 
-        if(strtext != null){
-            test_holder += Integer.parseInt(strtext);
-        }else{
-            test_holder += 0;
+        /*
+        database insert here
+        while(){
+
+        HistoryOJB account.concat('-') = new HistoryOJB(variable date, variable amount, variable total,variable dirImage);
         }
+         */
 
+        CartOBJ account1 = new CartOBJ ("₱ 150", "6", "1 Gallon Mineral water", "A mineral water","drawable://" + R.drawable.alvarez);
+        CartOBJ account2 = new CartOBJ ("₱ 150", "4", "1 Gallon Mineral water", "A mineral water","drawable://" + R.drawable.alvarez);
+        CartOBJ account3 = new CartOBJ ("₱ 150", "8", "1 Gallon Mineral water", "A mineral water","drawable://" + R.drawable.alvarez);
+        CartOBJ account4 = new CartOBJ ("₱ 150", "2", "1 Gallon Mineral water", "A mineral water", "drawable://" + R.drawable.alvarez);
+
+        ArrayList<CartOBJ> data = new ArrayList<>();
+
+        data.add(account1);
+        data.add(account2);
+        data.add(account3);
+        data.add(account4);
+        data.add(account1);
+        data.add(account2);
+        data.add(account3);
+        data.add(account4);
+        data.add(account1);
+        data.add(account2);
+        data.add(account3);
+        data.add(account4);
+
+        CartListAdapter arrayAdapter = new CartListAdapter(getActivity(), R.layout.adapter_cartview_layout, data);
+        lv.setAdapter(arrayAdapter);
 
 
         Toast.makeText(getActivity().getApplication(), "ITEM ADDED! " + test_holder, Toast.LENGTH_SHORT).show();
 
-        tvCart.setText(Integer.toString(test_holder));
-
+        // Inflate the layout for this fragment
         //don't touch!! returns values
         return v;
     }

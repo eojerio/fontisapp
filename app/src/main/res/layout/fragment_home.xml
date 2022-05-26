@@ -10,8 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:layout_marginBottom="40dp"
+        android:padding="10dp"
         tools:context=".homeFragment">
 
         <TextView
@@ -87,7 +87,7 @@
             app:layout_constraintVertical_bias="0.67" />
 
         <TextView
-            android:id="@+id/tvFirstName"
+            android:id="@+id/tvFragmentName"
             android:layout_width="229dp"
             android:layout_height="64dp"
             android:gravity="center"
@@ -99,22 +99,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.184" />
+            app:layout_constraintVertical_bias="0.111" />
 
         <TextView
             android:id="@+id/tvPrice1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="₱150.00"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.045"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.448" />
+            app:layout_constraintTop_toBottomOf="@+id/ivProduct1" />
 
         <TextView
             android:id="@+id/tvPrice3"
@@ -225,18 +224,17 @@
             android:id="@+id/btnIncrease1"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/roundedbutton"
             android:text="+"
             android:textColor="#38649A"
             android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.385"
+            app:layout_constraintHorizontal_bias="0.391"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.395" />
+            app:layout_constraintTop_toBottomOf="@+id/btnDecrease1" />
 
         <Button
             android:id="@+id/btnIncrease3"
@@ -310,18 +308,17 @@
             android:id="@+id/btnDecrease1"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginTop="56dp"
             android:background="@drawable/roundedbutton"
             android:text="-"
             android:textColor="#38649A"
             android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.382"
+            app:layout_constraintHorizontal_bias="0.391"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.302" />
+            app:layout_constraintTop_toBottomOf="@+id/tvFragmentName" />
 
         <Button
             android:id="@+id/btnDecrease3"
@@ -395,46 +392,43 @@
             android:id="@+id/btnDecrease2"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginTop="56dp"
             android:background="@drawable/roundedbutton"
             android:text="-"
             android:textColor="#38649A"
             android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.922"
+            app:layout_constraintHorizontal_bias="0.928"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.297" />
+            app:layout_constraintTop_toBottomOf="@+id/tvFragmentName" />
 
         <Button
             android:id="@+id/btnIncrease2"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/roundedbutton"
             android:text="+"
             android:textColor="#38649A"
             android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.922"
+            app:layout_constraintHorizontal_bias="0.928"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.395" />
+            app:layout_constraintTop_toBottomOf="@+id/btnDecrease2" />
 
         <ImageView
             android:id="@+id/ivProduct1"
             android:layout_width="100dp"
             android:layout_height="92dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="60dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.058"
+            app:layout_constraintHorizontal_bias="0.051"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.338"
+            app:layout_constraintTop_toBottomOf="@+id/tvFragmentName"
             app:srcCompat="@drawable/water_gallon" />
 
         <ImageView
@@ -477,12 +471,11 @@
             android:id="@+id/ivProduct2"
             android:layout_width="100dp"
             android:layout_height="92dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="60dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.713"
+            app:layout_constraintHorizontal_bias="0.707"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.333"
+            app:layout_constraintTop_toBottomOf="@+id/tvFragmentName"
             app:srcCompat="@drawable/water_gallon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

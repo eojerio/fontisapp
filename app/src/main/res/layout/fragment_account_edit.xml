@@ -15,7 +15,7 @@
         tools:context="account_edit">
 
         <TextView
-            android:id="@+id/tvFirstName"
+            android:id="@+id/tvFragmentName"
             android:layout_width="120dp"
             android:layout_height="64dp"
             android:gravity="center"
@@ -42,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tvFirstName"
+            app:layout_constraintStart_toEndOf="@+id/tvFragmentName"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.189" />
 
@@ -60,7 +60,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.006"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvFirstName"
+            app:layout_constraintTop_toBottomOf="@+id/tvFragmentName"
             app:layout_constraintVertical_bias="0.048" />
 
         <TextView
