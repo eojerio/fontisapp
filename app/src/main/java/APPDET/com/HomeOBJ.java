@@ -6,6 +6,7 @@ public class HomeOBJ {
     private String prodDesc;
     private String imgURL;
 
+    //home objects
     public HomeOBJ(String price, String prodName, String prodDesc, String imgURL){
         this.price = price;
         this.prodName = prodName;
