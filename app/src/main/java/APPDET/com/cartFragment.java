@@ -86,6 +86,7 @@ public class cartFragment extends Fragment {
 
         Log.d(TAG, "onCreate: Started");
 
+
         ListView lv = (ListView) v.findViewById(R.id.lvList);
 
         /*

@@ -9,7 +9,7 @@
 
         <TextView
             android:id="@+id/tvFragmentName"
-            android:layout_width="229dp"
+            android:layout_width="200dp"
             android:layout_height="64dp"
             android:gravity="center"
             android:text="HISTORY"
@@ -18,19 +18,21 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.187" />
+            app:layout_constraintVertical_bias="0.008" />
 
         <ListView
             android:id="@+id/lvList"
             android:layout_width="409dp"
-            android:layout_height="542dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="70dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvFragmentName"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvTotalHistory"
@@ -42,10 +44,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/tvFragmentName"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.245"
             app:layout_constraintStart_toEndOf="@+id/tvFragmentName"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.957" />
+            app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

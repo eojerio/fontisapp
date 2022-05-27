@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -31,6 +33,14 @@ public class HomeListAdapter extends ArrayAdapter<HomeOBJ> {
         mResource = resource;
     }
 
+    public class valueHolder{
+        TextView tvPriceHome;
+        TextView tvProdName;
+        TextView tvProdDesc;
+        ImageView ivHomeImg;
+        Button btnAddToCart;
+    }
+
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
@@ -49,11 +59,22 @@ public class HomeListAdapter extends ArrayAdapter<HomeOBJ> {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
 
+        //creating object from valueHolder
+        valueHolder fields = new valueHolder();
+
         //assigning text views to xml design
-        TextView tvPriceHome = (TextView) convertView.findViewById(R.id.tvPriceHome);
-        TextView tvProdName = (TextView) convertView.findViewById(R.id.tvProductNameHome);
-        TextView tvProdDesc = (TextView) convertView.findViewById(R.id.tvProductDescHome);
-        ImageView ivHomeImg = (ImageView) convertView.findViewById(R.id.ivHomeImg);
+        fields.tvPriceHome = (TextView) convertView.findViewById(R.id.tvPriceHome);
+        fields.tvProdName = (TextView) convertView.findViewById(R.id.tvProductNameHome);
+        fields.tvProdDesc = (TextView) convertView.findViewById(R.id.tvProductDescHome);
+        fields.ivHomeImg = (ImageView) convertView.findViewById(R.id.ivHomeImg);
+        fields.btnAddToCart = (Button) convertView.findViewById(R.id.btnAddToCart);
+        //click event increase
+        fields.btnAddToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Item added to cart at " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //instances of image loader for loadign images
         ImageLoader imageLoader = ImageLoader.getInstance();
@@ -67,11 +88,11 @@ public class HomeListAdapter extends ArrayAdapter<HomeOBJ> {
                 .showImageOnLoading(defaultImage).build();
 
         //download and display image from url
-        imageLoader.displayImage(imgURL, ivHomeImg, options);
+        imageLoader.displayImage(imgURL, fields.ivHomeImg, options);
 
-        tvPriceHome.setText(price);
-        tvProdName.setText(name);
-        tvProdDesc.setText(desc);
+        fields.tvPriceHome.setText(price);
+        fields.tvProdName.setText(name);
+        fields.tvProdDesc.setText(desc);
 
         return convertView;
     }
