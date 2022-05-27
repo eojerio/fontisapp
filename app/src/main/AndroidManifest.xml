@@ -11,6 +11,7 @@
         android:theme="@style/Theme.APPDET_ANDROIDBOTS_BLUEAPP">
         <activity
             android:name=".index_form"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="false" />
         <activity
             android:name=".registration_form"

@@ -59,10 +59,6 @@ public class cartFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null) {
-            // Restore value of members from saved state
-            data = savedInstanceState.getString("saved", "");
-        }
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -75,12 +71,9 @@ public class cartFragment extends Fragment {
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Always call the superclass so it can save the view hierarchy state
         super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putString("saved", data);
     }
 
     /*================================================ OKAY BEN DITO TAYO MAG C'CODE HA =====================================================================*/
-    int test_holder = 0;
-    String strtext = "0";
 
     private static final String TAG= "CartFrag";
 
@@ -125,9 +118,6 @@ public class cartFragment extends Fragment {
 
         CartListAdapter arrayAdapter = new CartListAdapter(getActivity(), R.layout.adapter_cartview_layout, data);
         lv.setAdapter(arrayAdapter);
-
-
-        Toast.makeText(getActivity().getApplication(), "ITEM ADDED! " + test_holder, Toast.LENGTH_SHORT).show();
 
         // Inflate the layout for this fragment
         //don't touch!! returns values

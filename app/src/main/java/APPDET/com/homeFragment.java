@@ -61,18 +61,6 @@ public class homeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //RETRIEVE FROM DATABASE VALUES
-
-
-
-
-
-
-        if (savedInstanceState != null) {
-            // Restore value of members from saved state
-            product1_amount = savedInstanceState.getInt("saved", 0);
-        }
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
