@@ -34,6 +34,16 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
         mResource = resource;
     }
 
+    public class valueHolderCart{
+        TextView tvPrice;
+        TextView tvProdName;
+        TextView tvProdAmount;
+        TextView tvProdDesc;
+        ImageView historyCartImg;
+        Button btnIncreaseCart;
+        Button btnDecreaseCart;
+    }
+
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
@@ -53,17 +63,21 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
 
+
+        //creating object from valueHolder
+        valueHolderCart fields = new valueHolderCart();
+
         //assigning text views to xml design
-        TextView tvPrice = (TextView) convertView.findViewById(R.id.tvPriceCart);
-        TextView tvProdName = (TextView) convertView.findViewById(R.id.tvProdNameCart);
-        TextView tvProdAmount = (TextView) convertView.findViewById(R.id.tvAmountCart);
-        TextView tvProdDesc = (TextView) convertView.findViewById(R.id.tvProdDescCart);
-        ImageView historyCartImg = (ImageView) convertView.findViewById(R.id.ivCartImg);
-        Button btnIncreaseCart = (Button) convertView.findViewById(R.id.btnIncrease);
-        Button btnDecreaseCart = (Button) convertView.findViewById(R.id.btnDecrease);
+        fields.tvPrice = (TextView) convertView.findViewById(R.id.tvPriceCart);
+        fields.tvProdName = (TextView) convertView.findViewById(R.id.tvProdNameCart);
+        fields.tvProdAmount = (TextView) convertView.findViewById(R.id.tvAmountCart);
+        fields.tvProdDesc = (TextView) convertView.findViewById(R.id.tvProdDescCart);
+        fields.historyCartImg = (ImageView) convertView.findViewById(R.id.ivCartImg);
+        fields.btnIncreaseCart = (Button) convertView.findViewById(R.id.btnIncrease);
+        fields.btnDecreaseCart = (Button) convertView.findViewById(R.id.btnDecrease);
 
         //click event increase
-        btnIncreaseCart.setOnClickListener(new View.OnClickListener() {
+        fields.btnIncreaseCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(), "Item added at " + position, Toast.LENGTH_SHORT).show();
@@ -71,7 +85,7 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
         });
 
         //click event decrease
-        btnDecreaseCart.setOnClickListener(new View.OnClickListener() {
+        fields.btnDecreaseCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(), "Item removed at " + position, Toast.LENGTH_SHORT).show();
@@ -90,12 +104,12 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
                 .showImageOnLoading(defaultImage).build();
 
         //download and display image from url
-        imageLoader.displayImage(imgURL, historyCartImg, options);
+        imageLoader.displayImage(imgURL, fields.historyCartImg, options);
 
-        tvPrice.setText(price);
-        tvProdName.setText(name);
-        tvProdDesc.setText(description);
-        tvProdAmount.setText(amount);
+        fields.tvPrice.setText(price);
+        fields.tvProdName.setText(name);
+        fields.tvProdDesc.setText(description);
+        fields.tvProdAmount.setText(amount);
 
         return convertView;
     }
