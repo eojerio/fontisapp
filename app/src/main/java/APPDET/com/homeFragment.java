@@ -55,7 +55,7 @@ public class homeFragment extends Fragment {
     }
 
     Button product1_increase, product1_decrease;
-    int product1_amount=0;
+    int product1_amount=1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,6 +85,7 @@ public class homeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
         Log.d(TAG, "onCreate: Started");
+
 
         ListView lv = (ListView) v.findViewById(R.id.lvList);
 

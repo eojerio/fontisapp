@@ -29,9 +29,10 @@ public class index_form extends AppCompatActivity {
     }
 
     //passing id from index to cart values
-    public void getDataFromIndex(int id){
+    public void getDataFromHome(int id){
         message = Integer.toString(id);
-    }
+    } //=1
+
 
     private BottomNavigationView.OnItemSelectedListener bottom_nav = new BottomNavigationView.OnItemSelectedListener() {
         @Override
@@ -52,7 +53,7 @@ public class index_form extends AppCompatActivity {
 
                 case R.id.cart:
                     fragment = new cartFragment();
-                    Bundle bundle = new Bundle();
+                    Bundle bundle = new Bundle(); //from homeFragment to cartFragment
                     bundle.putString("data", message);
 
                     fragment.setArguments(bundle);
