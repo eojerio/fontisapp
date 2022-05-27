@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:layout_margin="10dp"
+    android:weightSum="100">
+
+    <ImageView
+        android:id="@+id/ivHomeImg"
+        android:layout_width="138dp"
+        android:layout_height="101dp"
+        android:layout_gravity="center"
+        android:layout_weight="30" />
+
+
+    <LinearLayout
+        android:layout_width="233dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="70"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tvPriceHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="price"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvProductNameHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="product name"
+            android:textColor="#6A6666"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tvProductDescHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="product description"
+            android:textColor="#6A6666"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="40"
+        android:drawableLeft="@drawable/ic_cart"
+        android:text="ADD TO CART"
+        android:textSize="9sp"
+        app:backgroundTint="#692D94" />
+
+
+</LinearLayout>

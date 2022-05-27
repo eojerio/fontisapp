@@ -5,11 +5,16 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -83,6 +88,7 @@ public class homeFragment extends Fragment {
 
     /*================================================ OKAY BEN DITO TAYO MAG C'CODE HA =====================================================================*/
 
+    private static final String TAG= "HomeFrag";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -90,28 +96,32 @@ public class homeFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
-        product1_increase = (Button) v.findViewById(R.id.btnIncrease1);
-        product1_increase.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                product1_amount++;
-                Toast.makeText(getActivity().getApplication(), "ITEM ADDED! " + product1_amount, Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "onCreate: Started");
 
-                index_form send = (index_form) getActivity();
-                send.getDataFromIndex(product1_amount);
-            }
-        });
+        ListView lv = (ListView) v.findViewById(R.id.lvList);
 
-        product1_decrease = (Button) v.findViewById(R.id.btnDecrease1);
-        product1_decrease.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                product1_amount--;
-                Toast.makeText(getActivity().getApplication(), "ITEM REMOVED! " + product1_amount, Toast.LENGTH_SHORT).show();
+        HomeOBJ account_1 = new HomeOBJ("₱ 150", "1 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
+        HomeOBJ account_2 = new HomeOBJ("₱ 120", "0.5 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
+        HomeOBJ account_3 = new HomeOBJ("₱ 300", "2 Gallon Mineral water","Water that contains a large quantity of dissolved minerals or gases" ,"drawable://" + R.drawable.water_gallon);
+        HomeOBJ account_4 = new HomeOBJ("₱ 450", "3 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
 
+        ArrayList<HomeOBJ> data = new ArrayList<>();
 
-            }
-        });
+        data.add(account_1);
+        data.add(account_2);
+        data.add(account_3);
+        data.add(account_4);
+        data.add(account_1);
+        data.add(account_2);
+        data.add(account_3);
+        data.add(account_4);
+        data.add(account_1);
+        data.add(account_2);
+        data.add(account_3);
+        data.add(account_4);
+
+        HomeListAdapter adapter = new HomeListAdapter(getActivity(), R.layout.adapter_homeview_layout, data);
+        lv.setAdapter(adapter);
 
         //don't touch!! returns values
         return v;

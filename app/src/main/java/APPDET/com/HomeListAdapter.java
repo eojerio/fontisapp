@@ -5,10 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -20,15 +18,14 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class CartListAdapter extends ArrayAdapter<CartOBJ> {
-    private static final String TAG =  "CartListAdapter";
+public class HomeListAdapter extends ArrayAdapter<HomeOBJ> {
+    private static final String TAG =  "HomeListAdapter";
 
     private Context mContext;
     int mResource;
 
-    public CartListAdapter(Context context, int resource, ArrayList<CartOBJ> objects){
+    public HomeListAdapter(Context context, int resource, ArrayList<HomeOBJ> objects){
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
@@ -41,42 +38,22 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
 
         //GET INFORMATION
         String price = getItem(position).getPrice();
-        String amount = getItem(position).getAmount();
-        String name = getItem(position).getProductName();
-        String description = getItem(position).getDesc();
+        String name = getItem(position).getProdName();
+        String desc = getItem(position).getProdDesc();
         String imgURL = getItem(position).getImgURL();
 
         //Creating account object
-        CartOBJ account = new CartOBJ(price, amount, name, description, imgURL);
+        HomeOBJ account = new HomeOBJ(price, name, desc, imgURL);
 
         //creating layout inflater
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
 
         //assigning text views to xml design
-        TextView tvPrice = (TextView) convertView.findViewById(R.id.tvPriceCart);
-        TextView tvProdName = (TextView) convertView.findViewById(R.id.tvProdNameCart);
-        TextView tvProdAmount = (TextView) convertView.findViewById(R.id.tvAmountCart);
-        TextView tvProdDesc = (TextView) convertView.findViewById(R.id.tvProdDescCart);
-        ImageView historyCartImg = (ImageView) convertView.findViewById(R.id.ivCartImg);
-        Button btnIncreaseCart = (Button) convertView.findViewById(R.id.btnIncrease);
-        Button btnDecreaseCart = (Button) convertView.findViewById(R.id.btnDecrease);
-
-        //click event increase
-        btnIncreaseCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "Item added at " + position, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        //click event decrease
-        btnDecreaseCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "Item removed at " + position, Toast.LENGTH_SHORT).show();
-            }
-        });
+        TextView tvPriceHome = (TextView) convertView.findViewById(R.id.tvPriceHome);
+        TextView tvProdName = (TextView) convertView.findViewById(R.id.tvProductNameHome);
+        TextView tvProdDesc = (TextView) convertView.findViewById(R.id.tvProductDescHome);
+        ImageView ivHomeImg = (ImageView) convertView.findViewById(R.id.ivHomeImg);
 
         //instances of image loader for loadign images
         ImageLoader imageLoader = ImageLoader.getInstance();
@@ -90,16 +67,14 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
                 .showImageOnLoading(defaultImage).build();
 
         //download and display image from url
-        imageLoader.displayImage(imgURL, historyCartImg, options);
+        imageLoader.displayImage(imgURL, ivHomeImg, options);
 
-        tvPrice.setText(price);
+        tvPriceHome.setText(price);
         tvProdName.setText(name);
-        tvProdDesc.setText(description);
-        tvProdAmount.setText(amount);
+        tvProdDesc.setText(desc);
 
         return convertView;
     }
-
 
     private void setUpImageLoader(){
         // UNIVERSAL IMAGE LOADER SETUP
