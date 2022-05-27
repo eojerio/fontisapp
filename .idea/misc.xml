@@ -18,15 +18,15 @@
         <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/activity_index_form.xml" value="0.2" />
         <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/activity_registration_form.xml" value="0.25" />
-        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/adapter_cartview_layout.xml" value="0.264" />
         <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/adapter_historyview_layout.xml" value="0.22826086956521738" />
-        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/adapter_homeview_layout.xml" value="0.25" />
-        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/fragment_account.xml" value="0.2" />
-        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/fragment_account_edit.xml" value="0.21052631578947367" />
-        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/fragment_cart.xml" value="0.25" />
-        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/fragment_history.xml" value="0.264" />
-        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/fragment_account.xml" value="0.22826086956521738" />
+        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/fragment_cart.xml" value="0.22826086956521738" />
+        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/fragment_history.xml" value="0.22826086956521738" />
+        <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/layout/fragment_home.xml" value="0.152" />
         <entry key="..\:/Activities/APPDET_ANDROIDBOTS_BLUEAPP/app/src/main/res/menu/nav_bot.xml" value="0.25" />
+        <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/activity_index_form.xml" value="0.23097826086956522" />
+        <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/fragment_account.xml" value="0.25" />
+        <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/fragment_account_edit.xml" value="0.5" />
       </map>
     </option>
   </component>

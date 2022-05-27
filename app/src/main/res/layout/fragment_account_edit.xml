@@ -10,8 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:layout_marginBottom="40dp"
+        android:padding="10dp"
         tools:context=".account_edit">
 
         <TextView
@@ -91,8 +91,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvAccountConfirmPassword"
-            app:layout_constraintTop_toBottomOf="@+id/tvAccountChangePassword"
-            app:layout_constraintVertical_bias="0.242" />
+            app:layout_constraintTop_toBottomOf="@+id/etNewPassword"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvAccountNewPassword"
@@ -106,7 +106,7 @@
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.099"
+            app:layout_constraintHorizontal_bias="0.09"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAccountPassword"
             app:layout_constraintVertical_bias="0.0" />
@@ -126,7 +126,23 @@
             app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEmploymentStatus"
-            app:layout_constraintVertical_bias="0.029" />
+            app:layout_constraintVertical_bias="0.005" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="357dp"
+            android:layout_height="93dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:text="          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.296"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAccountDescription" />
 
         <TextView
             android:id="@+id/tvBirthdate"
@@ -226,25 +242,11 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
-            android:layout_width="357dp"
-            android:layout_height="93dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:text="          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.277"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAccountDescription" />
-
-        <EditText
             android:id="@+id/etNewPassword"
             android:layout_width="184dp"
             android:layout_height="38dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="116dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="New Password"
@@ -253,8 +255,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvAccountNewPassword"
-            app:layout_constraintTop_toBottomOf="@+id/tvAccountChangePassword"
-            app:layout_constraintVertical_bias="0.099" />
+            app:layout_constraintTop_toBottomOf="@+id/etEditPassword"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/btnSaveAccount"
@@ -282,10 +284,10 @@
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.105"
+            app:layout_constraintHorizontal_bias="0.09"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAccountPassword"
-            app:layout_constraintVertical_bias="0.068" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAccountNewPassword"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/etEditContactNo"
