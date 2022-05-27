@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/tvFragmentName"
-        android:layout_width="229dp"
+        android:layout_width="250dp"
         android:layout_height="64dp"
         android:gravity="center"
         android:text="MY CART"
@@ -19,9 +19,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.008" />
 
     <TextView
         android:id="@+id/tvTotalCart"
@@ -33,7 +34,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tvFragmentName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/tvFragmentName"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
