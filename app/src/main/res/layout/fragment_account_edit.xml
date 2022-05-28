@@ -32,8 +32,8 @@
 
         <TextView
             android:id="@+id/tvMaritalStatus"
-            android:layout_width="150dp"
-            android:layout_height="38dp"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Marital Status:"
@@ -42,7 +42,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvBirthdate"
             app:layout_constraintVertical_bias="0.0" />
@@ -50,7 +50,7 @@
         <EditText
             android:id="@+id/etEditMaritalStatus"
             android:layout_width="184dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Marital Status"
@@ -65,7 +65,7 @@
         <TextView
             android:id="@+id/tvAccountPassword"
             android:layout_width="80dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Password"
@@ -79,25 +79,10 @@
             app:layout_constraintTop_toBottomOf="@+id/tvAccountChangePassword"
             app:layout_constraintVertical_bias="0.0" />
 
-        <EditText
-            android:id="@+id/etEditConfirmPassword"
-            android:layout_width="184dp"
-            android:layout_height="38dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Confirm Password"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tvAccountConfirmPassword"
-            app:layout_constraintTop_toBottomOf="@+id/etNewPassword"
-            app:layout_constraintVertical_bias="0.0" />
-
         <TextView
             android:id="@+id/tvAccountNewPassword"
             android:layout_width="110dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="New Password"
@@ -106,9 +91,56 @@
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAccountPassword"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvAccountConfirmPassword"
+            android:layout_width="128dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="Confirm Password"
+            android:textColor="#38649A"
+            android:textSize="15dp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAccountNewPassword"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/etEditPassword2"
+            android:layout_width="184dp"
+            android:layout_height="35dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Password"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvAccountNewPassword"
+            app:layout_constraintTop_toBottomOf="@+id/etEditPassword"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/etEditPassword4"
+            android:layout_width="184dp"
+            android:layout_height="35dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Password"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvAccountConfirmPassword"
+            app:layout_constraintTop_toBottomOf="@+id/etEditPassword2"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -130,24 +162,25 @@
 
         <EditText
             android:id="@+id/editTextTextMultiLine"
-            android:layout_width="357dp"
-            android:layout_height="93dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="347dp"
+            android:layout_height="85dp"
             android:ems="10"
-            android:gravity="start|top"
+            android:gravity="left"
             android:inputType="textMultiLine"
             android:text="          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an"
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.296"
+            app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAccountDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAccountDescription"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvBirthdate"
-            android:layout_width="100dp"
-            android:layout_height="38dp"
+            android:layout_width="96dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Birthdate:"
@@ -164,7 +197,7 @@
         <EditText
             android:id="@+id/etEmploymentStatus"
             android:layout_width="184dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Employement Status"
@@ -179,7 +212,7 @@
         <EditText
             android:id="@+id/etEditPassword"
             android:layout_width="184dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Password"
@@ -193,8 +226,8 @@
 
         <TextView
             android:id="@+id/tvEmailAddress"
-            android:layout_width="161dp"
-            android:layout_height="38dp"
+            android:layout_width="141dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Email Address:"
@@ -203,7 +236,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.064"
+            app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvContactNo"
             app:layout_constraintVertical_bias="0.0" />
@@ -241,23 +274,6 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
             app:layout_constraintVertical_bias="0.0" />
 
-        <EditText
-            android:id="@+id/etNewPassword"
-            android:layout_width="184dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="116dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="New Password"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tvAccountNewPassword"
-            app:layout_constraintTop_toBottomOf="@+id/etEditPassword"
-            app:layout_constraintVertical_bias="0.0" />
-
         <Button
             android:id="@+id/btnSaveAccount"
             android:layout_width="106dp"
@@ -272,34 +288,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/tvAccountConfirmPassword"
-            android:layout_width="135dp"
-            android:layout_height="30dp"
-            android:layout_centerInParent="true"
-            android:gravity="center|left"
-            android:text="Confirm Password"
-            android:textColor="#38649A"
-            android:textSize="15dp"
-            android:textStyle="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.09"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAccountNewPassword"
-            app:layout_constraintVertical_bias="0.0" />
-
         <EditText
             android:id="@+id/etEditContactNo"
             android:layout_width="184dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Contact No."
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.089"
+            app:layout_constraintHorizontal_bias="0.188"
             app:layout_constraintStart_toEndOf="@+id/tvAddress"
             app:layout_constraintTop_toBottomOf="@+id/etEditAddress"
             app:layout_constraintVertical_bias="0.0" />
@@ -307,7 +306,7 @@
         <EditText
             android:id="@+id/etEditAddress"
             android:layout_width="184dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Address"
@@ -322,7 +321,7 @@
         <TextView
             android:id="@+id/tvContactNo"
             android:layout_width="120dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Contact No.:"
@@ -339,7 +338,7 @@
         <EditText
             android:id="@+id/etEditEmailAddress"
             android:layout_width="184dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Email Address"
@@ -353,8 +352,8 @@
 
         <TextView
             android:id="@+id/tvEmploymentStatus"
-            android:layout_width="191dp"
-            android:layout_height="38dp"
+            android:layout_width="187dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Employment Status:"
@@ -371,7 +370,7 @@
         <EditText
             android:id="@+id/etEditBirthdate"
             android:layout_width="184dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Birthdate"
@@ -386,7 +385,7 @@
         <TextView
             android:id="@+id/tvAddress"
             android:layout_width="100dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Address:"
