@@ -47,7 +47,7 @@
         <TextView
             android:id="@+id/tvAddress"
             android:layout_width="100dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Address:"
@@ -64,7 +64,7 @@
         <TextView
             android:id="@+id/tvBirthdate"
             android:layout_width="100dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Birthdate:"
@@ -81,7 +81,7 @@
         <TextView
             android:id="@+id/tvContactNo2"
             android:layout_width="120dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Contact No.:"
@@ -98,7 +98,7 @@
         <TextView
             android:id="@+id/tvMaritalStatus"
             android:layout_width="150dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Marital Status:"
@@ -115,7 +115,7 @@
         <TextView
             android:id="@+id/tvEmailAddress"
             android:layout_width="161dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Email Address:"
@@ -132,7 +132,7 @@
         <TextView
             android:id="@+id/tvEmailAddress2"
             android:layout_width="161dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Email Address:"
@@ -149,7 +149,7 @@
         <TextView
             android:id="@+id/tvEmploymentStatus"
             android:layout_width="191dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Employment Status:"
@@ -166,7 +166,7 @@
         <TextView
             android:id="@+id/tvEmploymentStatus2"
             android:layout_width="191dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Employment Status:"
@@ -217,7 +217,7 @@
         <TextView
             android:id="@+id/tvContactNo"
             android:layout_width="120dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Contact No.:"
@@ -234,7 +234,7 @@
         <TextView
             android:id="@+id/tvMaritalStatus2"
             android:layout_width="150dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Marital Status:"
@@ -251,7 +251,7 @@
         <TextView
             android:id="@+id/tvBirthdate2"
             android:layout_width="100dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Birthdate:"
@@ -268,7 +268,7 @@
         <TextView
             android:id="@+id/tvAddress2"
             android:layout_width="100dp"
-            android:layout_height="38dp"
+            android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Address:"

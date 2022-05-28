@@ -114,12 +114,12 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/etEditPassword2"
+            android:id="@+id/etEditNewPassword"
             android:layout_width="184dp"
             android:layout_height="35dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Password"
+            android:text="New Password"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -129,18 +129,18 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/etEditPassword4"
+            android:id="@+id/etEditConfirmPassword"
             android:layout_width="184dp"
             android:layout_height="35dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Password"
+            android:text="Confirm Password"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvAccountConfirmPassword"
-            app:layout_constraintTop_toBottomOf="@+id/etEditPassword2"
+            app:layout_constraintTop_toBottomOf="@+id/etEditNewPassword"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
