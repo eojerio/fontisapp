@@ -1,5 +1,6 @@
 package APPDET.com;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +13,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.vishnusivadas.advanced_httpurlconnection.PutData;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class registration_form extends AppCompatActivity {
     EditText username, password, first_name, last_name, contact_no, address, birthdate, email_address, employment_status, marital_status;
@@ -50,75 +63,59 @@ public class registration_form extends AppCompatActivity {
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String usernameDATA, passwordDATA, first_nameDATA, last_nameDATA, contact_noDATA, addressDATA, birthdateDATA, email_addressDATA, employment_statusDATA, marital_statusDATA;
+                final String usernameDATA = username.getText().toString().trim();
+                final String passwordDATA = password.getText().toString().trim();
+                final String first_nameDATA = first_name.getText().toString().trim();
+                final String last_nameDATA = last_name.getText().toString().trim();
+                final String contact_noDATA = contact_no.getText().toString().trim();
+                final String addressDATA = address.getText().toString().trim();
+                final String birthdateDATA = birthdate.getText().toString().trim();
+                final String email_addressDATA = email_address.getText().toString().trim();
+                final String employment_statusDATA = employment_status.getText().toString().trim();
+                final String marital_statusDATA = marital_status.getText().toString().trim();
 
-                usernameDATA = String.valueOf(username.getText());
-                passwordDATA = String.valueOf(password.getText());
-                first_nameDATA = String.valueOf(first_name.getText());
-                last_nameDATA = String.valueOf(last_name.getText());
-                contact_noDATA = String.valueOf(contact_no.getText());
-                addressDATA = String.valueOf(address.getText());
-                birthdateDATA = String.valueOf(birthdate.getText());
-                email_addressDATA =String.valueOf( email_address.getText());
-                employment_statusDATA = String.valueOf(employment_status.getText());
-                marital_statusDATA = String.valueOf(marital_status.getText());
+                Toast.makeText(getApplicationContext(), "REGISTERING USER...", Toast.LENGTH_SHORT).show();
 
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_REGISTER, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getApplicationContext(), "Inserting to database...", Toast.LENGTH_SHORT).show();
 
-                //usernameDATA.isEmpty() && passwordDATA.isEmpty() && first_nameDATA.isEmpty() && last_nameDATA.isEmpty() && contact_noDATA.isEmpty() && addressDATA.isEmpty() && birthdateDATA.isEmpty() && email_addressDATA.isEmpty() && employment_statusDATA.isEmpty() && marital_statusDATA.isEmpty()
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
 
-                //checks if edit text are blank
-                if((!usernameDATA.trim().equals("")) && (!passwordDATA.trim().equals("")) && (!first_nameDATA.trim().equals("")) && (!last_nameDATA.trim().equals("")) && (!contact_noDATA.trim().equals("")) && (!addressDATA.trim().equals("")) && (!birthdateDATA.trim().equals("")) && (!email_addressDATA.trim().equals("")) && (!employment_statusDATA.trim().equals("")) && (!marital_statusDATA.trim().equals(""))){
-                    //Start ProgressBar first (Set visibility VISIBLE)
-                    Handler handler = new Handler(Looper.getMainLooper());
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            //Starting Write and Read data with URL
-                            //Creating array for parameters
-                            String[] field = new String[10];
-                            field[0] = "username";
-                            field[1] = "password";
-                            field[2] = "first_name";
-                            field[3] = "last_name";
-                            field[4] = "contact_no";
-                            field[5] = "address";
-                            field[6] = "birthdate";
-                            field[7] = "email_address";
-                            field[8] = "employment_status";
-                            field[9] = "marital_status";
-                            //Creating array for data
-                            String[] data = new String[10];
-                            data[0] = usernameDATA;
-                            data[1] = passwordDATA;
-                            data[2] = first_nameDATA;
-                            data[3] = last_nameDATA;
-                            data[4] = contact_noDATA;
-                            data[5] = addressDATA;
-                            data[6] = birthdateDATA;
-                            data[7] = email_addressDATA;
-                            data[8] = employment_statusDATA;
-                            data[9] = marital_statusDATA;
-                            PutData putData = new PutData("http://192.168.254.103/fontisDB/signUp.php", "POST", field, data);
-                            if (putData.startPut()) {
-                                if (putData.onComplete()) {
-                                    String result = putData.getResult();
-                                    if(result.equals("Sign Up Success")){
-                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                        Intent signup = new Intent(getApplicationContext(), MainActivity.class);
-                                        startActivity(signup);
-                                        finish();
-                                    }else{
-                                        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
-                                    }
-                                    Log.i("PutData", result);
-                                }
-                            }
-                            //End Write and Read data with URL
+                            Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    });
-                }else{
-                    Toast.makeText(getApplicationContext(), "All fields are required", Toast.LENGTH_SHORT).show();
-                }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }){
+                    @Nullable
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("username", usernameDATA);
+                        params.put("password", passwordDATA);
+                        params.put("first_name", first_nameDATA);
+                        params.put("last_name", last_nameDATA);
+                        params.put("contact_no", contact_noDATA);
+                        params.put("address", addressDATA);
+                        params.put("birthdate", birthdateDATA);
+                        params.put("email_address", email_addressDATA);
+                        params.put("employment_status", employment_statusDATA);
+                        params.put("marital_status", marital_statusDATA);
+
+                        return params;
+
+                    }
+                };
+                RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+                requestQueue.add(stringRequest);
             }
         });
     }
