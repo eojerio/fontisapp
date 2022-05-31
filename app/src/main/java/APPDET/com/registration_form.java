@@ -79,8 +79,9 @@ public class registration_form extends AppCompatActivity {
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_REGISTER, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), "Inserting to database...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Checking...", Toast.LENGTH_SHORT).show();
 
+                        //if success
                         try {
                             JSONObject jsonObject = new JSONObject(response);
 
