@@ -85,7 +85,21 @@ public class registration_form extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
 
-                            Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                            //if success
+                            if(!jsonObject.getBoolean("error")){
+                                Toast.makeText(getApplicationContext(), "Register Successful" , Toast.LENGTH_SHORT).show();
+
+                                //intent go to main page
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                                finish();
+
+                            }else{
+                                //shows error
+                                Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+
+                            }
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -115,8 +129,9 @@ public class registration_form extends AppCompatActivity {
 
                     }
                 };
-                RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-                requestQueue.add(stringRequest);
+
+                RequestHandler.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
+
             }
         });
     }
