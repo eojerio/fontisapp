@@ -35,7 +35,7 @@
         //code for login
         function userLogin($conn, $username, $password){
             $password = md5($password);
-            $stmt = $conn->prepare("SELECT id FROM `fontis_userprofiles` WHERE username=:username OR password=:password");
+            $stmt = $conn->prepare("SELECT id FROM `fontis_userprofiles` WHERE username=:username AND password=:password");
             $stmt->bindParam(":username", $username);
             $stmt->bindParam(":password", $password);
             $stmt->execute();
@@ -63,5 +63,49 @@
             $count = $stmt->fetchColumn(0);
             
             return $count > 0;
+        }
+
+        //code for adding to cart
+        function addCart($conn, $cart_userID, $cart_prodTag, $cart_prodPrice, $cart_prodName, $cart_prodDesc, $cart_prodQty, $cart_prodImg){
+            $stringTest = "test";
+            if($this->itemExist($conn, $cart_prodTag)){
+                return 0;
+            }else{
+                $stmt = $conn->prepare("INSERT INTO `fontis_usercarts` (`cart_userID`, `cart_prodTag`, `cart_prodPrice`, `cart_prodName`, `cart_prodDesc`, `cart_prodQty`, `cart_prodImg`) VALUES (:cart_userID, :cart_prodTag, :cart_prodPrice, :cart_prodName, :cart_prodDesc, :cart_prodQty, :cart_prodImg);");
+                $stmt->bindParam(":cart_userID",$cart_userID);
+                $stmt->bindParam(":cart_prodTag",$cart_prodTag);
+                $stmt->bindParam(":cart_prodPrice",$cart_prodPrice);
+                $stmt->bindParam(":cart_prodName",$cart_prodName);
+                $stmt->bindParam(":cart_prodDesc",$cart_prodDesc);
+                $stmt->bindParam(":cart_prodQty",$cart_prodQty);
+                $stmt->bindParam(":cart_prodImg", $stringTest);
+
+                if($stmt->execute()){
+                    return 1;
+                }else{
+                    return 2;
+                }
+            }
+        }
+
+        //code for checking duplicate register
+        private function itemExist($conn, $cart_prodTag){
+            $stmt = $conn->prepare("SELECT cart_id FROM `fontis_usercarts` WHERE `cart_prodTag`=:cart_prodTag");
+            $stmt->bindParam(":cart_prodTag", $cart_prodTag);
+            $stmt->execute();
+            $count = $stmt->fetchColumn(0);
+            
+            return $count > 0;
+        }
+
+        //code for generating list view in cart
+        public function populateCart($conn, $cart_userID){
+            //query
+            $stmt = $conn->prepare("SELECT * FROM `fontis_usercarts` WHERE `cart_userID`=:cart_userID");
+            $stmt->bindParam(":cart_userID", $cart_userID);
+            $stmt->execute();
+            $count = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $count;
         }
     }

@@ -21,6 +21,12 @@ public class index_form extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index_form);
 
+        //checks if user is not logged in
+        if(!SharedPreferenceManager.getInstance(this).isUserLoggedIn()){
+            finish();
+            startActivity(new Intent(this, index_form.class));
+            return;
+        }
 
         bot_nav = findViewById(R.id.bottomNav);
 

@@ -86,13 +86,13 @@ public class homeFragment extends Fragment {
 
         Log.d(TAG, "onCreate: Started");
 
-
+        int fk_cart = SharedPreferenceManager.getInstance(getContext()).getUserID();
         ListView lv = (ListView) v.findViewById(R.id.lvList);
 
-        HomeOBJ account_1 = new HomeOBJ("₱ 150", "1 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
-        HomeOBJ account_2 = new HomeOBJ("₱ 120", "0.5 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
-        HomeOBJ account_3 = new HomeOBJ("₱ 300", "2 Gallon Mineral water","Water that contains a large quantity of dissolved minerals or gases" ,"drawable://" + R.drawable.water_gallon);
-        HomeOBJ account_4 = new HomeOBJ("₱ 450", "3 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
+        HomeOBJ account_1 = new HomeOBJ(fk_cart,"₱ 150", "1 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
+        HomeOBJ account_2 = new HomeOBJ(fk_cart,"₱ 120", "0.5 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
+        HomeOBJ account_3 = new HomeOBJ(fk_cart,"₱ 300", "2 Gallon Mineral water","Water that contains a large quantity of dissolved minerals or gases" ,"drawable://" + R.drawable.water_gallon);
+        HomeOBJ account_4 = new HomeOBJ(fk_cart,"₱ 450", "3 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
 
         ArrayList<HomeOBJ> data = new ArrayList<>();
 

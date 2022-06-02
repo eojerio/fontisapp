@@ -36,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //checks if an account is logged in
+        if(SharedPreferenceManager.getInstance(this).isUserLoggedIn()){
+            finish();
+            startActivity(new Intent(this, index_form.class));
+            return;
+        }
+
         usernameLogin = (EditText) findViewById(R.id.etUsername);
         passwordLogin = (EditText) findViewById(R.id.etPassword);
 

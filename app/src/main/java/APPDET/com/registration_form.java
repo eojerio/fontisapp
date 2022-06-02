@@ -37,6 +37,13 @@ public class registration_form extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_form);
 
+        //checks if user is logged in
+        if(SharedPreferenceManager.getInstance(this).isUserLoggedIn()){
+            finish();
+            startActivity(new Intent(this, index_form.class));
+            return;
+        }
+
         //TextView get value
         username = findViewById(R.id.etUsernameReg);
         password = findViewById(R.id.etPasswordReg);

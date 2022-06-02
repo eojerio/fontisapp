@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         //create an object from the DbOperations class 
         $obj = new DbOperations();
 
-        //calling of obj as an instance of result to save the value
+        //calling of register user method to be 
          $result = $obj->registerUser($conn, $_POST['username'], $_POST['password'], $_POST['first_name'], $_POST['last_name'], $_POST['contact_no'], $_POST['address'], $_POST['birthdate'], $_POST['email_address'], $_POST['employment_status'], $_POST['marital_status']);
 
          //checks the result value

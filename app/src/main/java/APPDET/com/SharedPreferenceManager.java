@@ -76,6 +76,10 @@ public class SharedPreferenceManager {
         return true;
     }
 
+    public int getUserID(){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(KEY_USER_ID, 0);
+    }
     //for profile fragment get data
 
 

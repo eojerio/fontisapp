@@ -81,6 +81,9 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getContext(), "Item added at " + position, Toast.LENGTH_SHORT).show();
+
+
+                //insert database insertion here
             }
         });
 
