@@ -4,9 +4,10 @@ include '../Includes/DbConnect.php';
 require_once '../Includes/DbOperations.php';
 $response = array();
 
-
+//checks if server method is post : else, Invalid request
 if($_SERVER['REQUEST_METHOD']=='POST'){
 
+    //checks if variables are empty : else, All fields are required.
     if(!empty($_POST['username']) and !empty($_POST['password'])){
         $obj = new DbOperations();
 

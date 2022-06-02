@@ -4,14 +4,18 @@ include '../Includes/DbConnect.php';
 require_once '../Includes/DbOperations.php';
 $response = array();
 
+//checks if server method is post : else, Invalid request
 if($_SERVER['REQUEST_METHOD']=='POST'){
 
-   
+    //checks if variables are empty : else, All fields are required.
     if(!empty($_POST['username']) and !empty($_POST['password']) and !empty($_POST['first_name']) and !empty($_POST['last_name']) and !empty($_POST['contact_no']) and !empty($_POST['address']) and !empty($_POST['birthdate']) and !empty($_POST['email_address']) and !empty($_POST['employment_status']) and !empty($_POST['marital_status'])){
-         $obj = new DbOperations();
+        //create an object from the DbOperations class 
+        $obj = new DbOperations();
 
+        //calling of obj as an instance of result to save the value
          $result = $obj->registerUser($conn, $_POST['username'], $_POST['password'], $_POST['first_name'], $_POST['last_name'], $_POST['contact_no'], $_POST['address'], $_POST['birthdate'], $_POST['email_address'], $_POST['employment_status'], $_POST['marital_status']);
 
+         //checks the result value
          if($result == 1){
              $response['error'] = false;
              $response['message'] = "User registered successfully.";
