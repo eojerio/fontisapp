@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,12 +61,25 @@ public class accountFragment extends Fragment {
     }
 
     Button btnEditAccount, btnLogout;
+    TextView name,address,contact_no,email_address,birthdate,marital_status,employment_status;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_account, container, false);
+
+
+            name = (TextView) v.findViewById(R.id.tvNameAccount);
+
+            //assigning textview values from database through SharedPreferenceManager
+
+            name.setText(SharedPreferenceManager.getInstance(getContext()).getFirstName() + SharedPreferenceManager.getInstance(getContext()).getLastName());
+
+
+
+
+            //methods for button
 
             btnEditAccount = (Button) v.findViewById(R.id.btnSaveAccount);
             btnEditAccount.setOnClickListener(new View.OnClickListener() {
@@ -88,4 +102,6 @@ public class accountFragment extends Fragment {
 
         return v;
     }
+
+
 }

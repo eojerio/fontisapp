@@ -10,25 +10,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:layout_marginBottom="40dp"
+        android:padding="10dp"
         tools:context=".accountFragment">
-
-        <TextView
-            android:id="@+id/tvFragmentName"
-            android:layout_width="120dp"
-            android:layout_height="64dp"
-            android:gravity="center"
-            android:text="Celyn"
-            android:textColor="#38649A"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.027" />
 
         <Button
             android:id="@+id/btnSaveAccount"
@@ -49,17 +33,33 @@
             android:layout_width="100dp"
             android:layout_height="35dp"
             android:layout_centerInParent="true"
+            android:layout_marginTop="52dp"
             android:gravity="center|left"
             android:text="Address:"
             android:textColor="#38649A"
             android:textSize="20dp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameAccount" />
+
+        <TextView
+            android:id="@+id/tvNameAccount"
+            android:layout_width="260dp"
+            android:layout_height="96dp"
+            android:layout_centerInParent="true"
+            android:gravity="center|left"
+            android:text="NAME"
+            android:textColor="#38649A"
+            android:textSize="28sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.051"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvFragmentName"
-            app:layout_constraintVertical_bias="0.023" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.038" />
 
         <TextView
             android:id="@+id/tvBirthdate"
@@ -270,33 +270,16 @@
             android:layout_width="100dp"
             android:layout_height="35dp"
             android:layout_centerInParent="true"
+            android:layout_marginTop="52dp"
             android:gravity="center|left"
             android:text="Address:"
             android:textColor="#38649A"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvAddress"
-            app:layout_constraintTop_toBottomOf="@+id/tvFragmentName"
-            app:layout_constraintVertical_bias="0.024" />
-
-        <TextView
-            android:id="@+id/tvLastName"
-            android:layout_width="120dp"
-            android:layout_height="64dp"
-            android:gravity="center|left"
-            android:text="Ho"
-            android:textColor="#38649A"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tvFragmentName"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.025" />
+            app:layout_constraintTop_toBottomOf="@+id/tvNameAccount" />
 
         <Button
             android:id="@+id/btnLogout"
