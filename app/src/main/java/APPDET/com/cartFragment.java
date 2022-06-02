@@ -115,6 +115,7 @@ public class cartFragment extends Fragment {
         data.add(account3);
         data.add(account4);
 
+        //test
 
         generateCartList();
         // Inflate the layout for this fragment
