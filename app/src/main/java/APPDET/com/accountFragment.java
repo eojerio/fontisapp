@@ -1,5 +1,6 @@
 package APPDET.com;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -57,7 +58,9 @@ public class accountFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    Button btnEditAccount;
+
+    Button btnEditAccount, btnLogout;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -74,6 +77,14 @@ public class accountFragment extends Fragment {
                 }
             });
 
+            btnLogout = (Button) v.findViewById(R.id.btnLogout);
+            btnLogout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    SharedPreferenceManager.getInstance(getContext()).logout();
+                    startActivity(new Intent(getContext(), MainActivity.class));
+                }
+            });
 
         return v;
     }

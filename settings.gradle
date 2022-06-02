@@ -1,4 +1,4 @@
-pluginManagement {
+    pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
@@ -12,5 +12,6 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+    
 rootProject.name = "APPDET_ANDROIDBOTS_BLUEAPP"
 include ':app'
