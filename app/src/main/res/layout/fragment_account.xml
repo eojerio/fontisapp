@@ -33,7 +33,7 @@
             android:layout_width="100dp"
             android:layout_height="35dp"
             android:layout_centerInParent="true"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="8dp"
             android:gravity="center|left"
             android:text="Address:"
             android:textColor="#38649A"
@@ -80,7 +80,7 @@
 
         <TextView
             android:id="@+id/tvContactNo2"
-            android:layout_width="120dp"
+            android:layout_width="250dp"
             android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
@@ -114,8 +114,8 @@
 
         <TextView
             android:id="@+id/tvEmailAddress"
-            android:layout_width="161dp"
-            android:layout_height="35dp"
+            android:layout_width="141dp"
+            android:layout_height="64dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Email Address:"
@@ -131,13 +131,13 @@
 
         <TextView
             android:id="@+id/tvEmailAddress2"
-            android:layout_width="161dp"
-            android:layout_height="35dp"
+            android:layout_width="225dp"
+            android:layout_height="64dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Email Address:"
             android:textColor="#38649A"
-            android:textSize="20dp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -233,7 +233,7 @@
 
         <TextView
             android:id="@+id/tvMaritalStatus2"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
@@ -250,7 +250,7 @@
 
         <TextView
             android:id="@+id/tvBirthdate2"
-            android:layout_width="100dp"
+            android:layout_width="250dp"
             android:layout_height="35dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
@@ -267,10 +267,10 @@
 
         <TextView
             android:id="@+id/tvAddress2"
-            android:layout_width="100dp"
+            android:layout_width="280dp"
             android:layout_height="35dp"
             android:layout_centerInParent="true"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="8dp"
             android:gravity="center|left"
             android:text="Address:"
             android:textColor="#38649A"
