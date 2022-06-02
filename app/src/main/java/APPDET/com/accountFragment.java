@@ -71,10 +71,22 @@ public class accountFragment extends Fragment {
 
 
             name = (TextView) v.findViewById(R.id.tvNameAccount);
+            address = (TextView) v.findViewById(R.id.tvAddress2);
+            contact_no = (TextView) v.findViewById(R.id.tvContactNo2);
+            email_address = (TextView) v.findViewById(R.id.tvEmailAddress2);
+            birthdate = (TextView) v.findViewById(R.id.tvBirthdate2);
+            marital_status = (TextView) v.findViewById(R.id.tvMaritalStatus2);
+            employment_status = (TextView) v.findViewById(R.id.tvEmploymentStatus2);
 
             //assigning textview values from database through SharedPreferenceManager
 
-            name.setText(SharedPreferenceManager.getInstance(getContext()).getFirstName() + SharedPreferenceManager.getInstance(getContext()).getLastName());
+            name.setText(SharedPreferenceManager.getInstance(getContext()).getFirstName() +" "+ SharedPreferenceManager.getInstance(getContext()).getLastName());
+            address.setText(SharedPreferenceManager.getInstance(getContext()).getAddress2());
+            contact_no.setText(SharedPreferenceManager.getInstance(getContext()).getContactNo2());
+            email_address.setText(SharedPreferenceManager.getInstance(getContext()).getEmailAddress2());
+            birthdate.setText(SharedPreferenceManager.getInstance(getContext()).getBirthdate2());
+            marital_status.setText(SharedPreferenceManager.getInstance(getContext()).getMaritalStatus2());
+            employment_status.setText(SharedPreferenceManager.getInstance(getContext()).getEmploymentStatus2());
 
 
 
