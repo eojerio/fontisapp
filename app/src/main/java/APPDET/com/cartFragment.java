@@ -129,20 +129,27 @@ public class cartFragment extends Fragment {
                     JSONArray array = obj.getJSONArray("cartTrue");
                         //loop
                         for(int i=0; i < array.length();i++){
+
+                            //array list
+                            //get id
+                            //arraylistsize
+
                             JSONObject cartOBJ = array.getJSONObject(i);
 
                             CartOBJ prod = new CartOBJ("₱ " + cartOBJ.getString("cart_prodPrice"), cartOBJ.getString("cart_prodQty"),cartOBJ.getString( "cart_prodName"), cartOBJ.getString("cart_prodDesc"), "drawable://" +  R.drawable.water_gallon);
+                            //5
+
                             data.add(prod);
+
+                            // Inflate the layout for this fragment
+                            CartListAdapter arrayAdapter = new CartListAdapter(getActivity(), R.layout.adapter_cartview_layout, data);
+                            lv.setAdapter(arrayAdapter);
                         }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(getContext(), "JSON Error Occurred", Toast.LENGTH_SHORT).show();
                 }
-
-                // Inflate the layout for this fragment
-                CartListAdapter arrayAdapter = new CartListAdapter(getActivity(), R.layout.adapter_cartview_layout, data);
-                lv.setAdapter(arrayAdapter);
             }
         }, new Response.ErrorListener() {
             @Override
@@ -158,6 +165,8 @@ public class cartFragment extends Fragment {
                 return params;
             }
         };
+
+
 
         RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
     }
