@@ -61,7 +61,7 @@ public class accountFragment extends Fragment {
     }
 
     Button btnEditAccount, btnLogout;
-    TextView name,address,contact_no,email_address,birthdate,marital_status,employment_status;
+    TextView name,address,contact_no,email_address,birthdate,marital_status,employment_status,user_description;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -77,16 +77,18 @@ public class accountFragment extends Fragment {
             birthdate = (TextView) v.findViewById(R.id.tvBirthdate2);
             marital_status = (TextView) v.findViewById(R.id.tvMaritalStatus2);
             employment_status = (TextView) v.findViewById(R.id.tvEmploymentStatus2);
+            user_description = (TextView) v.findViewById(R.id.tvAccountDescriptionSub);
 
             //assigning textview values from database through SharedPreferenceManager
 
             name.setText(SharedPreferenceManager.getInstance(getContext()).getFirstName() +" "+ SharedPreferenceManager.getInstance(getContext()).getLastName());
-            address.setText(SharedPreferenceManager.getInstance(getContext()).getAddress2());
-            contact_no.setText(SharedPreferenceManager.getInstance(getContext()).getContactNo2());
-            email_address.setText(SharedPreferenceManager.getInstance(getContext()).getEmailAddress2());
-            birthdate.setText(SharedPreferenceManager.getInstance(getContext()).getBirthdate2());
-            marital_status.setText(SharedPreferenceManager.getInstance(getContext()).getMaritalStatus2());
-            employment_status.setText(SharedPreferenceManager.getInstance(getContext()).getEmploymentStatus2());
+            address.setText(SharedPreferenceManager.getInstance(getContext()).getAddress());
+            contact_no.setText(SharedPreferenceManager.getInstance(getContext()).getContactNo());
+            email_address.setText(SharedPreferenceManager.getInstance(getContext()).getEmailAddress());
+            birthdate.setText(SharedPreferenceManager.getInstance(getContext()).getBirthdate());
+            marital_status.setText(SharedPreferenceManager.getInstance(getContext()).getMaritalStatus());
+            employment_status.setText(SharedPreferenceManager.getInstance(getContext()).getEmploymentStatus());
+            user_description.setText(SharedPreferenceManager.getInstance(getContext()).getDescription());
 
 
 
@@ -97,7 +99,7 @@ public class accountFragment extends Fragment {
             btnEditAccount.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                  Fragment edit_account = new account_edit();
+                  Fragment edit_account = new account_editFragment();
                   getParentFragmentManager().beginTransaction().replace(R.id.container_botnav,edit_account).commit();
 
                 }

@@ -30,10 +30,11 @@
         <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/adapter_cartview_layout.xml" value="0.358695652173913" />
         <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/fragment_account.xml" value="0.33" />
         <entry key="..\:/Users/g/Documents/GitHub/fontisapp/app/src/main/res/layout/fragment_account_edit.xml" value="0.5" />
-        <entry key="..\:/xampp/htdocs/APPDET_ANDROIDBOTS_FONTISAPP/app/src/main/res/layout/activity_index_form.xml" value="0.1" />
-        <entry key="..\:/xampp/htdocs/APPDET_ANDROIDBOTS_FONTISAPP/app/src/main/res/layout/fragment_account.xml" value="0.23172757475083056" />
-        <entry key="..\:/xampp/htdocs/APPDET_ANDROIDBOTS_FONTISAPP/app/src/main/res/layout/fragment_account_edit.xml" value="0.2222222222222222" />
-        <entry key="..\:/xampp/htdocs/APPDET_ANDROIDBOTS_FONTISAPP/app/src/main/res/layout/fragment_cart.xml" value="0.358695652173913" />
+        <entry key="..\:/xampp/htdocs/APPDET_ANDROIDBOTS_FONTISAPP/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/xampp/htdocs/APPDET_ANDROIDBOTS_FONTISAPP/app/src/main/res/layout/activity_registration_form.xml" value="0.358695652173913" />
+        <entry key="..\:/xampp/htdocs/APPDET_ANDROIDBOTS_FONTISAPP/app/src/main/res/layout/fragment_account.xml" value="0.33" />
+        <entry key="..\:/xampp/htdocs/APPDET_ANDROIDBOTS_FONTISAPP/app/src/main/res/layout/fragment_account_edit.xml" value="0.33" />
+        <entry key="..\:/xampp/htdocs/APPDET_ANDROIDBOTS_FONTISAPP/app/src/main/res/layout/fragment_cart.xml" value="0.33" />
       </map>
     </option>
   </component>

@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                             //if success
                             if(!jsonObject.getBoolean("error")){
 
-                                SharedPreferenceManager.getInstance(getApplicationContext()).userLogin(jsonObject.getInt("id"), jsonObject.getString("username"), jsonObject.getString("first_name"),jsonObject.getString("last_name"),jsonObject.getString("contact_no"),jsonObject.getString("address"),jsonObject.getString("birthdate"),jsonObject.getString("email_address"),jsonObject.getString("employment_status"),jsonObject.getString("marital_status"));
+                                SharedPreferenceManager.getInstance(getApplicationContext()).userLogin(jsonObject.getInt("id"), jsonObject.getString("username"), jsonObject.getString("first_name"),jsonObject.getString("last_name"),jsonObject.getString("contact_no"),jsonObject.getString("address"),jsonObject.getString("birthdate"),jsonObject.getString("email_address"),jsonObject.getString("employment_status"),jsonObject.getString("marital_status"),jsonObject.getString("user_description"));
 
                                 Toast.makeText(getApplicationContext(), "Login Successful" , Toast.LENGTH_SHORT).show();
 
