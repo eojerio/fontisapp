@@ -22,6 +22,7 @@ public class SharedPreferenceManager {
     private static final String KEY_USER_EMAILADDRESS = "email_address";
     private static final String KEY_USER_EMPLOYMENTSTATUS = "employment_status";
     private static final String KEY_USER_MARITALSTATUS = "marital_status";
+    private static final String KEY_USER_DESCRIPTION = "user_description";
 
     private SharedPreferenceManager(Context context) {
         ctx = context;
@@ -35,7 +36,7 @@ public class SharedPreferenceManager {
         return instance;
     }
 
-    public boolean userLogin(int id, String username, String first_name, String last_name,String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status){
+    public boolean userLogin(int id, String username, String first_name, String last_name,String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status, String user_description){
 
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -50,6 +51,26 @@ public class SharedPreferenceManager {
         editor.putString(KEY_USER_EMAILADDRESS, email_address);
         editor.putString(KEY_USER_EMPLOYMENTSTATUS, employment_status);
         editor.putString(KEY_USER_MARITALSTATUS, marital_status);
+        editor.putString(KEY_USER_DESCRIPTION, user_description);
+
+        editor.apply();
+
+        return true;
+
+    }
+
+    public boolean userEdit(String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status, String user_description){
+
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString(KEY_USER_CONTACTNO, contact_no);
+        editor.putString(KEY_USER_ADDRESS, address);
+        editor.putString(KEY_USER_BIRTHDATE, birthdate);
+        editor.putString(KEY_USER_EMAILADDRESS, email_address);
+        editor.putString(KEY_USER_EMPLOYMENTSTATUS, employment_status);
+        editor.putString(KEY_USER_MARITALSTATUS, marital_status);
+        editor.putString(KEY_USER_DESCRIPTION, user_description);
 
         editor.apply();
 
@@ -93,33 +114,37 @@ public class SharedPreferenceManager {
         return sharedPreferences.getString(KEY_USER_LASTNAME, null);
     }
 
-    public String getAddress2(){
+    public String getAddress(){
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USER_ADDRESS, null);
     }
 
-    public String getContactNo2(){
+    public String getContactNo(){
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USER_CONTACTNO, null);
     }
 
-    public String getEmailAddress2(){
+    public String getEmailAddress(){
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USER_EMAILADDRESS, null);
     }
 
-    public String getBirthdate2(){
+    public String getBirthdate(){
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USER_BIRTHDATE, null);
     }
 
-    public String getMaritalStatus2(){
+    public String getMaritalStatus(){
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USER_MARITALSTATUS, null);
     }
 
-    public String getEmploymentStatus2(){
+    public String getEmploymentStatus(){
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USER_EMPLOYMENTSTATUS, null);
+    }
+    public String getDescription(){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_USER_DESCRIPTION, null);
     }
 }

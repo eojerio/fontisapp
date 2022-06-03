@@ -106,4 +106,20 @@
             $stmt->execute();
             return $stmt;
         }
+
+        //code for updating user profile
+        function profileEdit($conn, $id, $contact_no, $address, $birthdate, $email_address, $employment_status, $marital_status, $user_description){
+            $stmt = $conn->prepare("UPDATE `fontis_userprofiles` SET `contact_no`=:contact_no,`address`=:address,`birthdate`=:birthdate,`email_address`=:email_address,`employment_status`=:employment_status,`marital_status`=:marital_status,`user_description`=:user_description WHERE `id`=:id");
+            $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":contact_no", $contact_no);
+            $stmt->bindParam(":address", $address);
+            $stmt->bindParam(":birthdate", $birthdate);
+            $stmt->bindParam(":email_address", $email_address);
+            $stmt->bindParam(":employment_status", $employment_status);
+            $stmt->bindParam(":marital_status", $marital_status);
+            $stmt->bindParam(":user_description", $user_description);
+
+            return $stmt->execute();
+
+        }
     }

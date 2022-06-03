@@ -26,6 +26,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             $response['email_address'] = $user['email_address'];
             $response['employment_status'] = $user['employment_status'];
             $response['marital_status'] = $user['marital_status']; 
+            $response['user_description'] = $user['user_description']; 
 
             $response['message'] = "Login Successful.";
         }else{

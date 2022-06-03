@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:padding="10dp"
-        tools:context=".account_edit">
+        tools:context=".account_editFragment">
 
         <TextView
             android:id="@+id/tvLastName"
@@ -52,8 +52,8 @@
             android:layout_width="184dp"
             android:layout_height="35dp"
             android:ems="10"
+            android:hint="Marital Status"
             android:inputType="textPersonName"
-            android:text="Marital Status"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -118,8 +118,8 @@
             android:layout_width="184dp"
             android:layout_height="35dp"
             android:ems="10"
+            android:hint="New Password"
             android:inputType="textPersonName"
-            android:text="New Password"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,8 +133,8 @@
             android:layout_width="184dp"
             android:layout_height="35dp"
             android:ems="10"
+            android:hint="Confirm Password"
             android:inputType="textPersonName"
-            android:text="Confirm Password"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -161,13 +161,13 @@
             app:layout_constraintVertical_bias="0.005" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/etEditDescription"
             android:layout_width="347dp"
             android:layout_height="85dp"
             android:ems="10"
             android:gravity="left"
+            android:hint="          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an"
             android:inputType="textMultiLine"
-            android:text="          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -195,12 +195,12 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
-            android:id="@+id/etEmploymentStatus"
+            android:id="@+id/etEditEmploymentStatus"
             android:layout_width="184dp"
             android:layout_height="35dp"
             android:ems="10"
+            android:hint="Employement Status"
             android:inputType="textPersonName"
-            android:text="Employement Status"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -214,8 +214,8 @@
             android:layout_width="184dp"
             android:layout_height="35dp"
             android:ems="10"
+            android:hint="Password"
             android:inputType="textPersonName"
-            android:text="Password"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -271,7 +271,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.068"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
+            app:layout_constraintTop_toBottomOf="@+id/etEditDescription"
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
@@ -293,8 +293,8 @@
             android:layout_width="184dp"
             android:layout_height="35dp"
             android:ems="10"
+            android:hint="Contact No."
             android:inputType="textPersonName"
-            android:text="Contact No."
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -308,8 +308,8 @@
             android:layout_width="184dp"
             android:layout_height="35dp"
             android:ems="10"
+            android:hint="Address"
             android:inputType="textPersonName"
-            android:text="Address"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -340,8 +340,8 @@
             android:layout_width="184dp"
             android:layout_height="35dp"
             android:ems="10"
+            android:hint="Email Address"
             android:inputType="textPersonName"
-            android:text="Email Address"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -372,8 +372,8 @@
             android:layout_width="184dp"
             android:layout_height="35dp"
             android:ems="10"
+            android:hint="Birthdate"
             android:inputType="textPersonName"
-            android:text="Birthdate"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
