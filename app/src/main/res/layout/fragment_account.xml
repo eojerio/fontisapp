@@ -132,7 +132,7 @@
         <TextView
             android:id="@+id/tvAddress2"
             android:layout_width="244dp"
-            android:layout_height="36dp"
+            android:layout_height="48dp"
             android:layout_centerInParent="true"
             android:layout_marginTop="40dp"
             android:capitalize="sentences"
@@ -142,7 +142,7 @@
             android:textSize="15dp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.176"
             app:layout_constraintStart_toEndOf="@+id/tvAddress"
             app:layout_constraintTop_toBottomOf="@+id/tvNameAccount" />
 

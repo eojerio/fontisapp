@@ -87,6 +87,7 @@ public class cartFragment extends Fragment {
 
     private static final String TAG= "CartFrag";
 
+    //fields
     TextView tvCart;
     ArrayList<CartOBJ> data;
     ListView lv;
@@ -100,25 +101,16 @@ public class cartFragment extends Fragment {
 
         Log.d(TAG, "onCreate: Started");
 
+        //list view declaration
         lv = (ListView) v.findViewById(R.id.lvList);
-
-
-        CartOBJ account2 = new CartOBJ ("₱ 150", "4", "1 Gallon Mineral water", "A mineral water","drawable://" + R.drawable.alvarez);
-        CartOBJ account3 = new CartOBJ ("₱ 150", "8", "1 Gallon Mineral water", "A mineral water","drawable://" + R.drawable.alvarez);
-        CartOBJ account4 = new CartOBJ ("₱ 150", "2", "1 Gallon Mineral water", "A mineral water", "drawable://" + R.drawable.alvarez);
 
         //new ArrayList
         data = new ArrayList<>();
 
-
-        data.add(account2);
-        data.add(account3);
-        data.add(account4);
-
-        //test
-
+        //method for generating cart list from database
         generateCartList();
-        // Inflate the layout for this fragment
+
+
         //don't touch!! returns values
         return v;
     }
@@ -127,43 +119,28 @@ public class cartFragment extends Fragment {
 
         final String cart_userID = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
 
-        Toast.makeText(getContext(), "REGISTERING USER...", Toast.LENGTH_SHORT).show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_POPULATECART, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                Toast.makeText(getContext(), "RETRIEVING DATA...", Toast.LENGTH_SHORT).show();
-
                 try {
                     JSONObject obj = new JSONObject(response);
-
                     JSONArray array = obj.getJSONArray("cartTrue");
-
-                    Toast.makeText(getContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
-
-                    //if success
-                    if(!obj.getBoolean("error")) {
                         //loop
                         for(int i=0; i < array.length();i++){
                             JSONObject cartOBJ = array.getJSONObject(i);
-                            CartOBJ prod = new CartOBJ("₱ " + cartOBJ.getString("cart_prodPrice"), cartOBJ.getString("cart_prodQty"),cartOBJ.getString( "cart_prodName"), cartOBJ.getString("cart_prodDesc"), cartOBJ.getString("drawable://" +  R.drawable.alvarez));
+
+                            CartOBJ prod = new CartOBJ("₱ " + cartOBJ.getString("cart_prodPrice"), cartOBJ.getString("cart_prodQty"),cartOBJ.getString( "cart_prodName"), cartOBJ.getString("cart_prodDesc"), "drawable://" +  R.drawable.water_gallon);
                             data.add(prod);
                         }
 
-                        CartOBJ account1 = new CartOBJ ("₱ 150", "6", "1 Gallon Mineral water", "A mineral water","drawable://" + R.drawable.alvarez);
-                        data.add(account1);
-
-                    }else{
-                        //shows error
-                        Toast.makeText(getContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
-                    }
-
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(getContext(), "helow", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "JSON Error Occurred", Toast.LENGTH_SHORT).show();
                 }
 
+                // Inflate the layout for this fragment
                 CartListAdapter arrayAdapter = new CartListAdapter(getActivity(), R.layout.adapter_cartview_layout, data);
                 lv.setAdapter(arrayAdapter);
             }

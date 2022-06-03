@@ -104,8 +104,6 @@
             $stmt = $conn->prepare("SELECT * FROM `fontis_usercarts` WHERE `cart_userID`=:cart_userID");
             $stmt->bindParam(":cart_userID", $cart_userID);
             $stmt->execute();
-            $count = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
-            return $count;
+            return $stmt;
         }
     }
