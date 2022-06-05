@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -29,7 +30,8 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     EditText usernameLogin, passwordLogin;
-    Button btn_login, btn_register;
+    Button btn_login;
+    TextView tvRegister;
     Intent intentLogin, intentRegister;
 
     @Override
@@ -121,10 +123,10 @@ public class MainActivity extends AppCompatActivity {
 
     //for accessing registration form
     public void register(){
-        btn_register = (Button) findViewById(R.id.btnRegister);
+        tvRegister = (TextView) findViewById(R.id.tvRegister);
         intentRegister = new Intent (this, registration_form.class);
 
-        btn_register.setOnClickListener(new View.OnClickListener() {
+        tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(intentRegister);

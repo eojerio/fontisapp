@@ -29,56 +29,54 @@
 
         <TextView
             android:id="@+id/tvAddress"
-            android:layout_width="100dp"
-            android:layout_height="35dp"
+            android:layout_width="133dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="12dp"
             android:gravity="center|left"
             android:text="Address:"
             android:textColor="#38649A"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.017"
+            app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNameAccount" />
 
         <TextView
             android:id="@+id/tvEmailAddress"
-            android:layout_width="141dp"
-            android:layout_height="35dp"
+            android:layout_width="133dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
-            android:text="Email Address:"
+            android:text="Email:"
             android:textColor="#38649A"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.017"
+            app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvContactNo"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tvContactNo" />
 
         <TextView
             android:id="@+id/tvEmploymentStatus"
-            android:layout_width="191dp"
-            android:layout_height="35dp"
+            android:layout_width="133dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
-            android:text="Employment Status:"
+            android:text="Employment:"
             android:textColor="#38649A"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.017"
+            app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvMaritalStatus"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tvMaritalStatus" />
 
         <TextView
             android:id="@+id/tvEmailAddress2"
-            android:layout_width="205dp"
-            android:layout_height="36dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Email Address:"
@@ -88,13 +86,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvEmailAddress"
-            app:layout_constraintTop_toBottomOf="@+id/tvContactNo"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tvContactNo" />
 
         <TextView
             android:id="@+id/tvContactNo2"
-            android:layout_width="230dp"
-            android:layout_height="37dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Contact No.:"
@@ -104,31 +101,29 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvContactNo"
-            app:layout_constraintTop_toBottomOf="@+id/tvAddress"
-            app:layout_constraintVertical_bias="0.002" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
 
         <TextView
             android:id="@+id/tvMaritalStatus"
-            android:layout_width="150dp"
-            android:layout_height="35dp"
+            android:layout_width="133dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
-            android:text="Marital Status:"
+            android:text="Marital:"
             android:textColor="#38649A"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.017"
+            app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvBirthdate"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tvBirthdate" />
 
         <TextView
             android:id="@+id/tvAddress2"
-            android:layout_width="244dp"
-            android:layout_height="48dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="12dp"
             android:capitalize="sentences"
             android:gravity="center|left"
             android:text="Address:"
@@ -142,8 +137,8 @@
 
         <TextView
             android:id="@+id/tvBirthdate2"
-            android:layout_width="250dp"
-            android:layout_height="35dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Birthdate:"
@@ -153,13 +148,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvBirthdate"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmailAddress"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailAddress" />
 
         <TextView
             android:id="@+id/tvBirthdate"
-            android:layout_width="100dp"
-            android:layout_height="35dp"
+            android:layout_width="133dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Birthdate:"
@@ -167,15 +161,14 @@
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.017"
+            app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmailAddress"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailAddress" />
 
         <TextView
             android:id="@+id/tvContactNo"
-            android:layout_width="120dp"
-            android:layout_height="35dp"
+            android:layout_width="133dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Contact No.:"
@@ -183,15 +176,14 @@
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.017"
+            app:layout_constraintHorizontal_bias="0.054"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAddress"
-            app:layout_constraintVertical_bias="0.002" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
 
         <TextView
             android:id="@+id/tvMaritalStatus2"
             android:layout_width="200dp"
-            android:layout_height="35dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Marital Status:"
@@ -201,45 +193,43 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvMaritalStatus"
-            app:layout_constraintTop_toBottomOf="@+id/tvBirthdate"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tvBirthdate2" />
 
         <TextView
             android:id="@+id/tvAccountDescription"
             android:layout_width="120dp"
             android:layout_height="25dp"
             android:layout_centerInParent="true"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             android:gravity="center|left"
             android:text="Description"
             android:textColor="#38649A"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.007"
+            app:layout_constraintHorizontal_bias="0.058"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEmploymentStatus" />
 
         <TextView
             android:id="@+id/tvAccountDescriptionSub"
-            android:layout_width="321dp"
-            android:layout_height="75dp"
+            android:layout_width="350dp"
+            android:layout_height="85dp"
             android:layout_centerInParent="true"
-            android:layout_marginTop="4dp"
             android:gravity="left"
-            android:text="        Press Edit to Add"
+            android:text="Press the edit button to add a description"
             android:textColor="#38649A"
             android:textSize="15dp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.347"
+            app:layout_constraintHorizontal_bias="0.72"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAccountDescription" />
 
         <TextView
             android:id="@+id/tvEmploymentStatus2"
-            android:layout_width="191dp"
-            android:layout_height="35dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Employment Status:"
@@ -249,22 +239,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvEmploymentStatus"
-            app:layout_constraintTop_toBottomOf="@+id/tvMaritalStatus"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tvMaritalStatus" />
 
         <TextView
             android:id="@+id/tvNameAccount"
             android:layout_width="235dp"
             android:layout_height="98dp"
             android:layout_centerInParent="true"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="32dp"
             android:gravity="left"
             android:text="NAME"
             android:textColor="#38649A"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.109"
+            app:layout_constraintHorizontal_bias="0.058"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
