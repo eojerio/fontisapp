@@ -39,6 +39,7 @@ public class index_form extends AppCompatActivity {
         message = Integer.toString(id);
     } //=1
 
+    private long mLastClickTime = 0;
 
     private BottomNavigationView.OnItemSelectedListener bottom_nav = new BottomNavigationView.OnItemSelectedListener() {
         @Override

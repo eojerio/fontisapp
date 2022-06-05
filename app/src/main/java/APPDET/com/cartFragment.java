@@ -258,9 +258,11 @@ public class cartFragment extends Fragment {
 
                             data.add(prod);
 
-                            // Inflate the layout for this fragment
-                            CartListAdapter arrayAdapter = new CartListAdapter(getActivity(), R.layout.adapter_cartview_layout, data);
-                            lv.setAdapter(arrayAdapter);
+                            if (getActivity()!=null){
+                                // Inflate the layout for this fragment
+                                CartListAdapter arrayAdapter = new CartListAdapter(getActivity(), R.layout.adapter_cartview_layout, data);
+                                lv.setAdapter(arrayAdapter);
+                            }
                         }
                     for(int j = 0; j < price.size(); j++){
                         total[0] += (Double.parseDouble(price.get(j)) * Integer.parseInt(qty.get(j)));

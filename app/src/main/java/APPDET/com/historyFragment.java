@@ -150,9 +150,11 @@ public class historyFragment extends Fragment {
                         HistoryOBJ prod = new HistoryOBJ("₱" + formatter.format(Double.parseDouble(historyOBJ.getString("prod_price"))), historyOBJ.getString("prod_date"), historyOBJ.getString("prod_amt"), "drawable://" +  R.drawable.water_gallon);
 
                         data.add(prod);
+                        if (getActivity()!=null){
+                            HistoryListAdapter arrayAdapter = new HistoryListAdapter(getActivity(), R.layout.adapter_historyview_layout, data);
+                            lv.setAdapter(arrayAdapter);
+                        }
 
-                        HistoryListAdapter arrayAdapter = new HistoryListAdapter(getActivity(), R.layout.adapter_historyview_layout, data);
-                        lv.setAdapter(arrayAdapter);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
