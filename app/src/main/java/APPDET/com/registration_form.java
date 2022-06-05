@@ -35,10 +35,8 @@ public class registration_form extends AppCompatActivity {
     EditText username, password, first_name, last_name, contact_no, address, birthdate, email_address, employment_status, marital_status;
     Button btn_loginform, btn_submit;
     Intent intent;
-    private String selectedStatus;
-    private TextView tvStatusSpinner;
-    private Spinner statusSpinner;
-    private ArrayAdapter<CharSequence> statusAdapter;
+    Spinner employmentstatusSpinner, maritalstatusSpinner;
+    ArrayAdapter<CharSequence> employmentstatusAdapter, maritalstatusAdapter;
 
 
     @Override
@@ -53,16 +51,22 @@ public class registration_form extends AppCompatActivity {
             return;
         }
         //Spinner dropdown menu
-        statusSpinner = findViewById(R.id.spinner_dropdown_employment_status);
+        employmentstatusSpinner = (Spinner) findViewById(R.id.spinner_dropdown_employment_status);
+        maritalstatusSpinner = (Spinner) findViewById(R.id.spinner_dropdown_marital_status);
 
         //Poppulate ArrayAdapter
-        statusAdapter = ArrayAdapter.createFromResource(this, R.array.array_employment_status, R.layout.spinner_layout);
+        employmentstatusAdapter = ArrayAdapter.createFromResource(this, R.array.array_employment_status, R.layout.spinner_layout);
+        maritalstatusAdapter = ArrayAdapter.createFromResource(this, R.array.array_marital_status, R.layout.spinner_layout);
 
         //Specify Layout use when Choices appear
-        statusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        employmentstatusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        maritalstatusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         //Set The Adapter to spinner to populate the status spinner
-        statusSpinner.setAdapter(statusAdapter);
+        employmentstatusSpinner.setAdapter(employmentstatusAdapter);
+        maritalstatusSpinner.setAdapter(maritalstatusAdapter);
+
+
 
         //TextView get value
         username = findViewById(R.id.etUsernameReg);
@@ -73,8 +77,6 @@ public class registration_form extends AppCompatActivity {
         address = findViewById(R.id.etAddressReg);
         birthdate =  findViewById(R.id.etBirthDateReg);
         email_address =  findViewById(R.id.etEmailReg);
-        employment_status = findViewById(R.id.etEmploymentReg);
-        marital_status = findViewById(R.id.etMaritalStatusReg);
 
         //for database registration
         submitReg();
@@ -98,8 +100,12 @@ public class registration_form extends AppCompatActivity {
                 final String addressDATA = address.getText().toString().trim();
                 final String birthdateDATA = birthdate.getText().toString().trim();
                 final String email_addressDATA = email_address.getText().toString().trim();
-                final String employment_statusDATA = employment_status.getText().toString().trim();
-                final String marital_statusDATA = marital_status.getText().toString().trim();
+                final String employment_statusDATA = employmentstatusSpinner.getSelectedItem().toString().trim();
+                final String marital_statusDATA = maritalstatusSpinner.getSelectedItem().toString().trim();
+
+                //getting value part 9999
+
+                Toast.makeText(getApplicationContext(), marital_statusDATA, Toast.LENGTH_SHORT).show();
 
                 Toast.makeText(getApplicationContext(), "REGISTERING USER...", Toast.LENGTH_SHORT).show();
 
@@ -107,6 +113,7 @@ public class registration_form extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(getApplicationContext(), "Checking...", Toast.LENGTH_SHORT).show();
+                        Log.i("employment status: ",employment_statusDATA);
 
                         //if success
                         try {

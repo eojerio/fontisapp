@@ -65,21 +65,6 @@
         app:layout_constraintVertical_bias="0.56" />
 
     <EditText
-        android:id="@+id/etEmploymentReg"
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Employement status"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.825" />
-
-    <EditText
         android:id="@+id/etAddressReg"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
@@ -121,21 +106,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.932" />
-
-    <EditText
-        android:id="@+id/etMaritalStatusReg"
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Marital Status"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.906"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.825" />
 
     <EditText
         android:id="@+id/etBirthDateReg"
@@ -213,42 +183,25 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fontis_icon" />
 
-    <TextView
-        android:id="@+id/employmentstatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:padding="6dp"
-        android:text="@string/welcome_text"
-        android:textAlignment="center"
-        android:textColor="#555555"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmploymentReg" />
-
-    <TextView
-        android:id="@+id/employmentlist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:padding="6dp"
-        android:text="@string/List"
-        android:textAlignment="center"
-        android:textColor="#555555"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employmentstatus" />
-
     <Spinner
         android:id="@+id/spinner_dropdown_employment_status"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/employmentlist"
-        android:layout_marginTop="29dp"
+        android:layout_width="175dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="13dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employmentstatus" />
+        app:layout_constraintTop_toBottomOf="@+id/etBirthDateReg" />
+
+    <Spinner
+        android:id="@+id/spinner_dropdown_marital_status"
+        android:layout_width="175dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailReg" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
