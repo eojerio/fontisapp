@@ -73,6 +73,7 @@ public class account_editFragment extends Fragment {
     }
     Button btnSaveAccount;
     EditText etEditAddress, etEditContactNo, etEditEmailAddress, etEditBirthdate, etEditMaritalStatus,etEditEmploymentStatus,etEditDescription;
+    TextView tvFragmentName;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -86,10 +87,12 @@ public class account_editFragment extends Fragment {
         etEditMaritalStatus = (EditText) v.findViewById(R.id.etEditMaritalStatus);
         etEditEmploymentStatus = (EditText) v.findViewById(R.id.etEditEmploymentStatus);
         etEditDescription = (EditText) v.findViewById(R.id.etEditDescription);
+        tvFragmentName = (TextView) v.findViewById(R.id.tvFragmentName);
 
         final String id = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
 
         //assigning text to database
+        tvFragmentName.setText(SharedPreferenceManager.getInstance(getContext()).getFirstName() +" "+ SharedPreferenceManager.getInstance(getContext()).getLastName());
         etEditAddress.setText(SharedPreferenceManager.getInstance(getContext()).getAddress());
         etEditContactNo.setText(SharedPreferenceManager.getInstance(getContext()).getContactNo());
         etEditEmailAddress.setText(SharedPreferenceManager.getInstance(getContext()).getEmailAddress());
@@ -114,8 +117,6 @@ public class account_editFragment extends Fragment {
                final String marital_status = etEditMaritalStatus.getText().toString().trim();
                final String employment_status = etEditEmploymentStatus.getText().toString().trim();
                final String description = etEditDescription.getText().toString().trim();
-
-                Toast.makeText(getContext(),"RETRIEVING DATA...", Toast.LENGTH_SHORT).show();
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_PROFILESAVE, new Response.Listener<String>() {
                     @Override
