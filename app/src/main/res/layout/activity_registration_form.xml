@@ -213,31 +213,42 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fontis_icon" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="200dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/etUsernameReg"
-        app:layout_constraintEnd_toStartOf="@+id/etPasswordReg"
+    <TextView
+        android:id="@+id/employmentstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="6dp"
+        android:text="@string/welcome_text"
+        android:textAlignment="center"
+        android:textColor="#555555"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/etEmploymentReg" />
 
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="AutoCompleteTextView"
-            tools:layout_editor_absoluteX="184dp"
-            tools:layout_editor_absoluteY="266dp" />
+    <TextView
+        android:id="@+id/employmentlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:padding="6dp"
+        android:text="@string/List"
+        android:textAlignment="center"
+        android:textColor="#555555"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employmentstatus" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
+    <Spinner
+        android:id="@+id/spinner_dropdown_employment_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/employmentlist"
+        android:layout_marginTop="29dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employmentstatus" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

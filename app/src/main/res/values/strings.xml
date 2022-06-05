@@ -2,4 +2,13 @@
     <string name="app_name">APPDET_ANDROIDBOTS_BLUEAPP</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_text">Employment Status</string>
+    <string name="List">Self-Employed</string>
+    <string name="submit">Submit</string>
+
+    <string-array name="array_employment_status" >
+        <item>Employed</item>
+        <item>Unemployed</item>
+        <item>Self-Employed</item>
+    </string-array>
 </resources>

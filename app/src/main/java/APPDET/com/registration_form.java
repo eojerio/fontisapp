@@ -9,10 +9,12 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -33,7 +35,11 @@ public class registration_form extends AppCompatActivity {
     EditText username, password, first_name, last_name, contact_no, address, birthdate, email_address, employment_status, marital_status;
     Button btn_loginform, btn_submit;
     Intent intent;
-    Spinner employment_status_s;
+    private String selectedStatus;
+    private TextView tvStatusSpinner;
+    private Spinner statusSpinner;
+    private ArrayAdapter<CharSequence> statusAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +52,17 @@ public class registration_form extends AppCompatActivity {
             startActivity(new Intent(this, index_form.class));
             return;
         }
+        //Spinner dropdown menu
+        statusSpinner = findViewById(R.id.spinner_dropdown_employment_status);
+
+        //Poppulate ArrayAdapter
+        statusAdapter = ArrayAdapter.createFromResource(this, R.array.array_employment_status, R.layout.spinner_layout);
+
+        //Specify Layout use when Choices appear
+        statusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //Set The Adapter to spinner to populate the status spinner
+        statusSpinner.setAdapter(statusAdapter);
 
         //TextView get value
         username = findViewById(R.id.etUsernameReg);
