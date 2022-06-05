@@ -79,10 +79,9 @@ public class HomeListAdapter extends ArrayAdapter<HomeOBJ> {
         String price = getItem(position).getPrice();
         String name = getItem(position).getProdName();
         String desc = getItem(position).getProdDesc();
-        String imgURL = getItem(position).getImgURL();
+        int imgURL = getItem(position).getImgURL();
         int fk_id = getItem(position).getfk_id();
 
-        Log.i("NumberGenerated3", String.valueOf(fk_id));
         //Creating account object
         HomeOBJ account = new HomeOBJ(fk_id, price, name, desc, imgURL);
 
@@ -105,9 +104,6 @@ public class HomeListAdapter extends ArrayAdapter<HomeOBJ> {
         fields.btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Item added to cart at " + position, Toast.LENGTH_SHORT).show();
-                int test = position;
-                Log.i("MasterEseng", String.valueOf(test));
 
                     //final fields
                     final String fk_IDuser = String.valueOf(fk_id);
@@ -116,12 +112,11 @@ public class HomeListAdapter extends ArrayAdapter<HomeOBJ> {
                     final String product_name = name.trim();
                     final String product_description = desc.trim();
                     final String product_quantity = "1"; //constant 1
-                    final String product_img = "test";
+                    final String product_img = String.valueOf(imgURL);
 
                     StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_ADDCART, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Toast.makeText(mContext.getApplicationContext(), "Checking...", Toast.LENGTH_SHORT).show();
 
                             //if success
                             try {
@@ -194,8 +189,9 @@ public class HomeListAdapter extends ArrayAdapter<HomeOBJ> {
                 .showImageOnFail(defaultImage)
                 .showImageOnLoading(defaultImage).build();
 
+
         //download and display image from url
-        imageLoader.displayImage(imgURL, fields.ivHomeImg, options);
+        imageLoader.displayImage("drawable://"+imgURL, fields.ivHomeImg, options);
 
         fields.tvPriceHome.setText(price);
         fields.tvProdName.setText(name);

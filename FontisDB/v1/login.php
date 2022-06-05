@@ -11,6 +11,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     if(!empty($_POST['username']) and !empty($_POST['password'])){
         $obj = new DbOperations();
 
+        //calling userLogin method as an instance of obj variable and assigning user variable to save the value of obj
         if($obj->userLogin($conn, $_POST['username'], $_POST['password'])){
             $user = $obj->getUser($conn, $_POST['username']);
             
@@ -25,8 +26,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             $response['birthdate'] = $user['birthdate'];
             $response['email_address'] = $user['email_address'];
             $response['employment_status'] = $user['employment_status'];
-            $response['marital_status'] = $user['marital_status']; 
-            $response['user_description'] = $user['user_description']; 
+            $response['marital_status'] = $user['marital_status'];
+            $response['user_description'] = $user['user_description'];  
 
             $response['message'] = "Login Successful.";
         }else{

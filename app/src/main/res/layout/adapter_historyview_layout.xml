@@ -16,29 +16,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="33.3">
-        <TextView
-            android:gravity="center"
-            android:text="text2"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:id="@+id/tvDateHistory"/>
 
         <TextView
+            android:id="@+id/tvDateHistory"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:gravity="center"
-            android:text="text3"
+            android:text="text2"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAmountHistory"
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:id="@+id/tvAmountHistory"/>
+            android:gravity="center"
+            android:text="text3"
+            android:textColor="#38649A" />
     </LinearLayout>
 
     <TextView
-        android:gravity="center"
-        android:textAlignment="center"
-        android:text="text1"
+        android:id="@+id/tvTotalCostHistory"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:id="@+id/tvTotalCostHistory"
-        android:layout_weight="33.3"/>
+        android:layout_weight="33.3"
+        android:gravity="center"
+        android:text="text1"
+        android:textAlignment="center"
+        android:textColor="#38649A"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
 

@@ -12,6 +12,7 @@
         android:id="@+id/ivHomeImg"
         android:layout_width="138dp"
         android:layout_height="101dp"
+        android:padding="5dp"
         android:layout_gravity="center"
         android:layout_weight="30" />
 
@@ -29,8 +30,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="price"
-            android:textColor="#000000"
+            android:textColor="#38649A"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -39,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="product name"
-            android:textColor="#6A6666"
+            android:textColor="#38649A"
             android:textSize="18sp"
             android:textStyle="normal" />
 
@@ -48,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="product description"
-            android:textColor="#6A6666"
+            android:textColor="#38649A"
             android:textSize="12sp"
             android:textStyle="normal" />
     </LinearLayout>

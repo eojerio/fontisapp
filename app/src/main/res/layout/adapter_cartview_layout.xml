@@ -1,84 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="100">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:id="@+id/ivCartImg"
-        android:layout_weight="30"/>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="32">
-
-        <TextView
-            android:id="@+id/tvPriceCart"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:gravity="center|left"
-            android:text="text2"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvProdNameCart"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:gravity="center|left"
-            android:text="text3"
-            android:textColor="#000000" />
-        <TextView
-            android:gravity="center|left"
-            android:text="text4"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:id="@+id/tvProdDescCart"/>
-    </LinearLayout>
 
     <Button
-        android:id="@+id/btnIncrease"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:id="@+id/btnDelete"
+        android:layout_gravity="right"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="3dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/roundedbutton"
-        android:text="+"
-        android:layout_margin="3dp"
-        android:textColor="#38649A"
-        android:textSize="20sp"
+        android:text="X"
+        android:textColor="#000000"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:backgroundTint="#FFFFFF" />
-    <Button
-        android:id="@+id/btnDecrease"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/roundedbutton"
-        android:text="-"
-        android:layout_margin="3dp"
-        android:textColor="#38649A"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="#FFFFFF"/>
 
-    <TextView
-        android:id="@+id/tvAmountCart"
+
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_weight="38"
-        android:gravity="center"
-        android:text="text1"
-        android:textAlignment="center"
-        android:textColor="#38649A"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:id="@+id/ivCartImg"
+            android:layout_weight="55"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="32">
+
+            <TextView
+                android:id="@+id/tvPriceCart"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center|left"
+                android:text="text2"
+                android:textColor="#38649A"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvProdNameCart"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:gravity="center|left"
+                android:text="text3"
+                android:textColor="#38649A" />
+
+            <TextView
+                android:id="@+id/tvProdDescCart"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center|left"
+                android:text="text4"
+                android:textColor="#38649A"
+                android:textSize="10dp" />
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnIncrease"
+                    android:layout_gravity="center"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/roundedbutton"
+                    android:text="+"
+                    android:layout_margin="3dp"
+                    android:textColor="#38649A"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tvAmountCart"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="text1"
+                    android:textAlignment="center"
+                    android:textColor="#38649A"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnDecrease"
+                    android:layout_gravity="center"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/roundedbutton"
+                    android:text="-"
+                    android:layout_margin="3dp"
+                    android:textColor="#38649A"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#FFFFFF"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
 
 
 </LinearLayout>

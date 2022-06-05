@@ -12,6 +12,8 @@ public class SharedPreferenceManager {
     private static Context ctx;
 
     private static final String SHARED_PREF_NAME = "mysharedref12";
+
+    //for user profile
     private static final String KEY_USER_ID = "id";
     private static final String KEY_USER_USERNAME = "username";
     private static final String KEY_USER_FIRSTNAME = "first_name";
@@ -24,6 +26,13 @@ public class SharedPreferenceManager {
     private static final String KEY_USER_MARITALSTATUS = "marital_status";
     private static final String KEY_USER_DESCRIPTION = "user_description";
 
+    //for cart
+    private static final String KEY_CART_TAG = "cart_prodTag";
+    private static final String KEY_CART_PRODPRICE = "cart_prodPrice";
+    private static final String KEY_CART_PRODNAME = "cart_prodName";
+    private static final String KEY_CART_PRODDESC = "cart_prodDesc";
+    private static final String KEY_CART_PRODQTY = "cart_prodQty";
+
     private SharedPreferenceManager(Context context) {
         ctx = context;
 
@@ -35,6 +44,25 @@ public class SharedPreferenceManager {
         }
         return instance;
     }
+
+    public boolean getCartDetails(String cart_prodQty){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString(KEY_CART_PRODQTY, cart_prodQty);
+        editor.apply();
+
+        return true;
+    }
+
+
+
+    public String getCartQty(){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_CART_PRODQTY, null);
+    }
+
+
 
     public boolean userLogin(int id, String username, String first_name, String last_name,String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status, String user_description){
 
@@ -94,6 +122,7 @@ public class SharedPreferenceManager {
 
         editor.clear();
         editor.apply();
+
         return true;
     }
 

@@ -1,15 +1,19 @@
 package APPDET.com;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,9 +27,15 @@ import com.android.volley.toolbox.StringRequest;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -88,9 +98,23 @@ public class cartFragment extends Fragment {
     private static final String TAG= "CartFrag";
 
     //fields
+    ProgressDialog load;
     TextView tvCart;
     ArrayList<CartOBJ> data;
+
+    public final double[] total = {0};
+    public final double[] amount = {0};
+
+    public ArrayList<String> price;
+    public ArrayList<String> qty;
+    ArrayList<String> img;
+
+    public String getTotal;
+
     ListView lv;
+    Button checkout;
+
+    public TextView tvAmountCart;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -106,9 +130,101 @@ public class cartFragment extends Fragment {
 
         //new ArrayList
         data = new ArrayList<>();
+        price = new ArrayList<String>();
+        qty = new ArrayList<String>();
+        img = new ArrayList<String>();
 
-        //method for generating cart list from database
+        //progress dialogue
+        load = new ProgressDialog(getContext());
+
+        tvAmountCart = (TextView) v.findViewById(R.id.tvAmountCartTotal);
+//        load.setMessage("UPDATING CART...");
+//        load.setCancelable(false);
+//        load.setCanceledOnTouchOutside(false);
+//        load.show();
+//
+//
+//        //dialog process
+//        final Handler handler = new Handler();
+//
+//        //Updating the mood box
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                //method for generating cart list from database
+//
+//                load.dismiss();
+//            }
+//        }, 300);
+
         generateCartList();
+
+        //for checking out
+        checkout = (Button) v.findViewById(R.id.btnCheckout);
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String imageTRUE = "2131165281";
+
+                final Date c = Calendar.getInstance().getTime();
+
+                SimpleDateFormat df = new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
+                final String formattedDate = df.format(c);
+
+                final String cart_userID = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
+                final String price = String.valueOf(total[0]);
+                final String amountQty = String.valueOf(amount[0]);
+
+                //checking values
+                Log.i("AMOUNT", formattedDate);
+                Log.i("AMOUNT", String.valueOf(total[0]));
+                Log.i("AMOUNT", String.valueOf(amount[0]));
+                if(total[0] <= 0 && amount[0] <= 0){
+                    Toast.makeText(getContext(), "Please add an item first" , Toast.LENGTH_SHORT).show();
+                }else{
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_CHECKOUT, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+                                JSONObject jsonObject = new JSONObject(response);
+
+                                if(!jsonObject.getBoolean("error")) {
+                                    Toast.makeText(getContext(), "Items have been Checked out" , Toast.LENGTH_SHORT).show();
+
+                                    //intent go to main page
+                                    Intent intent = new Intent(getContext(), index_form.class);
+                                    startActivity(intent);
+                                }else{
+                                    //shows error
+                                    Toast.makeText(getContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                        }
+                    }){
+                        @Nullable
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            Map<String, String> params = new HashMap<>();
+                            params.put("cart_userID", cart_userID);
+                            params.put("prod_price", price);
+                            params.put("prod_date", formattedDate);
+                            params.put("prod_amt", amountQty);
+                            params.put("prod_img", imageTRUE);
+                            return params;
+                        }
+                    };
+
+                    RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
+                }
+            }
+        });
 
 
         //don't touch!! returns values
@@ -130,16 +246,28 @@ public class cartFragment extends Fragment {
                         //loop
                         for(int i=0; i < array.length();i++){
 
-                            //array list
-                            //get id
-                            //arraylistsize
-
                             JSONObject cartOBJ = array.getJSONObject(i);
 
-                            CartOBJ prod = new CartOBJ("₱ " + cartOBJ.getString("cart_prodPrice"), cartOBJ.getString("cart_prodQty"),cartOBJ.getString( "cart_prodName"), cartOBJ.getString("cart_prodDesc"), "drawable://" +  R.drawable.water_gallon);
-                            //5
+                            CartOBJ prod = new CartOBJ(cartOBJ.getString("cart_prodTag"),"₱ " + cartOBJ.getString("cart_prodPrice"), cartOBJ.getString("cart_prodQty"),cartOBJ.getString( "cart_prodName"), cartOBJ.getString("cart_prodDesc"), "drawable://" +  Integer.parseInt(cartOBJ.getString("cart_prodImg")));
+
+                            price.add(cartOBJ.getString("cart_prodPrice"));
+                            qty.add(cartOBJ.getString("cart_prodQty"));
+                            img.add(cartOBJ.getString("cart_prodImg"));
+
 
                             data.add(prod);
+
+                            for(int j = 0; j < price.size(); j++){
+                                total[0] += (Double.parseDouble(price.get(i)) * Integer.parseInt(qty.get(i)));
+                                amount[0] += Integer.parseInt(qty.get(i));
+                                Log.i("AMOUNT", price.get(i) + " " + qty.get(i));
+                            }
+
+                            if(total[0] <= 0){
+                                tvAmountCart.setText("₱0");
+                            }else{
+                                tvAmountCart.setText(String.valueOf("₱"+total[0]));
+                            }
 
                             // Inflate the layout for this fragment
                             CartListAdapter arrayAdapter = new CartListAdapter(getActivity(), R.layout.adapter_cartview_layout, data);
@@ -169,6 +297,8 @@ public class cartFragment extends Fragment {
 
 
         RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
+
+
     }
 
 

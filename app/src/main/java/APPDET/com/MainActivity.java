@@ -64,12 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 final String usernameDATAGET = usernameLogin.getText().toString().trim();
                 final String passwordDATAGET = passwordLogin.getText().toString().trim();
 
-                Toast.makeText(getApplicationContext(), "LOGGING IN...", Toast.LENGTH_SHORT).show();
-
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_LOGIN, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), "Checking...", Toast.LENGTH_SHORT).show();
 
 
                         try {

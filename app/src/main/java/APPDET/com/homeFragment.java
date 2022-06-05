@@ -1,8 +1,8 @@
 package APPDET.com;
 
-import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -13,8 +13,19 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -76,7 +87,13 @@ public class homeFragment extends Fragment {
 
     /*================================================ OKAY BEN DITO TAYO MAG C'CODE HA =====================================================================*/
 
+    ListView lv;
+    ArrayList<HomeOBJ> data;
+
     private static final String TAG= "HomeFrag";
+
+    //list of array int
+    public int[] image = {R.drawable.water_gallon, R.drawable.alvarez};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -86,24 +103,18 @@ public class homeFragment extends Fragment {
 
         Log.d(TAG, "onCreate: Started");
 
-        int fk_cart = SharedPreferenceManager.getInstance(getContext()).getUserID();
-        ListView lv = (ListView) v.findViewById(R.id.lvList);
+        final int fk_cart = SharedPreferenceManager.getInstance(getContext()).getUserID();
 
-        HomeOBJ account_1 = new HomeOBJ(fk_cart,"₱ 150", "1 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
-        HomeOBJ account_2 = new HomeOBJ(fk_cart,"₱ 120", "0.5 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
-        HomeOBJ account_3 = new HomeOBJ(fk_cart,"₱ 300", "2 Gallon Mineral water","Water that contains a large quantity of dissolved minerals or gases" ,"drawable://" + R.drawable.water_gallon);
-        HomeOBJ account_4 = new HomeOBJ(fk_cart,"₱ 450", "3 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases","drawable://" + R.drawable.water_gallon);
+        lv = (ListView) v.findViewById(R.id.lvList);
 
-        ArrayList<HomeOBJ> data = new ArrayList<>();
+       HomeOBJ account_1 = new HomeOBJ(fk_cart,"₱ 150", "1 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases", image[0]);
+       HomeOBJ account_2 = new HomeOBJ(fk_cart,"₱ 120", "0.5 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases", image[1]);
+       HomeOBJ account_3 = new HomeOBJ(fk_cart,"₱ 300", "2 Gallon Mineral water","Water that contains a large quantity of dissolved minerals or gases" , image[0]);
+       HomeOBJ account_4 = new HomeOBJ(fk_cart,"₱ 450", "3 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases", image[1]);
 
-        data.add(account_1);
-        data.add(account_2);
-        data.add(account_3);
-        data.add(account_4);
-        data.add(account_1);
-        data.add(account_2);
-        data.add(account_3);
-        data.add(account_4);
+
+        data = new ArrayList<>();
+
         data.add(account_1);
         data.add(account_2);
         data.add(account_3);
@@ -111,10 +122,7 @@ public class homeFragment extends Fragment {
 
         HomeListAdapter adapter = new HomeListAdapter(getActivity(), R.layout.adapter_homeview_layout, data);
         lv.setAdapter(adapter);
-
         //don't touch!! returns values
         return v;
     }
-
-
 }

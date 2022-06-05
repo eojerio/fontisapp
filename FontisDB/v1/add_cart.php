@@ -8,7 +8,7 @@ $response = array();
 if($_SERVER['REQUEST_METHOD']=='POST'){
 
     //checks if variables are empty : else, All fields are required.
-    if(!empty($_POST['cart_prodTag']) and !empty($_POST['cart_prodPrice']) and !empty($_POST['cart_prodName']) and !empty($_POST['cart_prodDesc'] and !empty($_POST['cart_prodQty']))){
+    if(!empty($_POST['cart_prodTag']) and !empty($_POST['cart_prodPrice']) and !empty($_POST['cart_prodName']) and !empty($_POST['cart_prodDesc']) and !empty($_POST['cart_prodQty'])){
         //create an object from the DbOperations class 
         $obj = new DbOperations();
         

@@ -41,27 +41,25 @@
         android:id="@+id/btnLogin"
         android:layout_width="131dp"
         android:layout_height="48dp"
+        android:layout_marginTop="428dp"
         android:text="LOGIN"
         app:backgroundTint="#7CB9D0"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivLogo"
-        app:layout_constraintVertical_bias="0.649" />
+        app:layout_constraintTop_toTopOf="@+id/ivLogo" />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="131dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="428dp"
         android:text="REGISTER"
         app:backgroundTint="#7CB9D0"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintHorizontal_bias="0.801"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivLogo"
-        app:layout_constraintVertical_bias="0.649" />
+        app:layout_constraintTop_toTopOf="@+id/ivLogo" />
 
     <EditText
         android:id="@+id/etPassword"

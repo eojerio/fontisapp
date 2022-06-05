@@ -1,8 +1,6 @@
 package APPDET.com;
 
-import android.app.Person;
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,18 +17,15 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.List;
 
-public class HistoryListAdapter extends ArrayAdapter<HistoryOJB> {
+public class HistoryListAdapter extends ArrayAdapter<HistoryOBJ> {
     private static final String TAG =  "HistoryListAdapter";
 
     private Context mContext;
     int mResource;
 
-    public HistoryListAdapter(Context context, int resource, ArrayList<HistoryOJB> objects){
+    public HistoryListAdapter(Context context, int resource, ArrayList<HistoryOBJ> objects){
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
@@ -48,7 +43,7 @@ public class HistoryListAdapter extends ArrayAdapter<HistoryOJB> {
         String imgURL = getItem(position).getImgURL();
 
         //Creating account object
-        HistoryOJB account = new HistoryOJB(date, amount, total, imgURL);
+        HistoryOBJ account = new HistoryOBJ(date, amount, total, imgURL);
 
         //creating layout inflater
         LayoutInflater inflater = LayoutInflater.from(mContext);

@@ -1,17 +1,33 @@
 package APPDET.com;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -71,6 +87,12 @@ public class historyFragment extends Fragment {
 
     private static final String TAG= "HistoryFrag";
 
+    ProgressDialog load;
+    ListView lv;
+    ArrayList<HistoryOBJ> data;
+
+    DecimalFormat formatter = new DecimalFormat("#,###.00");
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -80,42 +102,78 @@ public class historyFragment extends Fragment {
 
         Log.d(TAG, "onCreate: Started");
 
-        ListView lv = (ListView) v.findViewById(R.id.lvList);
+        lv = (ListView) v.findViewById(R.id.lvList);
 
-        /*
-        database insert here
-        while(){
+        data = new ArrayList<>();
 
-        HistoryOJB account.concat('-') = new HistoryOJB(variable date, variable amount, variable total,variable dirImage);
-        }
-         */
-        HistoryOJB account1 = new HistoryOJB("12-20-2021", "6 Items", "P1200","drawable://" + R.drawable.alvarez);
-        HistoryOJB account2 = new HistoryOJB("12-20-2021", "4 Items", "P6200","drawable://" + R.drawable.alvarez);
-        HistoryOJB account3 = new HistoryOJB("12-20-2021", "8 Items", "P4200","drawable://" + R.drawable.alvarez);
-        HistoryOJB account4 = new HistoryOJB("12-20-2021", "2 Items", "P2200","drawable://" + R.drawable.alvarez);
+        //progress dialogue
+        load = new ProgressDialog(getContext());
+
+        load.setMessage("LOADING HISTORY...");
+        load.setCancelable(false);
+        load.setCanceledOnTouchOutside(false);
+        load.show();
+
+        //dialog process
+        final Handler handler = new Handler();
+        //Updating the mood box
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //method for generating history list from database
+                generateHistoryList();
+                load.dismiss();
+            }
+        }, 300);
 
 
 
-        ArrayList<HistoryOJB> data = new ArrayList<>();
-
-
-        data.add(account1);
-        data.add(account2);
-        data.add(account3);
-        data.add(account4);
-        data.add(account1);
-        data.add(account2);
-        data.add(account3);
-        data.add(account4);
-        data.add(account1);
-        data.add(account2);
-        data.add(account3);
-        data.add(account4);
-
-        HistoryListAdapter arrayAdapter = new HistoryListAdapter(getActivity(), R.layout.adapter_historyview_layout, data);
-        lv.setAdapter(arrayAdapter);
         // Inflate the layout for this fragment
         return v;
 
+    }
+
+    public void generateHistoryList(){
+        final String cart_userID = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_POPULATEHISTORY, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject obj = new JSONObject(response);
+                    JSONArray array = obj.getJSONArray("historyTrue");
+                    //loop
+                    for(int i=0; i < array.length();i++){
+
+                        JSONObject historyOBJ = array.getJSONObject(i);
+
+                        HistoryOBJ prod = new HistoryOBJ("₱" + formatter.format(Double.parseDouble(historyOBJ.getString("prod_price"))), historyOBJ.getString("prod_date"), historyOBJ.getString("prod_amt"), "drawable://" +  R.drawable.water_gallon);
+
+                        data.add(prod);
+
+                        HistoryListAdapter arrayAdapter = new HistoryListAdapter(getActivity(), R.layout.adapter_historyview_layout, data);
+                        lv.setAdapter(arrayAdapter);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getContext(), "JSON Error Occurred", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("cart_userID", cart_userID);
+                return params;
+            }
+        };
+
+        RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
     }
 }

@@ -1,12 +1,12 @@
 package APPDET.com;
 
-public class HistoryOJB {
+public class HistoryOBJ {
     private String date;
     private String amount;
     private String total;
     private String imgURL;
 
-    public HistoryOJB(String date, String amount, String total, String imgURL){
+    public HistoryOBJ(String date, String amount, String total, String imgURL){
         this.date = date;
         this.amount = amount;
         this.total = total;

@@ -24,21 +24,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.008" />
 
-    <TextView
-        android:id="@+id/tvTotalCart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Qty."
-        android:textColor="#38649A"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvFragmentName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toEndOf="@+id/tvFragmentName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
     <ListView
         android:id="@+id/lvList"
         android:layout_width="396dp"
@@ -65,7 +50,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnCheckout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="15"
@@ -74,7 +59,7 @@
             app:backgroundTint="#692D94" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvAmountCartTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="85"

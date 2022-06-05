@@ -67,18 +67,17 @@
 
         //code for adding to cart
         function addCart($conn, $cart_userID, $cart_prodTag, $cart_prodPrice, $cart_prodName, $cart_prodDesc, $cart_prodQty, $cart_prodImg){
-            $stringTest = "test";
-            if($this->itemExist($conn, $cart_prodTag)){
+            if($this->itemExist($conn, $cart_prodTag, $cart_userID)){
                 return 0;
             }else{
-                $stmt = $conn->prepare("INSERT INTO `fontis_usercarts` (`cart_userID`, `cart_prodTag`, `cart_prodPrice`, `cart_prodName`, `cart_prodDesc`, `cart_prodQty`, `cart_prodImg`) VALUES (:cart_userID, :cart_prodTag, :cart_prodPrice, :cart_prodName, :cart_prodDesc, :cart_prodQty, :cart_prodImg);");
+                $stmt = $conn->prepare("INSERT INTO `fontis_usercarts` (`cart_userID`, `cart_prodTag`, `cart_prodPrice`, `cart_prodName`, `cart_prodDesc`, `cart_prodQty`, `cart_prodImg`) VALUES (:cart_userID, :cart_prodTag, :cart_prodPrice, :cart_prodName, :cart_prodDesc, :cart_prodQty, :cart_prodImg)");
                 $stmt->bindParam(":cart_userID",$cart_userID);
                 $stmt->bindParam(":cart_prodTag",$cart_prodTag);
                 $stmt->bindParam(":cart_prodPrice",$cart_prodPrice);
                 $stmt->bindParam(":cart_prodName",$cart_prodName);
                 $stmt->bindParam(":cart_prodDesc",$cart_prodDesc);
                 $stmt->bindParam(":cart_prodQty",$cart_prodQty);
-                $stmt->bindParam(":cart_prodImg", $stringTest);
+                $stmt->bindParam(":cart_prodImg", $cart_prodImg);
 
                 if($stmt->execute()){
                     return 1;
@@ -89,9 +88,10 @@
         }
 
         //code for checking duplicate register
-        private function itemExist($conn, $cart_prodTag){
-            $stmt = $conn->prepare("SELECT cart_id FROM `fontis_usercarts` WHERE `cart_prodTag`=:cart_prodTag");
+        private function itemExist($conn, $cart_prodTag, $cart_userID){
+            $stmt = $conn->prepare("SELECT cart_id FROM `fontis_usercarts` WHERE `cart_prodTag`=:cart_prodTag AND `cart_userID`=:cart_userID");
             $stmt->bindParam(":cart_prodTag", $cart_prodTag);
+            $stmt->bindParam(":cart_userID", $cart_userID);
             $stmt->execute();
             $count = $stmt->fetchColumn(0);
             
@@ -122,4 +122,51 @@
             return $stmt->execute();
 
         }
+
+        //code for incrementing and decreasing values
+        function valueQtyUpdate($conn, $cart_userID, $cart_prodTag, $cart_prodQty){
+            $stmt = $conn->prepare("UPDATE `fontis_usercarts` SET `cart_prodQty`=:cart_prodQty WHERE `cart_prodTag`=:cart_prodTag AND `cart_userID`=:cart_userID");
+            $stmt->bindParam(":cart_userID", $cart_userID);
+            $stmt->bindParam(":cart_prodTag", $cart_prodTag);
+            $stmt->bindParam(":cart_prodQty", $cart_prodQty);
+
+            return $stmt->execute();
+        }
+
+        //code for checking out and inserting values for history database
+        function checkout($conn, $cart_userID, $prod_price, $prod_date, $prod_amt, $prod_img){
+            $stmt = $conn->prepare("INSERT INTO `fontis_userhistory`(`history_userID`, `prod_price`, `prod_date`, `prod_amt`, `prod_img`) VALUES (:history_userID,:prod_price,:prod_date,:prod_amt,:prod_img)");
+            $stmt->bindParam(":history_userID", $cart_userID);
+            $stmt->bindParam(":prod_price", $prod_price);
+            $stmt->bindParam(":prod_date", $prod_date);
+            $stmt->bindParam(":prod_amt", $prod_amt);
+            $stmt->bindParam(":prod_img", $prod_img);
+
+            if($stmt->execute()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+
+        //code for generating list view in history
+        public function populateHistory($conn, $cart_userID){
+            //query
+            $stmt = $conn->prepare("SELECT * FROM `fontis_userhistory` WHERE `history_userID`=:cart_userID");
+            $stmt->bindParam(":cart_userID", $cart_userID);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        //code for deleting specific item
+        function deleteItem($conn, $cart_userID, $cart_prodTag){
+            $stmt = $conn->prepare("DELETE FROM `fontis_usercarts` WHERE `cart_prodTag`=:cart_prodTag AND `cart_userID`=:cart_userID");
+            $stmt->bindParam(":cart_userID", $cart_userID);
+            $stmt->bindParam(":cart_prodTag", $cart_prodTag);
+        
+            return $stmt->execute();
+        }
+
+
     }

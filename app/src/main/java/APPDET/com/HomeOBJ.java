@@ -4,11 +4,11 @@ public class HomeOBJ {
     private String price;
     private String prodName;
     private String prodDesc;
-    private String imgURL;
+    private int imgURL;
     private int fk_id;
 
     //home objects
-    public HomeOBJ(int fk_id, String price, String prodName, String prodDesc, String imgURL){
+    public HomeOBJ(int fk_id, String price, String prodName, String prodDesc, int imgURL){
         this.fk_id = fk_id;
         this.price = price;
         this.prodName = prodName;
@@ -32,7 +32,7 @@ public class HomeOBJ {
         return prodDesc;
     }
 
-    public String getImgURL() {
+    public int getImgURL() {
         return imgURL;
     }
 }

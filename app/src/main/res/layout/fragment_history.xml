@@ -38,7 +38,7 @@
             android:id="@+id/tvTotalHistory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total"
+            android:text="Items"
             android:textColor="#38649A"
             android:textSize="18sp"
             android:textStyle="bold"
