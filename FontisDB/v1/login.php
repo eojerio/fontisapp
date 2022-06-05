@@ -19,6 +19,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
             $response['id'] = $user['id'];
             $response['username'] = $user['username'];
+            $response['password'] = md5($user['password']);
             $response['first_name'] = $user['first_name'];
             $response['last_name'] = $user['last_name'];
             $response['contact_no'] = $user['contact_no'];

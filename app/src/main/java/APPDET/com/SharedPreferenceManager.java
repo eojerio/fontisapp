@@ -16,6 +16,7 @@ public class SharedPreferenceManager {
     //for user profile
     private static final String KEY_USER_ID = "id";
     private static final String KEY_USER_USERNAME = "username";
+    private static final String KEY_USER_PASSWORD = "password";
     private static final String KEY_USER_FIRSTNAME = "first_name";
     private static final String KEY_USER_LASTNAME = "last_name";
     private static final String KEY_USER_CONTACTNO = "contact_no";
@@ -64,13 +65,14 @@ public class SharedPreferenceManager {
 
 
 
-    public boolean userLogin(int id, String username, String first_name, String last_name,String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status, String user_description){
+    public boolean userLogin(int id, String username, String password,String first_name, String last_name,String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status, String user_description){
 
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putInt(KEY_USER_ID, id);
         editor.putString(KEY_USER_USERNAME, username);
+        editor.putString(KEY_USER_PASSWORD, password);
         editor.putString(KEY_USER_FIRSTNAME, first_name);
         editor.putString(KEY_USER_LASTNAME, last_name);
         editor.putString(KEY_USER_CONTACTNO, contact_no);
@@ -87,11 +89,12 @@ public class SharedPreferenceManager {
 
     }
 
-    public boolean userEdit(String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status, String user_description){
+    public boolean userEdit(String password, String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status, String user_description){
 
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        editor.putString(KEY_USER_PASSWORD, password);
         editor.putString(KEY_USER_CONTACTNO, contact_no);
         editor.putString(KEY_USER_ADDRESS, address);
         editor.putString(KEY_USER_BIRTHDATE, birthdate);
@@ -130,8 +133,15 @@ public class SharedPreferenceManager {
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getInt(KEY_USER_ID, 0);
     }
-    //for profile fragment get data
 
+    public String getPassword(){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_USER_PASSWORD, null);
+    }
+
+
+
+    //for profile fragment get data
 
     public String getFirstName(){
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);

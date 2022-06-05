@@ -5,16 +5,20 @@ require_once '../Includes/DbOperations.php';
 $response = array();
 
 
-$stmt = $conn->prepare("SELECT * FROM `fontis_usercarts`");
+//checks if server method is post : else, Invalid request
+if($_SERVER['REQUEST_METHOD']=='POST'){
+
+
+
+$stmt = $conn->prepare("SELECT `first_name` FROM `fontis_userprofiles` WHERE `id`=:id");
+$stmt->bindParam(":id", $_POST['id']);
 $stmt->execute();
-$count = $stmt->fetchAll();
+$count = $stmt->fetch();
 
+echo $count['first_name'];
 
-foreach ($count as $key) {
-    $response['price'] = $key['cart_prodPrice'];
-    echo $response['price'] . '<br>';
+}else{
+    $response['error'] = true;
+    $response['message'] = "Invalid Request";
 }
 
-
-
-echo json_encode(array("cartObject"=>$response));
