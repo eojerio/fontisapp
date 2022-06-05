@@ -213,16 +213,31 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fontis_icon" />
 
-    <Spinner
-        android:id="@+id/employment_status_s"
-        android:layout_width="175dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="72dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="200dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/etUsernameReg"
+        app:layout_constraintEnd_toStartOf="@+id/etPasswordReg"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmploymentReg" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="AutoCompleteTextView"
+            tools:layout_editor_absoluteX="184dp"
+            tools:layout_editor_absoluteY="266dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
