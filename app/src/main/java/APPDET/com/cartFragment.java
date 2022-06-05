@@ -176,9 +176,10 @@ public class cartFragment extends Fragment {
                 final String amountQty = String.valueOf(amount[0]);
 
                 //checking values
-                Log.i("AMOUNT", formattedDate);
-                Log.i("AMOUNT", String.valueOf(total[0]));
+                Log.i("DATE", formattedDate);
+                Log.i("TOTAL", String.valueOf(total[0]));
                 Log.i("AMOUNT", String.valueOf(amount[0]));
+
                 if(total[0] <= 0 && amount[0] <= 0){
                     Toast.makeText(getContext(), "Please add an item first" , Toast.LENGTH_SHORT).show();
                 }else{
@@ -257,22 +258,22 @@ public class cartFragment extends Fragment {
 
                             data.add(prod);
 
-                            for(int j = 0; j < price.size(); j++){
-                                total[0] += (Double.parseDouble(price.get(i)) * Integer.parseInt(qty.get(i)));
-                                amount[0] += Integer.parseInt(qty.get(i));
-                                Log.i("AMOUNT", price.get(i) + " " + qty.get(i));
-                            }
-
-                            if(total[0] <= 0){
-                                tvAmountCart.setText("₱0");
-                            }else{
-                                tvAmountCart.setText(String.valueOf("₱"+total[0]));
-                            }
-
                             // Inflate the layout for this fragment
                             CartListAdapter arrayAdapter = new CartListAdapter(getActivity(), R.layout.adapter_cartview_layout, data);
                             lv.setAdapter(arrayAdapter);
                         }
+                    for(int j = 0; j < price.size(); j++){
+                        total[0] += (Double.parseDouble(price.get(j)) * Integer.parseInt(qty.get(j)));
+                        amount[0] += Integer.parseInt(qty.get(j));
+                        Log.i("AMOUNT ONCE", price.get(j) + " " + qty.get(j));
+                    }
+
+                    if(total[0] <= 0){
+                        tvAmountCart.setText("₱0");
+                    }else{
+                        tvAmountCart.setText(String.valueOf("₱"+total[0]));
+                        Log.i("AMOUNT TEST", String.valueOf(amount[0]));
+                    }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -297,7 +298,6 @@ public class cartFragment extends Fragment {
 
 
         RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
-
 
     }
 
