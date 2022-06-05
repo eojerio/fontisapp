@@ -9,8 +9,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -31,6 +33,7 @@ public class registration_form extends AppCompatActivity {
     EditText username, password, first_name, last_name, contact_no, address, birthdate, email_address, employment_status, marital_status;
     Button btn_loginform, btn_submit;
     Intent intent;
+    Spinner employment_status_s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +144,23 @@ public class registration_form extends AppCompatActivity {
 
             }
         });
+
+        //(dropdown menu)
+        //get the spinner from the xml.
+
+        Spinner dropdown = findViewById(R.id.employment_status_s);
+
+        //create a list of items for the spinner.
+        String[] items = new String[]{"Employment Status", "Employee", "Self-employed", "Unemployed"};
+
+        //create an adapter to describe how the items are displayed, adapters are used in several places in android.
+        //There are multiple variations of this, but this is the basic variant.
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+
+        //set the spinners adapter to the previously created one.
+        dropdown.setAdapter(adapter);
+
+
     }
 
     //for accessing registration form
@@ -155,6 +175,9 @@ public class registration_form extends AppCompatActivity {
             }
         });
     }
+
+
+
 
 
 }
