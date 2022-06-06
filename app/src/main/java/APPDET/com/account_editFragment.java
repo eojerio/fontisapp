@@ -196,7 +196,7 @@ public class account_editFragment extends Fragment {
                     } else {
                         Toast.makeText(getContext(), "Password fields are required", Toast.LENGTH_SHORT).show();
                     }
-                    //if et password is empty
+                    //if et password is empty true
                 }else{
 
                     final String id = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
