@@ -60,7 +60,7 @@ public class accountFragment extends Fragment {
         }
     }
 
-    Button btnEditAccount, btnLogout;
+    Button btnEditAccount, btnLogout, btnAboutUs;
     TextView name,address,contact_no,email_address,birthdate,marital_status,employment_status,user_description;
 
     @Override
@@ -113,6 +113,23 @@ public class accountFragment extends Fragment {
                     startActivity(new Intent(getContext(), MainActivity.class));
                 }
             });
+
+            //About us button testing
+//        @Override
+//        protected void onCreate(Bundle savedInstanceState){
+//            super.onCreate(savedInstanceState);
+//            setContentView(R.layout.fragment_account);
+//
+//            btnAboutUs = (Button) v.findViewById(R.id.btnAboutUs);
+//            btnAboutUs.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent = new Intent(accountFragment.this,activity_about_us.class);
+//                    startActivity(intent);
+//                }
+//            });
+//        }
+
 
         return v;
     }
