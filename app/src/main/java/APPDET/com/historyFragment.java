@@ -147,7 +147,7 @@ public class historyFragment extends Fragment {
 
                         JSONObject historyOBJ = array.getJSONObject(i);
 
-                        HistoryOBJ prod = new HistoryOBJ("₱" + formatter.format(Double.parseDouble(historyOBJ.getString("prod_price"))), historyOBJ.getString("prod_date"), historyOBJ.getString("prod_amt"), "drawable://" +  R.drawable.water_gallon);
+                        HistoryOBJ prod = new HistoryOBJ("₱" + formatter.format(Double.parseDouble(historyOBJ.getString("prod_price"))), historyOBJ.getString("prod_date"), historyOBJ.getString("prod_amt"), "drawable://" +  R.drawable.cart_history);
 
                         data.add(prod);
                         if (getActivity()!=null){
