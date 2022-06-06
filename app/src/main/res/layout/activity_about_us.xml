@@ -70,7 +70,7 @@ Our goal is to provide and deliver clean drinkable water to our customers who ha
             app:layout_constraintVertical_bias="0.1" />
 
         <ImageView
-            android:id="@+id/ivAvatar"
+            android:id="@+id/ivPlayer1"
             android:layout_width="178dp"
             android:layout_height="172dp"
             android:layout_below="@+id/tvAboutUsPlayers"
@@ -79,8 +79,9 @@ Our goal is to provide and deliver clean drinkable water to our customers who ha
             app:layout_constraintTop_toBottomOf="@+id/tvAboutUsPlayers"
             app:srcCompat="@drawable/alvarez" />
 
+
         <TextView
-            android:id="@+id/tvAboutUsDesc2"
+            android:id="@+id/tvPlayer1"
             android:layout_width="252dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -88,7 +89,30 @@ Our goal is to provide and deliver clean drinkable water to our customers who ha
 - Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.\n\n"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivAvatar" />
+            app:layout_constraintTop_toBottomOf="@+id/ivPlayer1" />
+
+        <ImageView
+            android:id="@+id/ivPlayer2"
+            android:layout_width="178dp"
+            android:layout_height="172dp"
+            android:layout_below="@+id/tvAboutUsPlayers"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlayer1"
+            app:srcCompat="@drawable/alvarez" />
+
+        <TextView
+            android:id="@+id/tvPlayer2"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Ben Lucido\n\n
+- Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.\n\n"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPlayer2" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
