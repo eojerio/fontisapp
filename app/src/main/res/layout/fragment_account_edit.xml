@@ -31,8 +31,8 @@
 
         <TextView
             android:id="@+id/tvAccountPassword"
-            android:layout_width="80dp"
-            android:layout_height="35dp"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Password"
@@ -40,14 +40,14 @@
             android:textSize="15dp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.072"
+            app:layout_constraintHorizontal_bias="0.057"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAccountChangePassword" />
 
         <TextView
             android:id="@+id/tvAccountConfirmPassword"
-            android:layout_width="128dp"
-            android:layout_height="35dp"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="Confirm Password"
@@ -55,14 +55,14 @@
             android:textSize="15dp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.084"
+            app:layout_constraintHorizontal_bias="0.057"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAccountNewPassword" />
 
         <TextView
             android:id="@+id/tvAccountNewPassword"
-            android:layout_width="110dp"
-            android:layout_height="35dp"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center|left"
             android:text="New Password"
@@ -70,7 +70,7 @@
             android:textSize="15dp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.079"
+            app:layout_constraintHorizontal_bias="0.057"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAccountPassword" />
 
@@ -161,7 +161,7 @@
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.113"
+            app:layout_constraintHorizontal_bias="0.079"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etEditDescription" />
 
@@ -255,8 +255,8 @@
             android:inputType="textPersonName"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.849"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvMaritalStatus"
             app:layout_constraintTop_toBottomOf="@+id/etEditBirthdate" />
 
         <TextView
@@ -308,40 +308,40 @@
 
         <EditText
             android:id="@+id/etEditPassword"
-            android:layout_width="184dp"
-            android:layout_height="35dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.739"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvAccountPassword"
             app:layout_constraintTop_toBottomOf="@+id/tvAccountChangePassword" />
 
         <EditText
             android:id="@+id/etEditNewPassword"
-            android:layout_width="184dp"
-            android:layout_height="35dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:ems="10"
             android:hint="New Password"
             android:inputType="textPassword"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.635"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvAccountNewPassword"
             app:layout_constraintTop_toBottomOf="@+id/etEditPassword" />
 
         <EditText
             android:id="@+id/etEditConfirmPassword"
-            android:layout_width="184dp"
-            android:layout_height="35dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:ems="10"
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.53"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/tvAccountConfirmPassword"
             app:layout_constraintTop_toBottomOf="@+id/etEditNewPassword" />
 

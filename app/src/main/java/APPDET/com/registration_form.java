@@ -27,13 +27,15 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class registration_form extends AppCompatActivity {
     EditText username, password, first_name, last_name, contact_no, address, birthdate, email_address, employment_status, marital_status;
-    Button btn_loginform, btn_submit;
+    TextView tvRegisterSignUp;
+    Button btn_submit;
     Intent intent;
     Spinner employmentstatusSpinner, maritalstatusSpinner;
     ArrayAdapter<CharSequence> employmentstatusAdapter, maritalstatusAdapter;
@@ -175,10 +177,10 @@ public class registration_form extends AppCompatActivity {
 
     //for accessing registration form
     public void loginform(){
-        btn_loginform = (Button) findViewById(R.id.btnLoginReg);
+        tvRegisterSignUp = (TextView) findViewById(R.id.tvRegisterSignUp);
         intent = new Intent(this, MainActivity.class);
 
-        btn_loginform.setOnClickListener(new View.OnClickListener() {
+        tvRegisterSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(intent);
