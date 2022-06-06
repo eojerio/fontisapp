@@ -1,8 +1,11 @@
 package APPDET.com;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -106,8 +109,23 @@ public class accountFragment extends Fragment {
             btnLogout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    SharedPreferenceManager.getInstance(getContext()).logout();
-                    startActivity(new Intent(getContext(), MainActivity.class));
+                    AlertDialog.Builder alert_builder = new AlertDialog.Builder(getContext());
+                    alert_builder.setMessage("Are you sure you want to logout?").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //logging out code
+                            SharedPreferenceManager.getInstance(getContext()).logout();
+                            startActivity(new Intent(getContext(), MainActivity.class));
+                        }
+                    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog alertDialog = alert_builder.create();
+                    alertDialog.setTitle("WARNING");
+                    alertDialog.show();
                 }
             });
 
