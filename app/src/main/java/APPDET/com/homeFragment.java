@@ -93,9 +93,9 @@ public class homeFragment extends Fragment {
     private static final String TAG= "HomeFrag";
 
     //list of array int
-    public int[] image = {R.drawable.prod1, R.drawable.prod2, R.drawable.prod3, R.drawable.prod4, R.drawable.prod5,
-            R.drawable.prod6, R.drawable.prod7, R.drawable.prod8, R.drawable.prod9, R.drawable.prod10, R.drawable.prod11,
-            R.drawable.prod12, R.drawable.prod13, R.drawable.prod14, R.drawable.prod15, R.drawable.prod16};
+    public int[] image = {R.drawable.prod_1, R.drawable.prod_2, R.drawable.prod_3, R.drawable.prod_4, R.drawable.prod_5,
+            R.drawable.prod_6, R.drawable.prod_7, R.drawable.prod_8, R.drawable.prod_9, R.drawable.prod_10, R.drawable.prod_11,
+            R.drawable.prod_12, R.drawable.prod_13, R.drawable.prod_14, R.drawable.prod_15, R.drawable.prod_16};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
