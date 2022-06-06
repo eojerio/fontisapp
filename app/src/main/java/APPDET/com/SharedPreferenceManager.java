@@ -89,12 +89,31 @@ public class SharedPreferenceManager {
 
     }
 
-    public boolean userEdit(String password, String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status, String user_description){
+    public boolean userEditPassword(String password, String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status, String user_description){
 
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putString(KEY_USER_PASSWORD, password);
+        editor.putString(KEY_USER_CONTACTNO, contact_no);
+        editor.putString(KEY_USER_ADDRESS, address);
+        editor.putString(KEY_USER_BIRTHDATE, birthdate);
+        editor.putString(KEY_USER_EMAILADDRESS, email_address);
+        editor.putString(KEY_USER_EMPLOYMENTSTATUS, employment_status);
+        editor.putString(KEY_USER_MARITALSTATUS, marital_status);
+        editor.putString(KEY_USER_DESCRIPTION, user_description);
+
+        editor.apply();
+
+        return true;
+
+    }
+
+    public boolean userEdit(String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status, String user_description){
+
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
         editor.putString(KEY_USER_CONTACTNO, contact_no);
         editor.putString(KEY_USER_ADDRESS, address);
         editor.putString(KEY_USER_BIRTHDATE, birthdate);

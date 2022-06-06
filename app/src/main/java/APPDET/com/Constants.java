@@ -10,6 +10,7 @@ public class Constants {
     public static final String URL_LOGIN = ROOT_URL + "login.php";
     public static final String URL_ADDCART = ROOT_URL + "add_cart.php";
     public static final String URL_POPULATECART = ROOT_URL + "populate_cart.php";
+    public static final String URL_PROFILESAVEPASSWORD = ROOT_URL + "profile_editPass.php";
     public static final String URL_PROFILESAVE = ROOT_URL + "profile_edit.php";
     public static final String URL_UPDATECART = ROOT_URL + "valueQtyUpdate.php";
     public static final String URL_CHECKOUT = ROOT_URL + "checkout_cart.php";

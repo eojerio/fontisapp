@@ -72,8 +72,9 @@ public class account_editFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
     Button btnSaveAccount;
-    EditText etEditAddress, etEditContactNo, etEditEmailAddress, etEditBirthdate, etEditMaritalStatus,etEditEmploymentStatus,etEditDescription;
+    EditText etEditAddress, etEditContactNo, etEditEmailAddress, etEditBirthdate, etEditMaritalStatus, etEditEmploymentStatus, etEditDescription;
     EditText etEditPassword, etEditNewPassword, etEditConfirmPassword;
     TextView tvFragmentName;
 
@@ -102,7 +103,7 @@ public class account_editFragment extends Fragment {
 
 
         //assigning text to database
-        tvFragmentName.setText(SharedPreferenceManager.getInstance(getContext()).getFirstName() +" "+ SharedPreferenceManager.getInstance(getContext()).getLastName());
+        tvFragmentName.setText(SharedPreferenceManager.getInstance(getContext()).getFirstName() + " " + SharedPreferenceManager.getInstance(getContext()).getLastName());
         etEditAddress.setText(SharedPreferenceManager.getInstance(getContext()).getAddress());
         etEditContactNo.setText(SharedPreferenceManager.getInstance(getContext()).getContactNo());
         etEditEmailAddress.setText(SharedPreferenceManager.getInstance(getContext()).getEmailAddress());
@@ -111,44 +112,47 @@ public class account_editFragment extends Fragment {
         etEditEmploymentStatus.setText(SharedPreferenceManager.getInstance(getContext()).getEmploymentStatus());
         etEditDescription.setText(SharedPreferenceManager.getInstance(getContext()).getDescription());
 
-    // event click for updating user details
+        // event click for updating user details
         btnSaveAccount = (Button) v.findViewById(R.id.btnSaveAccount);
         btnSaveAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String id = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
-               final String password = etEditPassword.getText().toString().trim();
-               final String new_password = etEditNewPassword.getText().toString().trim();
-               final String address = etEditAddress.getText().toString().trim();
-               final String contact_no = etEditContactNo.getText().toString().trim();
-               final String email_address = etEditEmailAddress.getText().toString().trim();
-               final String birthdate = etEditBirthdate.getText().toString().trim();
-               final String marital_status = etEditMaritalStatus.getText().toString().trim();
-               final String employment_status = etEditEmploymentStatus.getText().toString().trim();
-               final String description = etEditDescription.getText().toString().trim();
 
-               //checks if password is same as password from database and
-                if(!TextUtils.isEmpty(etEditPassword.getText().toString()) && !TextUtils.isEmpty(etEditNewPassword.getText().toString()) && !TextUtils.isEmpty(etEditConfirmPassword.getText().toString())){
-                        if(etEditNewPassword.getText().toString().trim().equals(etEditConfirmPassword.getText().toString().trim())){
-                            StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_PROFILESAVE, new Response.Listener<String>() {
+                //checks if password et is empty
+                if (!TextUtils.isEmpty(etEditPassword.getText().toString())) {
+                    final String id = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
+                    final String password = etEditPassword.getText().toString().trim();
+                    final String new_password = etEditNewPassword.getText().toString().trim();
+                    final String address = etEditAddress.getText().toString().trim();
+                    final String contact_no = etEditContactNo.getText().toString().trim();
+                    final String email_address = etEditEmailAddress.getText().toString().trim();
+                    final String birthdate = etEditBirthdate.getText().toString().trim();
+                    final String marital_status = etEditMaritalStatus.getText().toString().trim();
+                    final String employment_status = etEditEmploymentStatus.getText().toString().trim();
+                    final String description = etEditDescription.getText().toString().trim();
+
+                    //checks if password is same as password from database and
+                    if (!TextUtils.isEmpty(etEditPassword.getText().toString()) && !TextUtils.isEmpty(etEditNewPassword.getText().toString()) && !TextUtils.isEmpty(etEditConfirmPassword.getText().toString())) {
+                        if (etEditNewPassword.getText().toString().trim().equals(etEditConfirmPassword.getText().toString().trim())) {
+                            StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_PROFILESAVEPASSWORD, new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
                                     try {
 
                                         JSONObject jsonObject = new JSONObject(response);
 
-                                        if (!jsonObject.getBoolean("error")){
+                                        if (!jsonObject.getBoolean("error")) {
 
-                                            SharedPreferenceManager.getInstance(getContext()).userEdit(jsonObject.getString("password"),jsonObject.getString("contact_no"),jsonObject.getString("address"),jsonObject.getString("birthdate"),jsonObject.getString("email_address"),jsonObject.getString("employment_status"),jsonObject.getString("marital_status"),jsonObject.getString("user_description"));
+                                            SharedPreferenceManager.getInstance(getContext()).userEditPassword(jsonObject.getString("password"), jsonObject.getString("contact_no"), jsonObject.getString("address"), jsonObject.getString("birthdate"), jsonObject.getString("email_address"), jsonObject.getString("employment_status"), jsonObject.getString("marital_status"), jsonObject.getString("user_description"));
 
-                                            Toast.makeText(getContext(),"PROFILE UPDATED SUCCESSFULLY!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getContext(), "PROFILE UPDATED SUCCESSFULLY!", Toast.LENGTH_SHORT).show();
                                             Fragment save_account = new accountFragment();
-                                            getParentFragmentManager().beginTransaction().replace(R.id.container_botnav,save_account).commit();
+                                            getParentFragmentManager().beginTransaction().replace(R.id.container_botnav, save_account).commit();
 
 
-                                        }else{
+                                        } else {
 
-                                            Toast.makeText(getContext(),jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
 
                                         }
 
@@ -162,23 +166,23 @@ public class account_editFragment extends Fragment {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
 
-                                    Toast.makeText(getContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
-                            }){
+                            }) {
                                 @Nullable
                                 @Override
                                 protected Map<String, String> getParams() throws AuthFailureError {
                                     Map<String, String> params = new HashMap<>();
-                                    params.put("id",id);
-                                    params.put("password",password);
-                                    params.put("new_password",new_password);
-                                    params.put("address",address);
-                                    params.put("contact_no",contact_no);
-                                    params.put("email_address",email_address);
-                                    params.put("birthdate",birthdate);
-                                    params.put("marital_status",marital_status);
-                                    params.put("employment_status",employment_status);
-                                    params.put("user_description",description);
+                                    params.put("id", id);
+                                    params.put("password", password);
+                                    params.put("new_password", new_password);
+                                    params.put("address", address);
+                                    params.put("contact_no", contact_no);
+                                    params.put("email_address", email_address);
+                                    params.put("birthdate", birthdate);
+                                    params.put("marital_status", marital_status);
+                                    params.put("employment_status", employment_status);
+                                    params.put("user_description", description);
 
                                     return params;
 
@@ -186,14 +190,80 @@ public class account_editFragment extends Fragment {
                             };
 
                             RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
-                        }else{
-                            Toast.makeText(getContext(),"NEW PASSWORD AND CONFIRM NEW PASSWORD IS NOT THE SAME", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getContext(), "NEW PASSWORD AND CONFIRM NEW PASSWORD IS NOT THE SAME", Toast.LENGTH_SHORT).show();
                         }
+                    } else {
+                        Toast.makeText(getContext(), "Password fields are required", Toast.LENGTH_SHORT).show();
+                    }
+                    //if et password is empty
                 }else{
-                    Toast.makeText(getContext(),"Password fields are required",Toast.LENGTH_SHORT).show();
+
+                    final String id = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
+                    final String address = etEditAddress.getText().toString().trim();
+                    final String contact_no = etEditContactNo.getText().toString().trim();
+                    final String email_address = etEditEmailAddress.getText().toString().trim();
+                    final String birthdate = etEditBirthdate.getText().toString().trim();
+                    final String marital_status = etEditMaritalStatus.getText().toString().trim();
+                    final String employment_status = etEditEmploymentStatus.getText().toString().trim();
+                    final String description = etEditDescription.getText().toString().trim();
+
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_PROFILESAVE, new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+
+                            try {
+
+                                JSONObject jsonObject = new JSONObject(response);
+
+                                if (!jsonObject.getBoolean("error")){
+
+                                    SharedPreferenceManager.getInstance(getContext()).userEdit(jsonObject.getString("contact_no"),jsonObject.getString("address"),jsonObject.getString("birthdate"),jsonObject.getString("email_address"),jsonObject.getString("employment_status"),jsonObject.getString("marital_status"),jsonObject.getString("user_description"));
+
+                                    Toast.makeText(getContext(),"PROFILE UPDATED SUCCESSFULLY!", Toast.LENGTH_SHORT).show();
+                                    Fragment save_account = new accountFragment();
+                                    getParentFragmentManager().beginTransaction().replace(R.id.container_botnav,save_account).commit();
+
+
+                                }else{
+
+                                    Toast.makeText(getContext(),jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+
+                                }
+
+                            } catch (JSONException e) {
+
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                            Toast.makeText(getContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }){
+                        @Nullable
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            Map<String, String> params = new HashMap<>();
+                            params.put("id",id);
+                            params.put("address",address);
+                            params.put("contact_no",contact_no);
+                            params.put("email_address",email_address);
+                            params.put("birthdate",birthdate);
+                            params.put("marital_status",marital_status);
+                            params.put("employment_status",employment_status);
+                            params.put("user_description",description);
+
+                            return params;
+
+                        }
+                    };
+
+                    RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
                 }
-
-
 
             }
         });

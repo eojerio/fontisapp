@@ -107,32 +107,6 @@
             return $stmt;
         }
 
-        //code for updating user profile
-        function profileEdit($conn, $id, $password, $new_password,$contact_no, $address, $birthdate, $email_address, $employment_status, $marital_status, $user_description){
-            if($this->checkPassword($conn, $id, $password)){
-                $new_password = md5($new_password);
-                $stmt = $conn->prepare("UPDATE `fontis_userprofiles` SET `password`=:password,`contact_no`=:contact_no,`address`=:address,`birthdate`=:birthdate,`email_address`=:email_address,`employment_status`=:employment_status,`marital_status`=:marital_status,`user_description`=:user_description WHERE `id`=:id");
-                $stmt->bindParam(":id", $id);
-                $stmt->bindParam(":password", $new_password);
-                $stmt->bindParam(":contact_no", $contact_no);
-                $stmt->bindParam(":address", $address);
-                $stmt->bindParam(":birthdate", $birthdate);
-                $stmt->bindParam(":email_address", $email_address);
-                $stmt->bindParam(":employment_status", $employment_status);
-                $stmt->bindParam(":marital_status", $marital_status);
-                $stmt->bindParam(":user_description", $user_description);
-
-                if($stmt->execute()){
-                    return 1;   
-                }else{
-                    return 2;
-                }
-            }else{
-                return 0;
-            }
-
-        }
-
         //code for incrementing and decreasing values
         function valueQtyUpdate($conn, $cart_userID, $cart_prodTag, $cart_prodQty){
             $stmt = $conn->prepare("UPDATE `fontis_usercarts` SET `cart_prodQty`=:cart_prodQty WHERE `cart_prodTag`=:cart_prodTag AND `cart_userID`=:cart_userID");
@@ -179,22 +153,6 @@
             return $stmt->execute();
         }
 
-        function changePassword($conn, $id, $password, $new_password){
-            if($this->checkPassword($conn, $id, $password)){
-                $new_password = md5($new_password);
-                $stmt = $conn->prepare("UPDATE `fontis_userprofiles` SET `password`=:new_password WHERE `id`=:id");
-                $stmt->bindParam(":id", $id);   
-                $stmt->bindParam(":new_password", $new_password);
-                if($stmt->execute()){
-                    return 1;   
-                }else{
-                    return 2;
-                }
-            }else{
-                return 0;
-            }
-        }
-
         //code for checking password
         function checkPassword($conn, $id, $password){
             $stmt = $conn->prepare("SELECT `password` FROM `fontis_userprofiles` WHERE `id`=:id");
@@ -209,4 +167,44 @@
 
         }
 
+        //code for updating user profile with password
+        function profileEditPassword($conn, $id, $password, $new_password,$contact_no, $address, $birthdate, $email_address, $employment_status, $marital_status, $user_description){
+            if($this->checkPassword($conn, $id, $password)){
+                $new_password = md5($new_password);
+                $stmt = $conn->prepare("UPDATE `fontis_userprofiles` SET `password`=:password,`contact_no`=:contact_no,`address`=:address,`birthdate`=:birthdate,`email_address`=:email_address,`employment_status`=:employment_status,`marital_status`=:marital_status,`user_description`=:user_description WHERE `id`=:id");
+                $stmt->bindParam(":id", $id);
+                $stmt->bindParam(":password", $new_password);
+                $stmt->bindParam(":contact_no", $contact_no);
+                $stmt->bindParam(":address", $address);
+                $stmt->bindParam(":birthdate", $birthdate);
+                $stmt->bindParam(":email_address", $email_address);
+                $stmt->bindParam(":employment_status", $employment_status);
+                $stmt->bindParam(":marital_status", $marital_status);
+                $stmt->bindParam(":user_description", $user_description);
+
+                if($stmt->execute()){
+                    return 1;   
+                }else{
+                    return 2;
+                }
+            }else{
+                return 0;
+            }
+
+        }
+
+        //code for updating user profile without password
+        function profileEdit($conn, $id, $contact_no, $address, $birthdate, $email_address, $employment_status, $marital_status, $user_description){
+            $stmt = $conn->prepare("UPDATE `fontis_userprofiles` SET `contact_no`=:contact_no,`address`=:address,`birthdate`=:birthdate,`email_address`=:email_address,`employment_status`=:employment_status,`marital_status`=:marital_status,`user_description`=:user_description WHERE `id`=:id");
+            $stmt->bindParam(":id", $id);
+            $stmt->bindParam(":contact_no", $contact_no);
+            $stmt->bindParam(":address", $address);
+            $stmt->bindParam(":birthdate", $birthdate);
+            $stmt->bindParam(":email_address", $email_address);
+            $stmt->bindParam(":employment_status", $employment_status);
+            $stmt->bindParam(":marital_status", $marital_status);
+            $stmt->bindParam(":user_description", $user_description);
+
+            return $stmt->execute();
+        }
     }
