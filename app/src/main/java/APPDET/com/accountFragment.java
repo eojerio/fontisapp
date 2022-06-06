@@ -60,7 +60,7 @@ public class accountFragment extends Fragment {
         }
     }
 
-    Button btnEditAccount, btnLogout, btnAboutUs;
+    Button btnEditAccount, btnLogout;
     TextView name,address,contact_no,email_address,birthdate,marital_status,employment_status,user_description;
 
     @Override
@@ -90,9 +90,6 @@ public class accountFragment extends Fragment {
             employment_status.setText(SharedPreferenceManager.getInstance(getContext()).getEmploymentStatus());
             user_description.setText(SharedPreferenceManager.getInstance(getContext()).getDescription());
 
-
-
-
             //methods for button
 
             btnEditAccount = (Button) v.findViewById(R.id.btnSaveAccount);
@@ -114,21 +111,7 @@ public class accountFragment extends Fragment {
                 }
             });
 
-            //About us button testing
-//        @Override
-//        protected void onCreate(Bundle savedInstanceState){
-//            super.onCreate(savedInstanceState);
-//            setContentView(R.layout.fragment_account);
-//
-//            btnAboutUs = (Button) v.findViewById(R.id.btnAboutUs);
-//            btnAboutUs.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(accountFragment.this,activity_about_us.class);
-//                    startActivity(intent);
-//                }
-//            });
-//        }
+
 
 
         return v;

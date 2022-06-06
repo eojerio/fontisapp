@@ -92,8 +92,9 @@
 
         <EditText
             android:id="@+id/etEditDescription"
-            android:layout_width="350dp"
-            android:layout_height="85dp"
+            android:layout_width="331dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="300dp"
             android:ems="10"
             android:gravity="left"
             android:hint="          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an"
@@ -101,9 +102,8 @@
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.72"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAccountDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/tvFragmentName" />
 
         <TextView
             android:id="@+id/tvBirthdate"

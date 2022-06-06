@@ -212,18 +212,19 @@
 
         <TextView
             android:id="@+id/tvAccountDescriptionSub"
-            android:layout_width="350dp"
-            android:layout_height="85dp"
+            android:layout_width="322dp"
+            android:layout_height="77dp"
             android:layout_centerInParent="true"
+            android:layout_marginTop="300dp"
             android:gravity="left"
             android:text="Press the edit button to add a description"
             android:textColor="#38649A"
             android:textSize="15dp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.72"
+            app:layout_constraintHorizontal_bias="0.393"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAccountDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/tvNameAccount" />
 
         <TextView
             android:id="@+id/tvEmploymentStatus2"

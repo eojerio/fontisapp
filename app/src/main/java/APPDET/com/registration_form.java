@@ -105,9 +105,6 @@ public class registration_form extends AppCompatActivity {
                 final String employment_statusDATA = employmentstatusSpinner.getSelectedItem().toString().trim();
                 final String marital_statusDATA = maritalstatusSpinner.getSelectedItem().toString().trim();
 
-                //getting value part 9999
-
-                Toast.makeText(getApplicationContext(), marital_statusDATA, Toast.LENGTH_SHORT).show();
 
                 Toast.makeText(getApplicationContext(), "REGISTERING USER...", Toast.LENGTH_SHORT).show();
 

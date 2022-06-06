@@ -60,7 +60,7 @@ Our goal is to provide and deliver clean drinkable water to our customers who ha
             android:id="@+id/tvAboutUsPlayers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="THE PLAYERS"
+            android:text="THE DEVELOPERS"
             android:textColor="#38649A"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -86,8 +86,8 @@ Our goal is to provide and deliver clean drinkable water to our customers who ha
             android:layout_width="252dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Ezekiel Ojerio\n\n
-- Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.\n\n"
+            android:text="Ezekiel C. Ojerio\n\n
+I am a 2nd year student currently studying in University of Makati with the bachelors degree in Computer Science Major in Application Development. I want to help people by providing easier ways for them to live a happy life through computer science.\n\n"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivPlayer1" />
@@ -109,7 +109,7 @@ Our goal is to provide and deliver clean drinkable water to our customers who ha
             android:layout_width="252dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Ben Lucido\n\n
+            android:text="Benedicto E. Lucido\n\n
 - Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.\n\n"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +133,7 @@ Our goal is to provide and deliver clean drinkable water to our customers who ha
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Louiegie Arellano\n\n
-- Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.\n\n"
+I am currently a student in university of makati studying application development. I do want to help people through user friendly software and technological advancements.\n\n"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivPlayer3" />
@@ -206,8 +206,8 @@ Our goal is to provide and deliver clean drinkable water to our customers who ha
             android:layout_width="252dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="For more Inquiries, Visit our team\n
-Gmail: Fontis@gmail.com\nFacebook: iloveFontisPh\nInstagram: FontisPh.me\nTwitter: @Fontis2022\n"
+            android:text="For more Inquiries, Visit our team\n\n
+Gmail: fontis@gmail.com\nFacebook: FontisPhilippines\nInstagram: fontisph.me\nTwitter: @fontisPh\n"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutUsContactUs" />
