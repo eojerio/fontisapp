@@ -94,7 +94,7 @@ public class account_editFragment extends Fragment {
         etEditDescription = (EditText) v.findViewById(R.id.etEditDescription);
         etEditPassword = (EditText) v.findViewById(R.id.etEditPassword);
         etEditNewPassword = (EditText) v.findViewById(R.id.etEditNewPassword);
-        etEditConfirmPassword = (EditText) v.findViewById(R.id.etEditNewPassword);
+        etEditConfirmPassword = (EditText) v.findViewById(R.id.etEditConfirmPassword);
 
         tvFragmentName = (TextView) v.findViewById(R.id.tvFragmentName);
 

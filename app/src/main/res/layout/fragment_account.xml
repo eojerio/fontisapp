@@ -17,12 +17,11 @@
             android:id="@+id/btnSaveAccount"
             android:layout_width="106dp"
             android:layout_height="66dp"
-            android:layout_marginTop="24dp"
             android:text="EDIT"
             android:textSize="20sp"
             app:backgroundTint="#692D94"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.944"
+            app:layout_constraintHorizontal_bias="0.97"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
