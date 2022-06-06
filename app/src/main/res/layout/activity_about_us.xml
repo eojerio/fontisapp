@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".activity_about_us">
+
+
 
         <TextView
             android:id="@+id/tvAboutUs"
@@ -43,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="31dp"
             android:gravity="center"
-            android:text="What is FONTIS App?\n\n
+            android:text="What is FONTIS App?\n
 - Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.
         Through this app we make sure the water that you order will come smoothly right in front of your house.\n\n
 
@@ -64,10 +66,9 @@ Our goal is to provide and deliver clean drinkable water to our customers who ha
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutUsDesc"
-            app:layout_constraintVertical_bias="0.1" />
+            app:layout_constraintVertical_bias="0.046" />
 
         <ImageView
             android:id="@+id/ivPlayer1"
@@ -96,7 +97,7 @@ Our goal is to provide and deliver clean drinkable water to our customers who ha
             android:layout_width="178dp"
             android:layout_height="172dp"
             android:layout_below="@+id/tvAboutUsPlayers"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,6 +114,103 @@ Our goal is to provide and deliver clean drinkable water to our customers who ha
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivPlayer2" />
+
+        <ImageView
+            android:id="@+id/ivPlayer3"
+            android:layout_width="178dp"
+            android:layout_height="172dp"
+            android:layout_below="@+id/tvAboutUsPlayers"
+            android:layout_marginTop="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlayer2"
+            app:srcCompat="@drawable/alvarez" />
+
+        <TextView
+            android:id="@+id/tvPlayer3"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Louiegie Arellano\n\n
+- Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.\n\n"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPlayer3" />
+
+        <ImageView
+            android:id="@+id/ivPlayer4"
+            android:layout_width="178dp"
+            android:layout_height="172dp"
+            android:layout_below="@+id/tvAboutUsPlayers"
+            android:layout_marginTop="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlayer3"
+            app:srcCompat="@drawable/alvarez" />
+
+        <TextView
+            android:id="@+id/tvPlayer4"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Mary Avigail Felipe\n\n
+- Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.\n\n"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPlayer4" />
+
+        <ImageView
+            android:id="@+id/ivPlayer5"
+            android:layout_width="178dp"
+            android:layout_height="172dp"
+            android:layout_below="@+id/tvAboutUsPlayers"
+            android:layout_marginTop="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlayer4"
+            app:srcCompat="@drawable/alvarez" />
+
+        <TextView
+            android:id="@+id/tvPlayer5"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Maureen Usman\n\n
+- Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.\n\n"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPlayer5" />
+
+
+
+        <TextView
+            android:id="@+id/tvAboutUsContactUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="CONTACT US"
+            android:textColor="#38649A"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlayer5"
+            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/tvContactUsDesc"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="For more Inquiries, Visit our team\n
+Gmail: Fontis@gmail.com\nFacebook: iloveFontisPh\nInstagram: FontisPh.me\nTwitter: @Fontis2022\n"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAboutUsContactUs" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
