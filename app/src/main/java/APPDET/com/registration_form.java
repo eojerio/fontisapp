@@ -104,7 +104,7 @@ public class registration_form extends AppCompatActivity {
                 final String email_addressDATA = email_address.getText().toString().trim();
                 final String employment_statusDATA = employmentstatusSpinner.getSelectedItem().toString().trim();
                 final String marital_statusDATA = maritalstatusSpinner.getSelectedItem().toString().trim();
-
+//comment
 
                 Toast.makeText(getApplicationContext(), "REGISTERING USER...", Toast.LENGTH_SHORT).show();
 
