@@ -2,6 +2,7 @@ package APPDET.com;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.AuthFailureError;
@@ -108,6 +110,7 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
         fields.btnDecreaseCart = (Button) convertView.findViewById(R.id.btnDecrease);
         fields.btnDeleteItem = (Button) convertView.findViewById(R.id.btnDelete);
 
+        AlertDialog.Builder alert_builder = new AlertDialog.Builder(getContext());
 
         //click event for delete item
         fields.btnDeleteItem.setOnClickListener(new View.OnClickListener() {
@@ -117,44 +120,61 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
                 final String userID = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
                 final String item_tag = getItem(position).getTag();
 
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_DELETEITEMCART, new Response.Listener<String>() {
-
+                //alert dialog for confirming delete
+                alert_builder.setMessage("Are you sure you want to delete this item?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                            if(!jsonObject.getBoolean("error")) {
-                                Toast.makeText(getContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                        StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_DELETEITEMCART, new Response.Listener<String>() {
 
-                                Fragment cart = new cartFragment();
-                                ((index_form)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.container_botnav,cart).commit();
-                            }else{
-                                //shows error
-                                Toast.makeText(getContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                            @Override
+                            public void onResponse(String response) {
+                                try {
+                                    JSONObject jsonObject = new JSONObject(response);
+
+                                    if(!jsonObject.getBoolean("error")) {
+                                        Toast.makeText(getContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+
+                                        Fragment cart = new cartFragment();
+                                        ((index_form)mContext).getSupportFragmentManager().beginTransaction().replace(R.id.container_botnav,cart).commit();
+                                    }else{
+                                        //shows error
+                                        Toast.makeText(getContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
                             }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(getContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }){
+                            @Nullable
+                            @Override
+                            protected Map<String, String> getParams() throws AuthFailureError {
+                                Map<String, String> params = new HashMap<>();
+                                params.put("cart_userID", userID);
+                                params.put("cart_prodTag", item_tag);
+                                return params;
+                            }
+                        };
+                        RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                    }
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                AlertDialog alertDialog = alert_builder.create();
+                alertDialog.setTitle("WARNING");
+                alertDialog.show();
 
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                }){
-                    @Nullable
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        Map<String, String> params = new HashMap<>();
-                        params.put("cart_userID", userID);
-                        params.put("cart_prodTag", item_tag);
-                        return params;
-                    }
-                };
-                RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
             }
         });
 

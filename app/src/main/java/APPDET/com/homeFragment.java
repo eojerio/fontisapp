@@ -93,7 +93,9 @@ public class homeFragment extends Fragment {
     private static final String TAG= "HomeFrag";
 
     //list of array int
-    public int[] image = {R.drawable.water_gallon, R.drawable.alvarez};
+    public int[] image = {R.drawable.prod1, R.drawable.prod2, R.drawable.prod3, R.drawable.prod4, R.drawable.prod5,
+            R.drawable.prod6, R.drawable.prod7, R.drawable.prod8, R.drawable.prod9, R.drawable.prod10, R.drawable.prod11,
+            R.drawable.prod12, R.drawable.prod13, R.drawable.prod14, R.drawable.prod15, R.drawable.prod16};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -107,18 +109,47 @@ public class homeFragment extends Fragment {
 
         lv = (ListView) v.findViewById(R.id.lvList);
 
-       HomeOBJ account_1 = new HomeOBJ(fk_cart,"₱ 150", "1 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases", image[0]);
-       HomeOBJ account_2 = new HomeOBJ(fk_cart,"₱ 120", "0.5 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases", image[1]);
-       HomeOBJ account_3 = new HomeOBJ(fk_cart,"₱ 300", "2 Gallon Mineral water","Water that contains a large quantity of dissolved minerals or gases" , image[0]);
-       HomeOBJ account_4 = new HomeOBJ(fk_cart,"₱ 450", "3 Gallon Mineral water", "Water that contains a large quantity of dissolved minerals or gases", image[1]);
+        //list of product objects
+       HomeOBJ prod1 = new HomeOBJ(fk_cart,"₱35", "Fontis 5 Gallon Mineral Water(refill)", "Refreshing natural mineral water in a round container best used for water dispensers.", image[0]);
+       HomeOBJ prod2 = new HomeOBJ(fk_cart,"₱155", "Fontis 5 Gallon Mineral Water(non-refill)", "Refreshing natural mineral water in a round container best used for water dispensers.", image[0]);
+       HomeOBJ prod3 = new HomeOBJ(fk_cart,"₱149", "Fontis 5 Gallon Mineral Water(Slim container)","Refreshing natural mineral water in a slim container with faucet for portability." , image[1]);
+       HomeOBJ prod4 = new HomeOBJ(fk_cart,"₱75", "Fontis 2.5 Gallon Mineral Water", "Compact water container with faucet, good for carrying on picnics and outdoor activities.", image[2]);
+       HomeOBJ prod5 = new HomeOBJ(fk_cart,"₱68", "Fontis 5 liter Mineral Water", "Portable water container for quick thirst quencher and refreshment.", image[3]);
+       HomeOBJ prod6 = new HomeOBJ(fk_cart,"₱195", "3 pack Fontis 5 liter Mineral Water", "If one is not enough, add more refreshing natural mineral water for quick thirst quencher and refreshment.", image[4]);
+       HomeOBJ prod7 = new HomeOBJ(fk_cart,"₱15", "Fontis 1 liter Mineral Water", "On-the-go refreshment.", image[5]);
+       HomeOBJ prod8 = new HomeOBJ(fk_cart,"₱40", "3 pack Fontis 1 liter Mineral Water", "On-the-go refreshment", image[6]);
+       HomeOBJ prod9 = new HomeOBJ(fk_cart,"₱20", "Fontis 1 liter Alkaline  Water","A good way to rehydrate more effectively after exercise." , image[7]);
+       HomeOBJ prod10 = new HomeOBJ(fk_cart,"₱55", "3 pack Fontis 1 liter Alkaline Water", "Alkaline thirst quencher to share with a friend or gym buddies after exercising.", image[8]);
+       HomeOBJ prod11 = new HomeOBJ(fk_cart,"₱50", "Fontis 5 Gallon Purified Water(refill)", "Purified refreshment in a round container best used for water dispensers.", image[9]);
+       HomeOBJ prod12 = new HomeOBJ(fk_cart,"₱165", "Fontis 5 Gallon Purified Water(non-refill)", "Purified refreshment in a round container best used for water dispensers.", image[9]);
+       HomeOBJ prod13 = new HomeOBJ(fk_cart,"₱159", "Fontis 5 Gallon Purified Water(Slim container)", "Purified refreshment mineral water in a slim container with faucet for portability.", image[10]);
+       HomeOBJ prod14 = new HomeOBJ(fk_cart,"₱85", "Fontis 2.5 Gallon Purified Water","Compact purified water, good for carrying on picnics and outdoor activities." , image[11]);
+       HomeOBJ prod15 = new HomeOBJ(fk_cart,"₱75", "Fontis 5 liter Purified Water", "Portable purified water container for quick thirst quencher and refreshment.", image[12]);
+       HomeOBJ prod16 = new HomeOBJ(fk_cart,"₱210", "3 pack Fontis 5 liter Purified Water", "If one is not enough, add more refreshing purified water for quick thirst quencher and refreshment.", image[13]);
+       HomeOBJ prod17 = new HomeOBJ(fk_cart,"₱30", "Fontis 16 ounce infused Water", "A refreshing and healthy twist to your good old thirst quencher.(comes in different flavors: lime, strawberry, apple, kiwi, cucumber & peach)", image[14]);
+       HomeOBJ prod18 = new HomeOBJ(fk_cart,"₱169", "Fontis 24 ounce Stainless Steel Bottle", "Get your own insulated bottle to store your favorite beverage for free on every ₱ 399 worth of purchase or get this item for ₱ 169.", image[15]);
 
 
         data = new ArrayList<>();
 
-        data.add(account_1);
-        data.add(account_2);
-        data.add(account_3);
-        data.add(account_4);
+        data.add(prod1);
+        data.add(prod2);
+        data.add(prod3);
+        data.add(prod4);
+        data.add(prod5);
+        data.add(prod6);
+        data.add(prod7);
+        data.add(prod8);
+        data.add(prod9);
+        data.add(prod10);
+        data.add(prod11);
+        data.add(prod12);
+        data.add(prod13);
+        data.add(prod14);
+        data.add(prod15);
+        data.add(prod16);
+        data.add(prod17);
+        data.add(prod18);
 
         HomeListAdapter adapter = new HomeListAdapter(getActivity(), R.layout.adapter_homeview_layout, data);
         lv.setAdapter(adapter);
