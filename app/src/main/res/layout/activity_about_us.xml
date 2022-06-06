@@ -12,18 +12,20 @@
         tools:context=".activity_about_us">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="#38649A"
-            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-                <ImageView
-                    android:id="@+id/imageViewFontis"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
-                    app:srcCompat="@drawable/activity_fontis" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageViewFontis"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/activity_fontis" />
         </LinearLayout>
 
         <TextView
@@ -198,7 +200,6 @@ I am currently a student in university of makati studying application developmen
             app:layout_constraintTop_toBottomOf="@+id/ivPlayer5" />
 
 
-
         <TextView
             android:id="@+id/tvAboutUsContactUs"
             android:layout_width="wrap_content"
@@ -214,6 +215,7 @@ I am currently a student in university of makati studying application developmen
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer5"
             app:layout_constraintVertical_bias="0.0" />
+
         <TextView
             android:id="@+id/tvContactUsDesc"
             android:layout_width="252dp"
@@ -224,6 +226,21 @@ Gmail: fontis@gmail.com\nFacebook: FontisPhilippines\nInstagram: fontisph.me\nTw
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutUsContactUs" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="61dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/roundedbutton"
+            android:onClick="previous"
+            android:tint="#59000000"
+            app:backgroundTint="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/tvAboutUs"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_left" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
