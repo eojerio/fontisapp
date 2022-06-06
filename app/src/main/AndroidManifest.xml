@@ -12,8 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APPDET_ANDROIDBOTS_BLUEAPP"
         android:usesCleartextTraffic="true" >
-
-
+        <activity android:name=".activity_about_us"
+           android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".index_form"
             android:configChanges="orientation|screenSize|keyboardHidden"

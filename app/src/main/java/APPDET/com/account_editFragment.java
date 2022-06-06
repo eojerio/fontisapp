@@ -111,8 +111,6 @@ public class account_editFragment extends Fragment {
         etEditEmploymentStatus.setText(SharedPreferenceManager.getInstance(getContext()).getEmploymentStatus());
         etEditDescription.setText(SharedPreferenceManager.getInstance(getContext()).getDescription());
 
-        Toast.makeText(getContext(), SharedPreferenceManager.getInstance(getContext()).getPassword(), Toast.LENGTH_SHORT).show();
-
     // event click for updating user details
         btnSaveAccount = (Button) v.findViewById(R.id.btnSaveAccount);
         btnSaveAccount.setOnClickListener(new View.OnClickListener() {

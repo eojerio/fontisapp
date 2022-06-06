@@ -3,6 +3,8 @@ package APPDET.com;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,8 @@ public class index_form extends AppCompatActivity {
 
     private BottomNavigationView bot_nav;
     public String message;
+
+    TextView about;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,21 @@ public class index_form extends AppCompatActivity {
 
         bot_nav.setOnItemSelectedListener(bottom_nav);
         getSupportFragmentManager().beginTransaction().replace(R.id.container_botnav, new homeFragment()).commit();
+
+        //textview click about us
+        aboutUs();
+    }
+
+    public void aboutUs(){
+        about = (TextView) findViewById(R.id.tvAbout);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //intent go to main page
+                Intent intent = new Intent(getApplicationContext(), activity_about_us.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //passing id from index to cart values
