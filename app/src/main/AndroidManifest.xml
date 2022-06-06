@@ -12,15 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APPDET_ANDROIDBOTS_BLUEAPP"
         android:usesCleartextTraffic="true" >
-<!--        <activity android:name=".activity_about_us"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN"/>-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER"/>-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-
+        <activity android:name=".activity_about_us"
+           android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".index_form"
             android:configChanges="orientation|screenSize|keyboardHidden"
