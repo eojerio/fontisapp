@@ -104,14 +104,10 @@ public class registration_form extends AppCompatActivity {
                 final String email_addressDATA = email_address.getText().toString().trim();
                 final String employment_statusDATA = employmentstatusSpinner.getSelectedItem().toString().trim();
                 final String marital_statusDATA = maritalstatusSpinner.getSelectedItem().toString().trim();
-//comment
-
-                Toast.makeText(getApplicationContext(), "REGISTERING USER...", Toast.LENGTH_SHORT).show();
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_REGISTER, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), "Checking...", Toast.LENGTH_SHORT).show();
                         Log.i("employment status: ",employment_statusDATA);
 
                         //if success
