@@ -12,7 +12,7 @@
         tools:context=".activity_about_us">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tvAboutUs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ABOUT US"
@@ -27,33 +27,69 @@
             app:layout_constraintVertical_bias="0.049" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/ivLogoAboutUs"
             android:layout_width="178dp"
             android:layout_height="172dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="28dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/tvAboutUs"
             app:srcCompat="@drawable/fontis_icon" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvAboutUsDesc"
             android:layout_width="252dp"
-            android:layout_height="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="31dp"
             android:gravity="center"
-            android:text="What is FONTIS App?  - Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone. Through this app we make sure the water that you order will come smoothly right in front of your house."
-            tools:layout_editor_absoluteX="79dp"
-            tools:layout_editor_absoluteY="307dp" />
+            android:text="What is FONTIS App?\n\n
+- Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.
+        Through this app we make sure the water that you order will come smoothly right in front of your house.\n\n
+
+What is the purpose of the FONTIS App?\n\n
+- Fontis provides one of the basic needs of every living person, which is clean drinkable water.
+Our goal is to provide and deliver clean drinkable water to our customers who have no way of obtaining drinking water in their home.\n\n"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivLogoAboutUs" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tvAboutUsPlayers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="THE PLAYERS"
+            android:textColor="#38649A"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAboutUsDesc"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="178dp"
+            android:layout_height="172dp"
+            android:layout_below="@+id/tvAboutUsPlayers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAboutUsPlayers"
+            app:srcCompat="@drawable/alvarez" />
+
+        <TextView
+            android:id="@+id/tvAboutUsDesc2"
             android:layout_width="252dp"
-            android:layout_height="140dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="What is the purpose of the FONTIS App?  - Fontis provides one of the basic needs of every living person, which is clean drinkable water. Our goal is to provide and deliver clean drinkable water to our customers who have no way of obtaining drinking water in their home."
-            tools:layout_editor_absoluteX="79dp"
-            tools:layout_editor_absoluteY="458dp" />
+            android:text="Ezekiel Ojerio\n\n
+- Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.\n\n"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivAvatar" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
