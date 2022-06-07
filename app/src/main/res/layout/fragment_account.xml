@@ -299,6 +299,7 @@
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNameAccount"
+            app:srcCompat="@drawable/alvarez"
             tools:srcCompat="@drawable/alvarez" />
 
         <ImageView
