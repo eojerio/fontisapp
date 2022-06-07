@@ -150,9 +150,10 @@ public class homeFragment extends Fragment {
         data.add(prod16);
         data.add(prod17);
         data.add(prod18);
-
-        HomeListAdapter adapter = new HomeListAdapter(getActivity(), R.layout.adapter_homeview_layout, data);
-        lv.setAdapter(adapter);
+        if (getActivity()!=null) {
+            HomeListAdapter adapter = new HomeListAdapter(getActivity(), R.layout.adapter_homeview_layout, data);
+            lv.setAdapter(adapter);
+        }
         //don't touch!! returns values
         return v;
     }
