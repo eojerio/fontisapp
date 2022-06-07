@@ -178,9 +178,6 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
             }
         });
 
-        //test
-        /*=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
-
         //click event increase
         fields.btnIncreaseCart.setOnClickListener(new View.OnClickListener() {
             @Override

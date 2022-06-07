@@ -165,19 +165,6 @@ public class HomeListAdapter extends ArrayAdapter<HomeOBJ> {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         //instances of image loader for loadign images
         ImageLoader imageLoader = ImageLoader.getInstance();
 
