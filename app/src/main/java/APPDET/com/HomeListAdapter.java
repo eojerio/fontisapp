@@ -124,7 +124,7 @@ public class HomeListAdapter extends ArrayAdapter<HomeOBJ> {
 
                                 //if success
                                 if(!jsonObject.getBoolean("error")){
-                                    Toast.makeText(mContext.getApplicationContext(), "Added to cart" , Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(mContext.getApplicationContext(), "Item added to cart" , Toast.LENGTH_SHORT).show();
 
                                 }else{
                                     //shows error
