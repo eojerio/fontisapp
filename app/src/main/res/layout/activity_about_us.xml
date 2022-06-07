@@ -128,7 +128,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutUsPlayers"
-            app:srcCompat="@drawable/OJERIO" />
+            app:srcCompat="@drawable/ojerio" />
 
 
         <TextView
@@ -151,7 +151,7 @@ I am a 2nd year student currently studying in University of Makati with the bach
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer1"
-            app:srcCompat="@drawable/LUCIDO" />
+            app:srcCompat="@drawable/lucido" />
 
         <TextView
             android:id="@+id/tvPlayer2"
@@ -173,7 +173,7 @@ I'm Benedicto E. Lucido Jr. a College student at University of Makati with a cou
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer2"
-            app:srcCompat="@drawable/Arellano" />
+            app:srcCompat="@drawable/arellano" />
 
         <TextView
             android:id="@+id/tvPlayer3"
@@ -195,7 +195,7 @@ I am currently a student in university of makati studying application developmen
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer3"
-            app:srcCompat="@drawable/Felipe" />
+            app:srcCompat="@drawable/felipe" />
 
         <TextView
             android:id="@+id/tvPlayer4"
@@ -217,7 +217,7 @@ I am Mary Avigail Felipe, a computer science student in University of Makati. I 
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer4"
-            app:srcCompat="@drawable/USMAN" />
+            app:srcCompat="@drawable/usman" />
 
         <TextView
             android:id="@+id/tvPlayer5"
