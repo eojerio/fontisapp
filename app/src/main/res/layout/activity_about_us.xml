@@ -62,8 +62,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="31dp"
             android:gravity="center"
-            android:text="What is FONTIS App?"
+            android:text="WHAT IS FONTIS APP?"
             android:textColor="#38649A"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -84,10 +85,10 @@
             android:id="@+id/tvAboutUsTitleDesc2"
             android:layout_width="252dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
             android:gravity="center"
-            android:text="What is the purpose of the FONTIS App?"
+            android:text="WHAT IS THE PURPOSE OF FONTIS APP?"
             android:textColor="#38649A"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -127,7 +128,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutUsPlayers"
-            app:srcCompat="@drawable/alvarez" />
+            app:srcCompat="@drawable/OJERIO" />
 
 
         <TextView
@@ -146,12 +147,11 @@ I am a 2nd year student currently studying in University of Makati with the bach
             android:layout_width="178dp"
             android:layout_height="172dp"
             android:layout_below="@+id/tvAboutUsPlayers"
-            android:layout_marginTop="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer1"
-            app:srcCompat="@drawable/alvarez" />
+            app:srcCompat="@drawable/LUCIDO" />
 
         <TextView
             android:id="@+id/tvPlayer2"
@@ -169,12 +169,11 @@ I'm Benedicto E. Lucido Jr. a College student at University of Makati with a cou
             android:layout_width="178dp"
             android:layout_height="172dp"
             android:layout_below="@+id/tvAboutUsPlayers"
-            android:layout_marginTop="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer2"
-            app:srcCompat="@drawable/alvarez" />
+            app:srcCompat="@drawable/Arellano" />
 
         <TextView
             android:id="@+id/tvPlayer3"
@@ -192,12 +191,11 @@ I am currently a student in university of makati studying application developmen
             android:layout_width="178dp"
             android:layout_height="172dp"
             android:layout_below="@+id/tvAboutUsPlayers"
-            android:layout_marginTop="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer3"
-            app:srcCompat="@drawable/alvarez" />
+            app:srcCompat="@drawable/Felipe" />
 
         <TextView
             android:id="@+id/tvPlayer4"
@@ -215,12 +213,11 @@ I am Mary Avigail Felipe, a computer science student in University of Makati. I 
             android:layout_width="178dp"
             android:layout_height="172dp"
             android:layout_below="@+id/tvAboutUsPlayers"
-            android:layout_marginTop="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer4"
-            app:srcCompat="@drawable/alvarez" />
+            app:srcCompat="@drawable/USMAN" />
 
         <TextView
             android:id="@+id/tvPlayer5"
