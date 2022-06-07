@@ -26,24 +26,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvAddress"
-            android:layout_width="133dp"
-            android:layout_height="40dp"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="52dp"
-            android:gravity="bottom|left"
-            android:text="Address:"
-            android:textColor="#38649A"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameAccount" />
-
-        <TextView
             android:id="@+id/tvEmailAddress"
             android:layout_width="133dp"
             android:layout_height="40dp"
@@ -61,7 +43,7 @@
 
         <TextView
             android:id="@+id/tvEmailAddress2"
-            android:layout_width="200dp"
+            android:layout_width="260dp"
             android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp"
@@ -77,12 +59,10 @@
 
         <TextView
             android:id="@+id/tvContactNo2"
-            android:layout_width="200dp"
+            android:layout_width="260dp"
             android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
             android:gravity="left"
             android:text="Contact No.:"
             android:textColor="#38649A"
@@ -163,12 +143,10 @@
 
         <TextView
             android:id="@+id/tvEmploymentStatus2"
-            android:layout_width="200dp"
+            android:layout_width="260dp"
             android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
             android:gravity="center|left"
             android:text="Employment Status:"
             android:textColor="#38649A"
@@ -181,7 +159,7 @@
 
         <TextView
             android:id="@+id/tvMaritalStatus2"
-            android:layout_width="200dp"
+            android:layout_width="260dp"
             android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp"
@@ -197,7 +175,7 @@
 
         <TextView
             android:id="@+id/tvAddress2"
-            android:layout_width="200dp"
+            android:layout_width="260dp"
             android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp"
@@ -214,7 +192,7 @@
 
         <TextView
             android:id="@+id/tvBirthdate2"
-            android:layout_width="200dp"
+            android:layout_width="260dp"
             android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp"
@@ -295,12 +273,29 @@
             android:layout_height="58dp"
             android:layout_marginStart="36dp"
             android:layout_marginLeft="36dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="4dp"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNameAccount"
             app:srcCompat="@drawable/alvarez"
             tools:srcCompat="@drawable/alvarez" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="133dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:gravity="bottom|left"
+            android:text="Address:"
+            android:textColor="#38649A"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameAccount" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -311,6 +306,7 @@
             android:layout_marginTop="21dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            app:srcCompat="@drawable/alvarez"
             tools:srcCompat="@drawable/alvarez" />
 
         <ImageView
@@ -322,6 +318,7 @@
             android:layout_marginTop="21dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            app:srcCompat="@drawable/alvarez"
             tools:srcCompat="@drawable/alvarez" />
 
         <ImageView
@@ -333,6 +330,7 @@
             android:layout_marginTop="21dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView6"
+            app:srcCompat="@drawable/alvarez"
             tools:srcCompat="@drawable/alvarez" />
 
         <ImageView
@@ -344,6 +342,7 @@
             android:layout_marginTop="21dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView7"
+            app:srcCompat="@drawable/alvarez"
             tools:srcCompat="@drawable/alvarez" />
 
         <ImageView
@@ -355,6 +354,7 @@
             android:layout_marginTop="21dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView8"
+            app:srcCompat="@drawable/alvarez"
             tools:srcCompat="@drawable/alvarez" />
 
 

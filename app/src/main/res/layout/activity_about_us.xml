@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:gravity="center"
-            android:text="- Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone.         Through this app we make sure the water that you order will come smoothly right in front of your house.\n   "
+            android:text="- Fontis app is a business application that delivers clean and purified drinking water in just a few taps on your phone. Through this app we make sure the water that you order will come smoothly right in front of your house.\n   "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutUsTitleDesc" />
@@ -124,23 +124,38 @@
             android:id="@+id/ivPlayer1"
             android:layout_width="178dp"
             android:layout_height="172dp"
+            android:layout_marginTop="20dp"
             android:layout_below="@+id/tvAboutUsPlayers"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutUsPlayers"
-            app:srcCompat="@drawable/ojerio" />
+            app:srcCompat="@drawable/ojerio"
+            tools:srcCompat="@drawable/ojerio" />
 
-
+        <TextView
+            android:id="@+id/tvTitlePlayer1"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Ezekiel C. Ojerio"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textColor="#38649A"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPlayer1" />
         <TextView
             android:id="@+id/tvPlayer1"
             android:layout_width="252dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Ezekiel C. Ojerio\n\n
+            android:layout_marginTop="10dp"
+            android:text="
 I am a 2nd year student currently studying in University of Makati with the bachelors degree in Computer Science Major in Application Development. I want to help people by providing easier ways for them to live a happy life through computer science.\n\n"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivPlayer1" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitlePlayer1" />
 
         <ImageView
             android:id="@+id/ivPlayer2"
@@ -151,18 +166,33 @@ I am a 2nd year student currently studying in University of Makati with the bach
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer1"
-            app:srcCompat="@drawable/lucido" />
+            app:srcCompat="@drawable/lucido"
+            tools:srcCompat="@drawable/lucido" />
 
+        <TextView
+            android:id="@+id/tvTitlePlayer2"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Benedicto E. Lucido Jr."
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textColor="#38649A"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPlayer2" />
         <TextView
             android:id="@+id/tvPlayer2"
             android:layout_width="252dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Benedicto E. Lucido\n\n
+            android:layout_marginTop="10dp"
+            android:text="
 I'm Benedicto E. Lucido Jr. a College student at University of Makati with a course of Computer Science Major in Application Development. I wanted to let people experience the best and efficient way of using a application. I wanted them to experience the future.\n\n"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivPlayer2" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitlePlayer2" />
 
         <ImageView
             android:id="@+id/ivPlayer3"
@@ -173,18 +203,34 @@ I'm Benedicto E. Lucido Jr. a College student at University of Makati with a cou
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer2"
-            app:srcCompat="@drawable/arellano" />
+            app:srcCompat="@drawable/arellano"
+            tools:srcCompat="@drawable/arellano" />
+
+        <TextView
+            android:id="@+id/tvTitlePlayer3"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Louiegie Arellano"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textColor="#38649A"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPlayer3" />
 
         <TextView
             android:id="@+id/tvPlayer3"
             android:layout_width="252dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Louiegie Arellano\n\n
+            android:layout_marginTop="10dp"
+            android:text="
 I am currently a student in university of makati studying application development. I do want to help people through user friendly software and technological advancements.\n\n"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivPlayer3" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitlePlayer3" />
 
         <ImageView
             android:id="@+id/ivPlayer4"
@@ -195,18 +241,34 @@ I am currently a student in university of makati studying application developmen
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer3"
-            app:srcCompat="@drawable/felipe" />
+            app:srcCompat="@drawable/felipe"
+            tools:srcCompat="@drawable/felipe" />
+
+        <TextView
+            android:id="@+id/tvTitlePlayer4"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Mary Avigail Felipe"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textColor="#38649A"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPlayer4"/>
 
         <TextView
             android:id="@+id/tvPlayer4"
             android:layout_width="252dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Mary Avigail Felipe\n\n
+            android:layout_marginTop="10dp"
+            android:text="
 I am Mary Avigail Felipe, a computer science student in University of Makati. I will make our application appealing and helpful for every user. I will ensure to make an application with a user-friendly interface for the convenience of all."
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivPlayer4" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitlePlayer4" />
 
         <ImageView
             android:id="@+id/ivPlayer5"
@@ -217,18 +279,34 @@ I am Mary Avigail Felipe, a computer science student in University of Makati. I 
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvPlayer4"
-            app:srcCompat="@drawable/usman" />
+            app:srcCompat="@drawable/usman"
+            tools:srcCompat="@drawable/usman" />
+
+        <TextView
+            android:id="@+id/tvTitlePlayer5"
+            android:layout_width="252dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Maureen Usman"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textColor="#38649A"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPlayer5" />
 
         <TextView
             android:id="@+id/tvPlayer5"
             android:layout_width="252dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Maureen Usman\n\n
+            android:layout_marginTop="10dp"
+            android:text="
 I am a Computer Science Student, with a bachelor's degree majoring in Application Development. I want to help people to have an efficient way of living using advance technologies and softwares."
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivPlayer5" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitlePlayer5" />
 
 
         <TextView
@@ -253,7 +331,7 @@ I am a Computer Science Student, with a bachelor's degree majoring in Applicatio
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="For more Inquiries, Visit our team\n\n
-Gmail: fontis@gmail.com\nFacebook: FontisPhilippines\nInstagram: fontisph.me\nTwitter: @fontisPh\n"
+Email: fontis@gmail.com\nFacebook: FontisPhilippines\nInstagram: fontisph.me\nTwitter: @fontisPh\nMobile No.: 09879587221\n"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAboutUsContactUs" />
