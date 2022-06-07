@@ -16,6 +16,7 @@ public class Constants {
     public static final String URL_CHECKOUT = ROOT_URL + "checkout_cart.php";
     public static final String URL_POPULATEHISTORY = ROOT_URL + "populate_history.php";
     public static final String URL_DELETEITEMCART = ROOT_URL + "deleteItemCart.php";
+    public static final String URL_POPULATEADMIN = ROOT_URL + "populate_admin.php";
 
     //comment
 

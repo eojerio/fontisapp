@@ -34,9 +34,18 @@ public class SharedPreferenceManager {
     private static final String KEY_CART_PRODDESC = "cart_prodDesc";
     private static final String KEY_CART_PRODQTY = "cart_prodQty";
 
+    //for history
+    private static final String KEY_HISTORY_ID = "prod_id";
+    private static final String KEY_HISTORY_PRICE = "prod_price";
+    private static final String KEY_HISTORY_DATE = "prod_price";
+    private static final String KEY_HISTORY_AMT = "prod_price";
+    private static final String KEY_HISTORY_IMG = "prod_img";
+    private static final String KEY_HISTORY_ACCEPTED = "prod_adminAccepted";
+    private static final String KEY_HISTORY_FIRSTNAME = "first_name";
+    private static final String KEY_HISTORY_LASTNAME = "last_name";
+
     private SharedPreferenceManager(Context context) {
         ctx = context;
-
     }
 
     public static synchronized SharedPreferenceManager getInstance(Context context) {
@@ -63,7 +72,20 @@ public class SharedPreferenceManager {
         return sharedPreferences.getString(KEY_CART_PRODQTY, null);
     }
 
+    public boolean getHistoryDetails(String prod_id){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        editor.putString(KEY_HISTORY_ID, prod_id);
+        editor.apply();
+
+        return true;
+    }
+
+    public String getHistoryID(){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_HISTORY_ID, null);
+    }
 
     public boolean userLogin(int id, String username, String password,String first_name, String last_name,String contact_no, String address, String birthdate, String email_address, String employment_status, String marital_status, String user_description){
 
@@ -126,6 +148,43 @@ public class SharedPreferenceManager {
 
         return true;
 
+    }
+
+    public boolean adminPanel(String price, String date, String amount, String image, String first_name, String last_name){
+
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+
+
+        editor.apply();
+
+        return true;
+    }
+
+    public String getPriceAdmin(){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_HISTORY_PRICE, null);
+    }
+
+    public String getDateAdmin(){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_HISTORY_DATE, null);
+    }
+
+    public String getAmtAdmin(){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_HISTORY_AMT, null);
+    }
+
+    public String getFirstNameAdmin(){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_HISTORY_FIRSTNAME, null);
+    }
+
+    public String getLastNameAdmin(){
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_HISTORY_LASTNAME, null);
     }
 
     public boolean isUserLoggedIn(){

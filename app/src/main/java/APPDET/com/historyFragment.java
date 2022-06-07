@@ -116,7 +116,7 @@ public class historyFragment extends Fragment {
 
         //dialog process
         final Handler handler = new Handler();
-        //Updating the mood box
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {

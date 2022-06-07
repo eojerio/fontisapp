@@ -118,13 +118,15 @@
         }
 
         //code for checking out and inserting values for history database
-        function checkout($conn, $cart_userID, $prod_price, $prod_date, $prod_amt, $prod_img){
-            $stmt = $conn->prepare("INSERT INTO `fontis_userhistory`(`history_userID`, `prod_price`, `prod_date`, `prod_amt`, `prod_img`) VALUES (:history_userID,:prod_price,:prod_date,:prod_amt,:prod_img)");
+        function checkout($conn, $cart_userID, $prod_price, $prod_date, $prod_amt, $prod_img, $prod_adminAccepted){
+            //query for inserting history cart
+            $stmt = $conn->prepare("INSERT INTO `fontis_userhistory`(`history_userID`, `prod_price`, `prod_date`, `prod_amt`, `prod_img`, `prod_adminAccepted`) VALUES (:history_userID,:prod_price,:prod_date,:prod_amt,:prod_img,:prod_adminAccepted)");
             $stmt->bindParam(":history_userID", $cart_userID);
             $stmt->bindParam(":prod_price", $prod_price);
             $stmt->bindParam(":prod_date", $prod_date);
             $stmt->bindParam(":prod_amt", $prod_amt);
             $stmt->bindParam(":prod_img", $prod_img);
+            $stmt->bindParam(":prod_adminAccepted", $prod_adminAccepted);   
 
             if($stmt->execute()){
                 return true;
@@ -207,4 +209,15 @@
 
             return $stmt->execute();
         }
+
+        //code for generating list view in cart
+        public function populateAdmin($conn){
+            //query
+            $stmt = $conn->prepare("SELECT * FROM `fontis_useradminorders`");
+            $stmt->execute();
+            $get = $stmt->fetchAll();
+
+            return $get;
+        }
+
     }

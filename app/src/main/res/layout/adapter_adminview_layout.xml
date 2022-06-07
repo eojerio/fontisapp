@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_weight="55">
+
+        <TextView
+            android:id="@+id/tvUserAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center|left"
+            android:text="User"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvDateAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="Date"
+            android:textColor="#38649A"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_weight="45">
+
+        <TextView
+            android:id="@+id/tvPriceAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center|left"
+            android:text="Price"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAmountAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center|left"
+            android:text="Amount items"
+            android:textSize="20dp"
+            android:textColor="#38649A" />
+
+        <TextView
+            android:id="@+id/tvAddressAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center|left"
+            android:text="Address"
+            android:textColor="#38649A"
+            android:textSize="15dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnAccept"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:layout_marginTop="8dp"
+                android:text="Accept"
+                android:textColor="#38649A"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:backgroundTint="#FFFFFF"
+                app:cornerRadius="25dp" />
+
+            <Button
+                android:id="@+id/btnDecline"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:layout_marginTop="8dp"
+                android:text="Decline"
+                android:textColor="#38649A"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:backgroundTint="#FFFFFF"
+                app:cornerRadius="25dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

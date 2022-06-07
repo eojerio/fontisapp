@@ -138,24 +138,10 @@ public class cartFragment extends Fragment {
         load = new ProgressDialog(getContext());
 
         tvAmountCart = (TextView) v.findViewById(R.id.tvAmountCartTotal);
-//        load.setMessage("UPDATING CART...");
-//        load.setCancelable(false);
-//        load.setCanceledOnTouchOutside(false);
-//        load.show();
-//
-//
-//        //dialog process
-//        final Handler handler = new Handler();
-//
-//        //Updating the mood box
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                //method for generating cart list from database
-//
-//                load.dismiss();
-//            }
-//        }, 300);
+
+
+        //dialog process
+        final Handler handler = new Handler();
 
         generateCartList();
 
@@ -164,66 +150,78 @@ public class cartFragment extends Fragment {
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String imageTRUE = "2131165281";
+                load.setMessage("CHECKING OUT ITEMS...");
+                load.setCancelable(false);
+                load.setCanceledOnTouchOutside(false);
+                load.show();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        final String imageTRUE = "2131165281";
 
-                final Date c = Calendar.getInstance().getTime();
+                        final Date c = Calendar.getInstance().getTime();
 
-                SimpleDateFormat df = new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
-                final String formattedDate = df.format(c);
+                        SimpleDateFormat df = new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
+                        final String formattedDate = df.format(c);
 
-                final String cart_userID = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
-                final String price = String.valueOf(total[0]);
-                final String amountQty = String.valueOf(amount[0]);
+                        final String cart_userID = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
+                        final String price = String.valueOf(total[0]);
+                        final String amountQty = String.valueOf(amount[0]);
 
-                //checking values
-                Log.i("DATE", formattedDate);
-                Log.i("TOTAL", String.valueOf(total[0]));
-                Log.i("AMOUNT", String.valueOf(amount[0]));
+                        //checking values
+                        Log.i("DATE", formattedDate);
+                        Log.i("TOTAL", String.valueOf(total[0]));
+                        Log.i("AMOUNT", String.valueOf(amount[0]));
 
-                if(total[0] <= 0 && amount[0] <= 0){
-                    Toast.makeText(getContext(), "Please add an item first" , Toast.LENGTH_SHORT).show();
-                }else{
-                    StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_CHECKOUT, new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            try {
-                                JSONObject jsonObject = new JSONObject(response);
+                        if(total[0] <= 0 && amount[0] <= 0){
+                            Toast.makeText(getContext(), "Please add an item first" , Toast.LENGTH_SHORT).show();
+                        }else{
+                            //intent go to main page
+                            Intent intent = new Intent(getContext(), index_form.class);
+                            startActivity(intent);
+                            StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_CHECKOUT, new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    try {
+                                        JSONObject jsonObject = new JSONObject(response);
 
-                                if(!jsonObject.getBoolean("error")) {
-                                    Toast.makeText(getContext(), "Items have been Checked out" , Toast.LENGTH_SHORT).show();
+                                        if(!jsonObject.getBoolean("error")) {
+                                            Toast.makeText(getContext(), "Items have been Checked out" , Toast.LENGTH_SHORT).show();
 
-                                    //intent go to main page
-                                    Intent intent = new Intent(getContext(), index_form.class);
-                                    startActivity(intent);
-                                }else{
-                                    //shows error
-                                    Toast.makeText(getContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                                        }else{
+                                            //shows error
+                                            Toast.makeText(getContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                                        }
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
+                            }, new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
 
-                        }
-                    }){
-                        @Nullable
-                        @Override
-                        protected Map<String, String> getParams() throws AuthFailureError {
-                            Map<String, String> params = new HashMap<>();
-                            params.put("cart_userID", cart_userID);
-                            params.put("prod_price", price);
-                            params.put("prod_date", formattedDate);
-                            params.put("prod_amt", amountQty);
-                            params.put("prod_img", imageTRUE);
-                            return params;
-                        }
-                    };
+                                }
+                            }){
+                                @Nullable
+                                @Override
+                                protected Map<String, String> getParams() throws AuthFailureError {
+                                    Map<String, String> params = new HashMap<>();
+                                    params.put("cart_userID", cart_userID);
+                                    params.put("prod_price", price);
+                                    params.put("prod_date", formattedDate);
+                                    params.put("prod_amt", amountQty);
+                                    params.put("prod_img", imageTRUE);
+                                    params.put("prod_adminAccepted", "false");
+                                    return params;
+                                }
+                            };
 
-                    RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
-                }
+                            RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
+                        }
+                        load.dismiss();
+                    }
+                }, 500);
+
             }
         });
 
@@ -235,7 +233,6 @@ public class cartFragment extends Fragment {
     public void generateCartList(){
 
         final String cart_userID = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
-
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_POPULATECART, new Response.Listener<String>() {
             @Override
@@ -296,8 +293,6 @@ public class cartFragment extends Fragment {
                 return params;
             }
         };
-
-
 
         RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
 
