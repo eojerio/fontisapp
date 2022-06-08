@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,12 +85,19 @@ public class adminDeliveriesFragment extends Fragment {
         //new ArrayList
         data = new ArrayList<>();
 
+        generateFragmentDeliveries();
+
+        return v;
+    }
+
+    public void generateFragmentDeliveries(){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_POPULATEADMIN, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject obj = new JSONObject(response);
                     JSONArray array = obj.getJSONArray("adminTrue");
+
                     //loop
                     for (int i = 0; i < array.length(); i++) {
 
@@ -97,10 +105,15 @@ public class adminDeliveriesFragment extends Fragment {
 
                         AdminOBJ prod = new AdminOBJ("₱" + adminOBJ.getString("prod_price"),adminOBJ.getString("first_name") + " " + adminOBJ.getString("last_name"), "Date: " + adminOBJ.getString("prod_date"), adminOBJ.getString("prod_amt") + " Items", adminOBJ.getString("address"));
                         data.add(prod);
-                        // Inflate the layout for this fragment
-                        AdminListAdapter arrayAdapter = new AdminListAdapter(getContext(), R.layout.adapter_adminview_layout, data);
-                        lv.setAdapter(arrayAdapter);
+
+                        if (getActivity()!=null) {
+                            // Inflate the layout for this fragment
+                            AdminListAdapter arrayAdapter = new AdminListAdapter(getContext(), R.layout.adapter_adminview_layout, data);
+                            lv.setAdapter(arrayAdapter);
+                        }
                     }
+
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -114,14 +127,7 @@ public class adminDeliveriesFragment extends Fragment {
         });
 
         RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
-
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(getContext(), "List item was clicked at: " + position, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        return v;
     }
+
+
 }

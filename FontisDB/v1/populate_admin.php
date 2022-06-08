@@ -32,6 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $response[$i]['first_name'] = $resultGet['first_name'];
                 $response[$i]['last_name'] = $resultGet['last_name'];
                 $response[$i]['address'] = $resultGet['address'];
+                $response[$i]['admin_historyprodID'] = $key['admin_historyprodID'];
+                $response[$i]['admin_userID'] = $key['admin_userID'];
                 $i++;
             }
         }

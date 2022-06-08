@@ -29,7 +29,6 @@
                     return 2;
                 }
             }
-
         }
 
         //code for login
@@ -221,12 +220,12 @@
         }
 
         
-        function populateAdminBreakdown($conn){
-            $stmt = $conn->prepare("SELECT * FROM `fontis_useradminbreakdown`");
+        function populateAdminBreakdown($conn, $admin_historyprodID, $admin_cartuserID){
+            $stmt = $conn->prepare("SELECT `admin_cartID` FROM `fontis_useradminbreakdown` WHERE `admin_historyprodID`=:admin_historyprodID AND `admin_cartuserID`=:admin_cartuserID");
+            $stmt->bindParam(":admin_historyprodID", $admin_historyprodID);
+            $stmt->bindParam(":admin_cartuserID", $admin_cartuserID);
             $stmt->execute();
-            $get = $stmt->fetchAll();
-
-            return $get;
+            return $stmt->fetchAll();
         }
 
     }

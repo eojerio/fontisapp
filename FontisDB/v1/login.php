@@ -46,4 +46,5 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $response['message'] = "Invalid Request";
 }
 
+//php to android studio
 echo json_encode($response);

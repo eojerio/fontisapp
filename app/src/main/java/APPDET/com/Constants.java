@@ -3,7 +3,7 @@ package APPDET.com;
 public class Constants {
 
     //IPv4 database connection
-    private static final String ROOT_URL = "http://192.168.100.170/APPDET_ANDROIDBOTS_FONTISAPP/fontisDB/v1/";
+    private static final String ROOT_URL = "http://192.168.254.103/APPDET_ANDROIDBOTS_FONTISAPP/fontisDB/v1/";
 
     //file constant php connections
     public static final String URL_REGISTER = ROOT_URL + "register.php";
@@ -17,6 +17,7 @@ public class Constants {
     public static final String URL_POPULATEHISTORY = ROOT_URL + "populate_history.php";
     public static final String URL_DELETEITEMCART = ROOT_URL + "deleteItemCart.php";
     public static final String URL_POPULATEADMIN = ROOT_URL + "populate_admin.php";
+    public static final String URL_POPULATEADMINBREAKOUT = ROOT_URL + "admin_breakoutdetails.php";
 
     //comment
 
