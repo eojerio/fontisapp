@@ -1,5 +1,7 @@
 package APPDET.com;
 
+import java.util.ArrayList;
+
 public class CartOBJ {
     private String tag;
     private String price;
@@ -75,4 +77,9 @@ public class CartOBJ {
     public String getTotal() {
         return total;
     }
+
+    //array lists
+
+
+
 }

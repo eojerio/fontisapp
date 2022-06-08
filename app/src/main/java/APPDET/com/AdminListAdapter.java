@@ -1,6 +1,7 @@
 package APPDET.com;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ public class AdminListAdapter extends ArrayAdapter<AdminOBJ> {
 
     private Context mContext;
     int mResource;
+
 
     public AdminListAdapter(Context context, int resource, ArrayList<AdminOBJ> objects){
         super(context, resource, objects);

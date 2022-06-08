@@ -46,7 +46,8 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
     private Context mContext;
     int mResource;
 
-    cartFragment obj = new cartFragment();
+
+
 
     public CartListAdapter(Context context, int resource, ArrayList<CartOBJ> objects){
         super(context, resource, objects);
@@ -95,6 +96,7 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
         //creating layout inflater
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
+
 
 
         //creating object from valueHolder

@@ -118,7 +118,7 @@
         }
 
         //code for checking out and inserting values for history database
-        function checkout($conn, $cart_userID, $prod_price, $prod_date, $prod_amt, $prod_img, $prod_adminAccepted){
+        function checkout($conn, $cart_userID, $prod_price, $prod_date, $prod_amt, $prod_img, $prod_adminAccepted, $cart_id, $cart_userIDAdmin){
             //query for inserting history cart
             $stmt = $conn->prepare("INSERT INTO `fontis_userhistory`(`history_userID`, `prod_price`, `prod_date`, `prod_amt`, `prod_img`, `prod_adminAccepted`) VALUES (:history_userID,:prod_price,:prod_date,:prod_amt,:prod_img,:prod_adminAccepted)");
             $stmt->bindParam(":history_userID", $cart_userID);
@@ -214,6 +214,15 @@
         public function populateAdmin($conn){
             //query
             $stmt = $conn->prepare("SELECT * FROM `fontis_useradminorders`");
+            $stmt->execute();
+            $get = $stmt->fetchAll();
+
+            return $get;
+        }
+
+        
+        function populateAdminBreakdown($conn){
+            $stmt = $conn->prepare("SELECT * FROM `fontis_useradminbreakdown`");
             $stmt->execute();
             $get = $stmt->fetchAll();
 

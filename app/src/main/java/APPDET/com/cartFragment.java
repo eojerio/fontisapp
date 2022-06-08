@@ -116,6 +116,11 @@ public class cartFragment extends Fragment {
 
     public TextView tvAmountCart;
 
+    ArrayList<String> cart_idAdminCART;
+    ArrayList<String> cart_userIDAdminCART;
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -128,11 +133,15 @@ public class cartFragment extends Fragment {
         //list view declaration
         lv = (ListView) v.findViewById(R.id.lvList);
 
+
         //new ArrayList
         data = new ArrayList<>();
         price = new ArrayList<String>();
         qty = new ArrayList<String>();
         img = new ArrayList<String>();
+
+        cart_idAdminCART = new ArrayList<String>();
+        cart_userIDAdminCART = new ArrayList<String>();
 
         //progress dialogue
         load = new ProgressDialog(getContext());
@@ -173,6 +182,29 @@ public class cartFragment extends Fragment {
                         Log.i("TOTAL", String.valueOf(total[0]));
                         Log.i("AMOUNT", String.valueOf(amount[0]));
 
+                        CartOBJArrayList arrOBJ= new CartOBJArrayList();
+
+                        arrOBJ.setCart_idAdmin(cart_idAdminCART);
+                        arrOBJ.setCart_userIDAdmin(cart_userIDAdminCART);
+
+                        for(int j = 0; j < arrOBJ.getCartID().size(); j++){
+                            Log.i("cart ID: ", arrOBJ.getCartID() + " userID " + arrOBJ.getCart_userIDAdmin());
+                        }
+
+                        JSONArray cart_id = new JSONArray();
+                        for(String cart_idAdmin : arrOBJ.getCartID()){
+                            cart_id.put(cart_idAdmin);
+                        }
+
+                        JSONArray cart_userIDAdmin = new JSONArray();
+                        for(String cart_userIDAdminTrue : arrOBJ.getCart_userIDAdmin()){
+                            cart_userIDAdmin.put(cart_userIDAdminTrue);
+                        }
+
+                        Log.i("cart id json display:: ", cart_id.toString());
+                        Log.i("cart user id display: ", cart_userIDAdmin.toString());
+
+
                         if(total[0] <= 0 && amount[0] <= 0){
                             Toast.makeText(getContext(), "Please add an item first" , Toast.LENGTH_SHORT).show();
                         }else{
@@ -212,6 +244,9 @@ public class cartFragment extends Fragment {
                                     params.put("prod_amt", amountQty);
                                     params.put("prod_img", imageTRUE);
                                     params.put("prod_adminAccepted", "false");
+                                    params.put("cart_id", cart_id.toString());
+                                    params.put("cart_userIDAdmin", cart_userIDAdmin.toString());
+
                                     return params;
                                 }
                             };
@@ -252,6 +287,9 @@ public class cartFragment extends Fragment {
                             qty.add(cartOBJ.getString("cart_prodQty"));
                             img.add(cartOBJ.getString("cart_prodImg"));
 
+                            cart_idAdminCART.add(cartOBJ.getString("cart_id"));
+                            cart_userIDAdminCART.add(cartOBJ.getString("cart_userID"));
+
 
                             data.add(prod);
 
@@ -266,6 +304,7 @@ public class cartFragment extends Fragment {
                         amount[0] += Integer.parseInt(qty.get(j));
                         Log.i("AMOUNT ONCE", price.get(j) + " " + qty.get(j));
                     }
+
 
                     if(total[0] <= 0){
                         tvAmountCart.setText("₱0");
