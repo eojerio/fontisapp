@@ -14,6 +14,36 @@
         android:padding="10dp"
         tools:context=".account_editFragment">
 
+        <ImageView
+            android:id="@+id/profile_imageEdit"
+            android:layout_width="151dp"
+            android:layout_height="122dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile_picture"
+            tools:srcCompat="@drawable/profile_picture" />
+
+        <Spinner
+            android:id="@+id/spinner_dropdown_marital_status_edit"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvMaritalStatus"
+            app:layout_constraintTop_toBottomOf="@+id/etEditBirthdate" />
+
+        <Spinner
+            android:id="@+id/spinner_dropdown_employment_status_edit"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvEmploymentStatus"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_dropdown_marital_status_edit" />
+
         <TextView
             android:id="@+id/tvMaritalStatus"
             android:layout_width="133dp"
@@ -139,7 +169,8 @@
             android:id="@+id/tvFragmentName"
             android:layout_width="235dp"
             android:layout_height="98dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
             android:gravity="left"
             android:text="Name"
             android:textColor="#38649A"
@@ -148,7 +179,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.058"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/profile_imageEdit" />
 
         <TextView
             android:id="@+id/tvAccountChangePassword"
@@ -183,7 +214,7 @@
             android:id="@+id/etEditAddress"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="11dp"
             android:ems="10"
             android:hint="Address"
             android:inputType="textPersonName"
@@ -241,8 +272,9 @@
             android:hint="Employement Status"
             android:inputType="textPersonName"
             android:textSize="14sp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.259"
             app:layout_constraintStart_toEndOf="@+id/tvEmploymentStatus"
             app:layout_constraintTop_toBottomOf="@+id/etEditMaritalStatus" />
 
@@ -252,10 +284,11 @@
             android:layout_height="40dp"
             android:ems="10"
             android:hint="Marital Status"
+            android:visibility="invisible"
             android:inputType="textPersonName"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.259"
             app:layout_constraintStart_toEndOf="@+id/tvMaritalStatus"
             app:layout_constraintTop_toBottomOf="@+id/etEditBirthdate" />
 

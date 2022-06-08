@@ -9,8 +9,11 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -77,6 +80,8 @@ public class account_editFragment extends Fragment {
     EditText etEditAddress, etEditContactNo, etEditEmailAddress, etEditBirthdate, etEditMaritalStatus, etEditEmploymentStatus, etEditDescription;
     EditText etEditPassword, etEditNewPassword, etEditConfirmPassword;
     TextView tvFragmentName;
+    Spinner employmentstatusSpinner, maritalstatusSpinner;
+    ArrayAdapter<CharSequence> employmentstatusAdapter, maritalstatusAdapter;
 
 
     @Override
@@ -98,9 +103,79 @@ public class account_editFragment extends Fragment {
 
         tvFragmentName = (TextView) v.findViewById(R.id.tvFragmentName);
 
+        //Spinner dropdown menu
+        employmentstatusSpinner = (Spinner) v.findViewById(R.id.spinner_dropdown_employment_status_edit);
+        maritalstatusSpinner = (Spinner) v.findViewById(R.id.spinner_dropdown_marital_status_edit);
 
-        //test
 
+        //Poppulate ArrayAdapter
+        employmentstatusAdapter = ArrayAdapter.createFromResource(getContext(), R.array.array_employment_status2, R.layout.spinner_layout);
+        maritalstatusAdapter = ArrayAdapter.createFromResource(getContext(), R.array.array_marital_status2, R.layout.spinner_layout);
+
+        int sp_position, sp_position2;
+        String myString = "Status";
+        final String[] selected = new String[1];
+        final String[] spinner_item = new String[1];
+
+        sp_position = employmentstatusAdapter.getPosition(myString);
+        sp_position2 = maritalstatusAdapter.getPosition(myString);
+
+        employmentstatusSpinner.setAdapter(employmentstatusAdapter);
+        maritalstatusSpinner.setAdapter(maritalstatusAdapter);
+
+        //Specify Layout use when Choices appear
+        employmentstatusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        maritalstatusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //For employment dropdown menu
+        employmentstatusSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                selected[0] = employmentstatusSpinner.getSelectedItem().toString();
+                if (!selected[0].equals("Choose Status")) {
+                    spinner_item[0] = selected[0];
+                    System.out.println(selected[0]);
+
+                    setid();
+                }
+            }
+
+            private void setid() {
+                employmentstatusSpinner.setSelection(sp_position);
+                etEditEmploymentStatus.setText(spinner_item[0]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+
+            }
+        });
+
+        //For marital dropdown menu
+        maritalstatusSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                selected[0] = maritalstatusSpinner.getSelectedItem().toString();
+                if (!selected[0].equals("Choose Status")) {
+                    spinner_item[0] = selected[0];
+                    System.out.println(selected[0]);
+
+                    setid();
+                }
+            }
+
+            private void setid() {
+                maritalstatusSpinner.setSelection(sp_position);
+                etEditMaritalStatus.setText(spinner_item[0]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+
+            }
+        });
 
         //assigning text to database
         tvFragmentName.setText(SharedPreferenceManager.getInstance(getContext()).getFirstName() + " " + SharedPreferenceManager.getInstance(getContext()).getLastName());
@@ -111,6 +186,7 @@ public class account_editFragment extends Fragment {
         etEditMaritalStatus.setText(SharedPreferenceManager.getInstance(getContext()).getMaritalStatus());
         etEditEmploymentStatus.setText(SharedPreferenceManager.getInstance(getContext()).getEmploymentStatus());
         etEditDescription.setText(SharedPreferenceManager.getInstance(getContext()).getDescription());
+
 
         // event click for updating user details
         btnSaveAccount = (Button) v.findViewById(R.id.btnSaveAccount);

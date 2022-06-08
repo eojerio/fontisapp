@@ -11,7 +11,22 @@
         <item>Unemployed</item>
         <item>Self-Employed</item>
     </string-array>
+    <string-array name="array_employment_status2">
+        <item>Choose Status</item>
+        <item>Employed</item>
+        <item>Unemployed</item>
+        <item>Self-Employed</item>
+
+    </string-array>
     <string-array name="array_marital_status">
+        <item>Married</item>
+        <item>Widowed</item>
+        <item>Separated</item>
+        <item>Divorced</item>
+        <item>Single</item>
+    </string-array>
+    <string-array name="array_marital_status2">
+        <item>Choose Status</item>
         <item>Married</item>
         <item>Widowed</item>
         <item>Separated</item>
