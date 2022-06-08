@@ -92,7 +92,7 @@ public class HomeListAdapter extends ArrayAdapter<HomeOBJ> {
         //creating object from valueHolder
         valueHolder fields = new valueHolder();
 
-        //assigning text views to xml design
+        //assigning text views to xml design true
         fields.tvPriceHome = (TextView) convertView.findViewById(R.id.tvPriceHome);
         fields.tvProdName = (TextView) convertView.findViewById(R.id.tvProductNameHome);
         fields.tvProdDesc = (TextView) convertView.findViewById(R.id.tvProductDescHome);
