@@ -1,71 +1,85 @@
 package APPDET.com;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class admin_form extends AppCompatActivity {
 
-    ArrayList<AdminOBJ> data;
-    ListView lv;
+    private BottomNavigationView bot_nav_admin;
+    TextView adminLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_form);
 
-        //list view declaration
-        lv = (ListView) findViewById(R.id.lvAdmin);
+        bot_nav_admin = findViewById(R.id.bottomNavAdmin);
 
-        //new ArrayList
-        data = new ArrayList<>();
+        bot_nav_admin.setOnItemSelectedListener(bottom_nav);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_botnavAdmin, new adminDeliveriesFragment()).commit();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_POPULATEADMIN, new Response.Listener<String>() {
+        logoutAdmin();
+    }
+
+    public void logoutAdmin(){
+        adminLogout = (TextView) findViewById(R.id.tvAdminLogout);
+        adminLogout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject obj = new JSONObject(response);
-                    JSONArray array = obj.getJSONArray("adminTrue");
-                    //loop
-                    for (int i = 0; i < array.length(); i++) {
+            public void onClick(View view) {
+                AlertDialog.Builder alert_builder = new AlertDialog.Builder(admin_form.this);
 
-                        JSONObject adminOBJ = array.getJSONObject(i);
-
-                        AdminOBJ prod = new AdminOBJ("₱" + adminOBJ.getString("prod_price"),adminOBJ.getString("first_name") + " " + adminOBJ.getString("last_name"), adminOBJ.getString("prod_date"), adminOBJ.getString("prod_amt") + " Items", adminOBJ.getString("address"));
-                        data.add(prod);
-                        // Inflate the layout for this fragment
-                        AdminListAdapter arrayAdapter = new AdminListAdapter(getApplicationContext(), R.layout.adapter_adminview_layout, data);
-                        lv.setAdapter(arrayAdapter);
+                alert_builder.setMessage("Are you sure you want to exit admin dashboard?").setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
                     }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog alertDialog = alert_builder.create();
+                alertDialog.setTitle("WARNING");
+                alertDialog.show();
             }
         });
-
-        RequestHandler.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
     }
+
+    private BottomNavigationView.OnItemSelectedListener bottom_nav = new BottomNavigationView.OnItemSelectedListener() {
+        @Override
+
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            Fragment fragment = null;
+
+            switch(item.getItemId()){
+
+                case R.id.deliveriesAdmin:
+                    fragment = new adminDeliveriesFragment();
+                    break;
+
+                case R.id.historyAdmin:
+                    fragment = new adminHistoryFragment();
+                    break;
+            }
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_botnavAdmin, fragment).commit();
+
+            return true;
+        }
+    };
 }

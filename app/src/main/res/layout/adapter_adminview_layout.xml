@@ -17,16 +17,16 @@
         <TextView
             android:id="@+id/tvUserAdmin"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:gravity="center|left"
+            android:layout_height="120dp"
+            android:gravity="center"
             android:text="User"
-            android:textColor="#38649A"
+            android:textColor="#33A3A6"
             android:textSize="20sp"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/tvDateAdmin"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="60dp"
             android:gravity="center"
             android:text="Date"
             android:textColor="#38649A"
@@ -70,36 +70,33 @@
             android:textSize="15dp" />
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/btnAccept"
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_margin="3dp"
-                android:layout_marginTop="8dp"
-                android:text="Accept"
-                android:textColor="#38649A"
+                android:text="CONFIRM DELIVERY"
+                android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:backgroundTint="#FFFFFF"
+                app:backgroundTint="#33A3A6"
                 app:cornerRadius="25dp" />
-
             <Button
-                android:id="@+id/btnDecline"
-                android:layout_width="100dp"
+                android:id="@+id/btnDetails"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_margin="3dp"
-                android:layout_marginTop="8dp"
-                android:text="Decline"
-                android:textColor="#38649A"
+                android:text="Details"
+                android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:backgroundTint="#FFFFFF"
+                app:backgroundTint="#378DB0"
                 app:cornerRadius="25dp" />
 
         </LinearLayout>

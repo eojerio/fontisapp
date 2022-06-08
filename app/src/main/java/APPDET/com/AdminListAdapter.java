@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -33,7 +34,7 @@ public class AdminListAdapter extends ArrayAdapter<AdminOBJ> {
         TextView tvAmountAdmin;
         TextView tvAddressAdmin;
         Button btnAccept;
-        Button btnDecline;
+        Button btnDetails;
     }
 
     @NonNull
@@ -63,10 +64,28 @@ public class AdminListAdapter extends ArrayAdapter<AdminOBJ> {
         fields.tvDateAdmin = (TextView) convertView.findViewById(R.id.tvDateAdmin);
         fields.tvAmountAdmin = (TextView) convertView.findViewById(R.id.tvAmountAdmin);
         fields.tvAddressAdmin = (TextView) convertView.findViewById(R.id.tvAddressAdmin);
-
-
         fields.btnAccept = (Button) convertView.findViewById(R.id.btnAccept);
-        fields.btnDecline = (Button) convertView.findViewById(R.id.btnDecline);
+        fields.btnDetails = (Button) convertView.findViewById(R.id.btnDetails);
+
+        fields.btnAccept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
+        fields.btnDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
+
 
         fields.tvPriceAdmin.setText(price);
         fields.tvUserAdmin.setText(user);

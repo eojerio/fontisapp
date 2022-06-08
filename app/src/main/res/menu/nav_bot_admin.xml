@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/deliveriesAdmin"
+        android:title="Deliveries"
+        android:icon="@drawable/ic_deliveries" />
+    <item
+        android:id="@+id/historyAdmin"
+        android:title="History"
+        android:icon="@drawable/ic_history" />
+</menu>
