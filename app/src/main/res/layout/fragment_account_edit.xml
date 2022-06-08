@@ -171,7 +171,7 @@
             android:layout_height="66dp"
             android:text="SAVE"
             android:textSize="20sp"
-            app:backgroundTint="#692D94"
+            app:backgroundTint="#378DB0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.97"

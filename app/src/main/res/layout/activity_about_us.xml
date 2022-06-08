@@ -265,7 +265,7 @@ I am currently a student in university of makati studying application developmen
             android:gravity="center"
             android:layout_marginTop="10dp"
             android:text="
-I am Mary Avigail Felipe, a computer science student in University of Makati. I will make our application appealing and helpful for every user. I will ensure to make an application with a user-friendly interface for the convenience of all."
+I am Mary Avigail Felipe, a computer science student in University of Makati. I will make our application appealing and helpful for every user. I will ensure to make an application with a user-friendly interface for the convenience of all.\n\n"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitlePlayer4" />
