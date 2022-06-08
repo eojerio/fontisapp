@@ -57,7 +57,7 @@ public class admin_breakdown extends AppCompatActivity {
         String historyID = historyIDArr.get(Integer.parseInt(position));
         String userID = userIDArr.get(Integer.parseInt(position));
 
-        //new ArrayList
+        //new ArrayList true
         data = new ArrayList<>();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_POPULATEADMINBREAKOUT, new Response.Listener<String>() {
