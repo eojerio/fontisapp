@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($result = $obj->populateAdminBreakdown($conn, $_POST['admin_historyprodID'],$_POST['admin_cartuserID'])){
 
             foreach($result as $key){
-                $stmt = $conn->prepare("SELECT * FROM `fontis_usercarts` WHERE `cart_id`=:admin_cartID");
+                $stmt = $conn->prepare("SELECT * FROM `fontis_usercartscheckout` WHERE `admincart_id`=:admin_cartID");
                 $stmt->bindParam(":admin_cartID", $key['admin_cartID']);
                 $stmt->execute();
 

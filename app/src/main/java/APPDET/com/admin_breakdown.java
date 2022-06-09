@@ -50,10 +50,6 @@ public class admin_breakdown extends AppCompatActivity {
         ArrayList<String> historyIDArr = getIntent().getExtras().getStringArrayList("historyID");
         ArrayList<String> userIDArr = getIntent().getExtras().getStringArrayList("userID");
 
-        Log.i("HISTORY ID ARR: ", String.valueOf(historyIDArr));
-        Log.i("USER ID ARR: ", String.valueOf(userIDArr));
-
-        Toast.makeText(getApplicationContext(), "position is: " + position, Toast.LENGTH_SHORT).show();
         String historyID = historyIDArr.get(Integer.parseInt(position));
         String userID = userIDArr.get(Integer.parseInt(position));
 

@@ -79,6 +79,7 @@
                 $stmt->bindParam(":cart_prodImg", $cart_prodImg);
 
                 if($stmt->execute()){
+ 
                     return 1;
                 }else{
                     return 2;

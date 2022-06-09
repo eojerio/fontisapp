@@ -47,6 +47,8 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
     int mResource;
 
 
+    ProgressDialog load;
+
 
 
     public CartListAdapter(Context context, int resource, ArrayList<CartOBJ> objects){
@@ -114,6 +116,18 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
 
         AlertDialog.Builder alert_builder = new AlertDialog.Builder(getContext());
 
+
+        //progress dialogue
+        load = new ProgressDialog(getContext());
+//
+//        load.setMessage("LOADING HISTORY...");
+//        load.setCancelable(false);
+//        load.setCanceledOnTouchOutside(false);
+//        load.show();
+
+        //dialog process
+        final Handler handler = new Handler();
+
         //click event for delete item
         fields.btnDeleteItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,7 +166,7 @@ public class CartListAdapter extends ArrayAdapter<CartOBJ> {
                         }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(getContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "ERROR", Toast.LENGTH_SHORT).show();
                             }
                         }){
                             @Nullable

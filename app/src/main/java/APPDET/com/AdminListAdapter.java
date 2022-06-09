@@ -85,8 +85,6 @@ public class AdminListAdapter extends ArrayAdapter<AdminOBJ> {
         //creating object from valueHolder
         valueHolderCart fields = new valueHolderCart();
 
-        AdminOBJArrayList prod = new AdminOBJArrayList();
-
         //assigning text views to xml design
         fields.tvPriceAdmin = (TextView) convertView.findViewById(R.id.tvPriceAdmin);
         fields.tvUserAdmin = (TextView) convertView.findViewById(R.id.tvUserAdmin);
@@ -108,11 +106,6 @@ public class AdminListAdapter extends ArrayAdapter<AdminOBJ> {
         fields.btnDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
-
-                prod.setBreakdown_historyIDAdmin(admin_historyprodID);
-                prod.setBreakdown_userIDAdmin(admin_cartuserID);
-                prod.setPosition(position);
 
                 Intent intent = new Intent(getContext(), admin_breakdown.class);
                 intent.putStringArrayListExtra("historyID",admin_historyprodID);
