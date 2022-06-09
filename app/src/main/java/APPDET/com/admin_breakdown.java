@@ -67,7 +67,7 @@ public class admin_breakdown extends AppCompatActivity {
 
                         JSONObject adminBreakdownOBJ = array.getJSONObject(i);
 
-                        AdminBreakdownOBJ prod = new AdminBreakdownOBJ("₱ " + adminBreakdownOBJ.getString("cart_prodPrice"), adminBreakdownOBJ.getString("cart_prodQty"), adminBreakdownOBJ.getString("cart_prodName"), adminBreakdownOBJ.getString("cart_prodDesc"), "drawable://" + Integer.parseInt(adminBreakdownOBJ.getString("cart_prodImg")));
+                        AdminBreakdownOBJ prod = new AdminBreakdownOBJ("₱ " + adminBreakdownOBJ.getString("cart_prodPrice"), "Quantity: " + adminBreakdownOBJ.getString("cart_prodQty"), adminBreakdownOBJ.getString("cart_prodName"), adminBreakdownOBJ.getString("cart_prodDesc"), "drawable://" + Integer.parseInt(adminBreakdownOBJ.getString("cart_prodImg")));
 
                         data.add(prod);
                         AdminBreakdownListAdapter arrayAdapter = new AdminBreakdownListAdapter(getApplicationContext(), R.layout.adapter_breakdownview_layout, data);
