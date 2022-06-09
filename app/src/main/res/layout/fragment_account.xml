@@ -17,13 +17,15 @@
             android:id="@+id/btnSaveAccount"
             android:layout_width="106dp"
             android:layout_height="66dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="12dp"
             android:text="EDIT"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:backgroundTint="#378DB0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.97"
+            app:layout_constraintEnd_toStartOf="@+id/btnLogout"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/tvNameAccount" />
 
         <TextView
             android:id="@+id/tvEmailAddress"
@@ -243,32 +245,32 @@
 
         <TextView
             android:id="@+id/tvNameAccount"
-            android:layout_width="235dp"
-            android:layout_height="98dp"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
             android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
-            android:gravity="left"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
             android:text="NAME"
             android:textColor="#38649A"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.058"
+            app:layout_constraintHorizontal_bias="0.471"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="106dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="40dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="60dp"
             android:text="LOGOUT"
+            android:textSize="16sp"
             app:backgroundTint="#378DB0"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.901"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAccountDescriptionSub" />
+            app:layout_constraintTop_toBottomOf="@+id/tvNameAccount" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -276,10 +278,10 @@
             android:layout_height="58dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="40dp"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameAccount"
+            app:layout_constraintTop_toBottomOf="@+id/btnSaveAccount"
             app:srcCompat="@drawable/address_profile"
             tools:srcCompat="@drawable/address_profile" />
 
@@ -289,7 +291,7 @@
             android:layout_height="25dp"
             android:layout_centerInParent="true"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="40dp"
             android:gravity="bottom|left"
             android:text="Address:"
             android:textColor="#38649A"
@@ -298,7 +300,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameAccount" />
+            app:layout_constraintTop_toBottomOf="@+id/btnSaveAccount" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -364,9 +366,8 @@
             android:id="@+id/profile_image"
             android:layout_width="151dp"
             android:layout_height="122dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/profile_picture"
