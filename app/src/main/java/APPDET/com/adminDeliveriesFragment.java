@@ -79,15 +79,15 @@ public class adminDeliveriesFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_admin_home, container, false);
 
-        //list view declaration
-        lv = (ListView) v.findViewById(R.id.lvListAdmin);
-
-        //new ArrayList
-        data = new ArrayList<>();
-
-        generateFragmentDeliveries();
-
-        return v;
+            //list view declaration
+            lv = (ListView) v.findViewById(R.id.lvListAdmin);
+    
+            //new ArrayList
+            data = new ArrayList<>();
+    
+            generateFragmentDeliveries();
+    
+            return v;
     }
 
     public void generateFragmentDeliveries(){
@@ -103,7 +103,7 @@ public class adminDeliveriesFragment extends Fragment {
 
                         JSONObject adminOBJ = array.getJSONObject(i);
 
-                        AdminOBJ prod = new AdminOBJ("₱" + adminOBJ.getString("prod_price"),adminOBJ.getString("first_name") + " " + adminOBJ.getString("last_name"), "Date: " + adminOBJ.getString("prod_date"), adminOBJ.getString("prod_amt") + " Items", adminOBJ.getString("address"));
+                        AdminOBJ prod = new AdminOBJ("₱" + adminOBJ.getString("prod_price"),adminOBJ.getString("first_name") + " " + adminOBJ.getString("last_name"), "Ordered on: " + adminOBJ.getString("prod_date"), adminOBJ.getString("prod_amt") + " Items", adminOBJ.getString("address"));
                         data.add(prod);
 
                         if (getActivity()!=null) {

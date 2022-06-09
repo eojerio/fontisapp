@@ -18,6 +18,8 @@ public class Constants {
     public static final String URL_DELETEITEMCART = ROOT_URL + "deleteItemCart.php";
     public static final String URL_POPULATEADMIN = ROOT_URL + "populate_admin.php";
     public static final String URL_POPULATEADMINBREAKOUT = ROOT_URL + "admin_breakoutdetails.php";
+    public static final String URL_POPULATEADMINDELIVER = ROOT_URL + "admin_deliver.php";
+    public static final String URL_POPULATEADMINHISTORY = ROOT_URL + "populate_adminhistory.php";
 
     //comment
 

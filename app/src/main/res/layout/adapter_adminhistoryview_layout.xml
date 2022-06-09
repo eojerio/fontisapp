@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_weight="55">
+
+        <TextView
+            android:id="@+id/tvUserAdminHistory"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="User"
+            android:textColor="#33A3A6"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvDateAdminHistory"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="Date"
+            android:textColor="#38649A"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:paddingLeft="20dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="45">
+
+        <TextView
+            android:id="@+id/tvPriceAdminHistory"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center|left"
+            android:text="Price"
+            android:textColor="#38649A"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAmountAdminHistory"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center|left"
+            android:text="Amount items"
+            android:textSize="20dp"
+            android:textColor="#38649A" />
+
+        <TextView
+            android:id="@+id/tvAddressAdminHistory"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="left"
+            android:text="Address"
+            android:textColor="#38649A"
+            android:textSize="15dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
