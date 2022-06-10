@@ -1,6 +1,7 @@
 package APPDET.com;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -96,6 +98,9 @@ public class historyFragment extends Fragment {
 
     DecimalFormat formatter = new DecimalFormat("#,###.00");
 
+    ArrayList<String> historyprodID = new ArrayList<String>();
+    ArrayList<String> userID = new ArrayList<String>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -164,6 +169,10 @@ public class historyFragment extends Fragment {
 
                         HistoryOBJ prod = new HistoryOBJ("₱" + formatter.format(Double.parseDouble(historyOBJ.getString("prod_price"))), dateHistory, historyOBJ.getString("prod_amt"), "drawable://" +  R.drawable.cart_history);
 
+
+                        historyprodID.add(historyOBJ.getString("prod_id"));
+                        userID.add(historyOBJ.getString("history_userID"));
+
                         data.add(prod);
                         if (getActivity()!=null){
                             HistoryListAdapter arrayAdapter = new HistoryListAdapter(getActivity(), R.layout.adapter_historyview_layout, data);
@@ -192,5 +201,18 @@ public class historyFragment extends Fragment {
         };
 
         RequestHandler.getInstance(getContext()).addToRequestQueue(stringRequest);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                //for displaying breakdown
+                Intent intent = new Intent(getContext(), history_breakdown.class);
+                intent.putStringArrayListExtra("historyID", historyprodID);
+                intent.putStringArrayListExtra("userID", userID);
+                intent.putExtra("positionID", String.valueOf(position));
+                startActivity(intent);
+
+            }
+        });
     }
 }

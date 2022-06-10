@@ -14,6 +14,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         //calling userLogin method as an instance of obj variable and assigning user variable to save the value of obj
         if($state = $obj->populateHistory($conn, $_POST['cart_userID'])){
             //looping to pass variable
+
             while($result = $state->fetch(PDO::FETCH_ASSOC)){
                 $response[] = $result;
             }

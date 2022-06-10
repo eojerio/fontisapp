@@ -269,4 +269,13 @@
             return $get;
         }
 
+        //code for generating lsit view in admin breakdown details
+        function populateHistoryBreakdown($conn, $historyprodID, $userID){
+            $stmt = $conn->prepare("SELECT `history_cartID` FROM `fontis_userhistorybreakdown` WHERE `history_prodID`=:history_prodID AND `history_userID`=:history_userID");
+            $stmt->bindParam(":history_prodID",  $historyprodID);
+            $stmt->bindParam(":history_userID", $userID);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
+
     }

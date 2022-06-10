@@ -15,7 +15,6 @@
         android:onClick="previous"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/tvAdminBreakdown"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@drawable/previous_button" />
@@ -39,7 +38,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvAdminBreakdown"
+        android:id="@+id/tvHistoryBreakdown"
         android:layout_width="250dp"
         android:layout_height="64dp"
         android:gravity="center"
