@@ -348,7 +348,7 @@ Email: fontis@gmail.com\nFacebook: FontisPhilippines\nInstagram: fontisph.me\nTw
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:srcCompat="@drawable/about_us_previous" />
+            app:srcCompat="@drawable/previous_button" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

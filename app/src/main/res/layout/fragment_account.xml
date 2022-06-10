@@ -70,6 +70,7 @@
             android:layout_marginStart="30dp"
             android:gravity="left"
             android:text="Contact No.:"
+            android:inputType="phone"
             android:textColor="#38649A"
             android:textSize="15dp"
             android:textStyle="normal"
@@ -179,7 +180,7 @@
 
         <TextView
             android:id="@+id/tvAddress2"
-            android:layout_width="260dp"
+            android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:layout_marginStart="30dp"
@@ -202,6 +203,7 @@
             android:layout_marginStart="30dp"
             android:gravity="left"
             android:text="Birthdate:"
+            android:inputType="date"
             android:textColor="#38649A"
             android:textSize="15dp"
             android:textStyle="normal"
