@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".cartFragment">
+    tools:context=".cartFragment"
+    >
 
 
     <TextView
@@ -53,21 +54,37 @@
             android:id="@+id/btnCheckout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="15"
+            android:layout_weight="0"
             android:text="CHECK OUT"
             android:textSize="18sp"
             app:backgroundTint="#692D94" />
 
-        <TextView
-            android:id="@+id/tvAmountCartTotal"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="85"
-            android:gravity="center"
-            android:text="AMOUNT"
-            android:textColor="#38649A"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_weight="95">
+
+            <TextView
+                android:id="@+id/tvTotalSign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TOTAL"
+                android:textColor="#38649A"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvAmountCartTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="AMOUNT"
+                android:textColor="#1A457A"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

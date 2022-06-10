@@ -52,11 +52,17 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             $resultUserID = $stmt->fetch(PDO::FETCH_ASSOC);
         
             for($i=0;$i < count($cart_id); $i++){
-                $stmt = $conn->prepare("INSERT INTO `fontis_useradminbreakdown`(`admin_historyprodID`,`admin_cartID`,`admin_cartuserID`) VALUES (:prod_id,:cart_id,:cart_userID)");
+                $stmt = $conn->prepare("INSERT INTO `fontis_userhistorybreakdown`(`history_prodID`,`history_cartID`,`history_userID`) VALUES (:prod_id,:cart_id,:cart_userID)");
                 $stmt->bindParam(":prod_id", $resultUserID['max']);
                 $stmt->bindParam(":cart_id", $cart_id[$i]);
                 $stmt->bindParam(":cart_userID", $cart_userIDAdmin[$i]);
                 $stmt->execute();
+
+                $stmt1 = $conn->prepare("INSERT INTO `fontis_useradminbreakdown`(`admin_historyprodID`,`admin_cartID`,`admin_cartuserID`) VALUES (:prod_id,:cart_id,:cart_userID)");
+                $stmt1->bindParam(":prod_id", $resultUserID['max']);
+                $stmt1->bindParam(":cart_id", $cart_id[$i]);
+                $stmt1->bindParam(":cart_userID", $cart_userIDAdmin[$i]);
+                $stmt1->execute();
             }
 
 

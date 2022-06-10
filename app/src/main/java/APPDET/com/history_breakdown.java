@@ -3,11 +3,8 @@ package APPDET.com;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -22,23 +19,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class admin_breakdown extends AppCompatActivity {
+public class history_breakdown extends AppCompatActivity {
 
-    ArrayList<AdminBreakdownOBJ> data;
+    ArrayList<HistoryBreakdownOBJ> data;
     ListView lv;
     String position;
-
-    //test
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_breakdown);
+        setContentView(R.layout.activity_history_breakdown);
 
         //previous
         addListenerOnButton();
@@ -46,8 +40,10 @@ public class admin_breakdown extends AppCompatActivity {
         //list view declaration
         lv = (ListView) findViewById(R.id.lvListBreakdown);
 
-        //object to get arraylist value position of id
-        AdminOBJArrayList prod = new AdminOBJArrayList();
+//        HistoryBreakdownOBJ prod1 = new HistoryBreakdownOBJ("20","2","Water","A mineral water","drawable://" + R.drawable.alvarez);
+//        HistoryBreakdownOBJ prod2 = new HistoryBreakdownOBJ("20","2","Water","A mineral water","drawable://" + R.drawable.alvarez);
+//        HistoryBreakdownOBJ prod3 = new HistoryBreakdownOBJ("20","2","Water","A mineral water","drawable://" + R.drawable.alvarez);
+//        HistoryBreakdownOBJ prod4 = new HistoryBreakdownOBJ("20","2","Water","A mineral water","drawable://" + R.drawable.alvarez);
 
         Bundle extras = getIntent().getExtras();
         if(extras!=null) {
@@ -62,22 +58,27 @@ public class admin_breakdown extends AppCompatActivity {
 
         //new ArrayList true
         data = new ArrayList<>();
+//
+//        data.add(prod1);
+//        data.add(prod2);
+//        data.add(prod3);
+//        data.add(prod4);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_POPULATEADMINBREAKOUT, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_POPULATEHISTORYBREAKOUT, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject obj = new JSONObject(response);
-                    JSONArray array = obj.getJSONArray("adminBreakdownTrue");
+                    JSONArray array = obj.getJSONArray("historyBreakdownTrue");
 
                     for(int i = 0; i < array.length(); i++){
 
                         JSONObject adminBreakdownOBJ = array.getJSONObject(i);
 
-                        AdminBreakdownOBJ prod = new AdminBreakdownOBJ("₱ " + adminBreakdownOBJ.getString("cart_prodPrice"), "Quantity: " + adminBreakdownOBJ.getString("cart_prodQty"), adminBreakdownOBJ.getString("cart_prodName"), adminBreakdownOBJ.getString("cart_prodDesc"), "drawable://" + Integer.parseInt(adminBreakdownOBJ.getString("cart_prodImg")));
+                        HistoryBreakdownOBJ prod = new HistoryBreakdownOBJ("₱ " + adminBreakdownOBJ.getString("cart_prodPrice"), "Quantity: " + adminBreakdownOBJ.getString("cart_prodQty"), adminBreakdownOBJ.getString("cart_prodName"), adminBreakdownOBJ.getString("cart_prodDesc"), "drawable://" + Integer.parseInt(adminBreakdownOBJ.getString("cart_prodImg")));
 
                         data.add(prod);
-                        AdminBreakdownListAdapter arrayAdapter = new AdminBreakdownListAdapter(getApplicationContext(), R.layout.adapter_breakdownview_layout, data);
+                        HistoryBreakdownListAdapter arrayAdapter = new HistoryBreakdownListAdapter(getApplicationContext(), R.layout.adapter_historybreakdownview_layout, data);
                         lv.setAdapter(arrayAdapter);
                     }
                 } catch (JSONException e) {
@@ -94,8 +95,8 @@ public class admin_breakdown extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("admin_historyprodID", historyID);
-                params.put("admin_cartuserID", userID);
+                params.put("historyprodID", historyID);
+                params.put("userID", userID);
                 return params;
             }
         };
