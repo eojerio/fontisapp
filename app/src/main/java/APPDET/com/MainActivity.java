@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //Database login
+        //Database login code
         login();
 
         //travel to register activity
