@@ -6,6 +6,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +27,11 @@ import com.android.volley.toolbox.StringRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -93,9 +98,9 @@ public class account_editFragment extends Fragment {
         etEditAddress = (EditText) v.findViewById(R.id.etEditAddress);
         etEditContactNo = (EditText) v.findViewById(R.id.etEditContactNo);
         etEditEmailAddress = (EditText) v.findViewById(R.id.etEditEmailAddress);
-        etEditBirthdate = (EditText) v.findViewById(R.id.etEditBirthdate);
         etEditMaritalStatus = (EditText) v.findViewById(R.id.etEditMaritalStatus);
         etEditEmploymentStatus = (EditText) v.findViewById(R.id.etEditEmploymentStatus);
+        etEditBirthdate = (EditText) v.findViewById(R.id.etEditBirthdate);
         etEditDescription = (EditText) v.findViewById(R.id.etEditDescription);
         etEditPassword = (EditText) v.findViewById(R.id.etEditPassword);
         etEditNewPassword = (EditText) v.findViewById(R.id.etEditNewPassword);
@@ -182,7 +187,21 @@ public class account_editFragment extends Fragment {
         etEditAddress.setText(SharedPreferenceManager.getInstance(getContext()).getAddress());
         etEditContactNo.setText(SharedPreferenceManager.getInstance(getContext()).getContactNo());
         etEditEmailAddress.setText(SharedPreferenceManager.getInstance(getContext()).getEmailAddress());
-        etEditBirthdate.setText(SharedPreferenceManager.getInstance(getContext()).getBirthdate());
+
+        //getting date and parsing it
+        String dateDB = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getBirthdate());
+        SimpleDateFormat dateParser = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        try {
+            date = dateParser.parse(dateDB);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
+        String dateHistory = dateFormatter.format(date);
+
+        etEditBirthdate.setText(dateHistory);
         etEditMaritalStatus.setText(SharedPreferenceManager.getInstance(getContext()).getMaritalStatus());
         etEditEmploymentStatus.setText(SharedPreferenceManager.getInstance(getContext()).getEmploymentStatus());
         etEditDescription.setText(SharedPreferenceManager.getInstance(getContext()).getDescription());
@@ -202,10 +221,26 @@ public class account_editFragment extends Fragment {
                         final String address = etEditAddress.getText().toString().trim();
                         final String contact_no = etEditContactNo.getText().toString().trim();
                         final String email_address = etEditEmailAddress.getText().toString().trim();
-                        final String birthdate = etEditBirthdate.getText().toString().trim();
                         final String marital_status = etEditMaritalStatus.getText().toString().trim();
                         final String employment_status = etEditEmploymentStatus.getText().toString().trim();
                         final String description = etEditDescription.getText().toString().trim();
+
+                        //birthdate string to date
+                        String dateTime = etEditBirthdate.getText().toString().trim();
+
+                        SimpleDateFormat dateParser = new SimpleDateFormat("dd-MM-yyyy");
+
+                        Date c = null;
+                        try {
+                            c = dateParser.parse(dateTime);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+
+                        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
+                        String formattedDate = df.format(c);
+
+                        final String birthdate = formattedDate;
 
                         //checks if password is same as password from database and
                         if (!TextUtils.isEmpty(etEditPassword.getText().toString()) && !TextUtils.isEmpty(etEditNewPassword.getText().toString()) && !TextUtils.isEmpty(etEditConfirmPassword.getText().toString())) {
@@ -279,10 +314,28 @@ public class account_editFragment extends Fragment {
                         final String address = etEditAddress.getText().toString().trim();
                         final String contact_no = etEditContactNo.getText().toString().trim();
                         final String email_address = etEditEmailAddress.getText().toString().trim();
-                        final String birthdate = etEditBirthdate.getText().toString().trim();
                         final String marital_status = etEditMaritalStatus.getText().toString().trim();
                         final String employment_status = etEditEmploymentStatus.getText().toString().trim();
                         final String description = etEditDescription.getText().toString().trim();
+
+                        //birthdate string to date
+                        String dateTime = etEditBirthdate.getText().toString().trim();
+
+                        SimpleDateFormat dateParser = new SimpleDateFormat("dd-MM-yyyy");
+
+                        Log.i("DATE: ", dateTime);
+
+                        Date c = null;
+                        try {
+                            c = dateParser.parse(dateTime);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+
+                        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
+                        String formattedDate = df.format(c);
+
+                        final String birthdate = formattedDate;
 
                         StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_PROFILESAVE, new Response.Listener<String>() {
                             @Override

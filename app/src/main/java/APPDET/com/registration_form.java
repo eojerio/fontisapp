@@ -29,7 +29,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class registration_form extends AppCompatActivity {
@@ -100,10 +105,26 @@ public class registration_form extends AppCompatActivity {
                 final String last_nameDATA = last_name.getText().toString().trim();
                 final String contact_noDATA = contact_no.getText().toString().trim();
                 final String addressDATA = address.getText().toString().trim();
-                final String birthdateDATA = birthdate.getText().toString().trim();
                 final String email_addressDATA = email_address.getText().toString().trim();
                 final String employment_statusDATA = employmentstatusSpinner.getSelectedItem().toString().trim();
                 final String marital_statusDATA = maritalstatusSpinner.getSelectedItem().toString().trim();
+
+                //birthdate string to date
+                String dateTime = birthdate.getText().toString().trim();
+
+                SimpleDateFormat dateParser = new SimpleDateFormat("dd/MM/yyyy");
+
+                Date c = null;
+                try {
+                    c = dateParser.parse(dateTime);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
+                String formattedDate = df.format(c);
+
+                final String birthdateDATA = formattedDate;
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_REGISTER, new Response.Listener<String>() {
                     @Override
