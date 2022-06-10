@@ -106,8 +106,8 @@ public class admin_breakdown extends AppCompatActivity {
 
     public void addListenerOnButton() {
 
-        ImageButton imagebtn1 = (ImageButton) findViewById(R.id.imageButtonItemBreakdown);
-        imagebtn1.setOnClickListener(new View.OnClickListener() {
+        ImageButton adminBreakdownPrevious = (ImageButton) findViewById(R.id.imageButtonItemBreakdown);
+        adminBreakdownPrevious.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
