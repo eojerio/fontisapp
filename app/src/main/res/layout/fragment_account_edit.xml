@@ -198,10 +198,11 @@
 
         <Button
             android:id="@+id/btnSaveAccount"
-            android:layout_width="106dp"
-            android:layout_height="66dp"
+            android:layout_width="107dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/save_profile"
             android:text="SAVE"
-            android:textSize="20sp"
+            android:textSize="10sp"
             app:backgroundTint="#378DB0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
