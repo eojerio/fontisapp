@@ -112,8 +112,6 @@ public class admin_breakdown extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                Intent intent = new Intent
-                        (getApplicationContext(), admin_breakdown.class);
                 finish();
 
             }
