@@ -3,8 +3,12 @@ package APPDET.com;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -35,6 +39,9 @@ public class admin_breakdown extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_breakdown);
+
+        //previous
+        addListenerOnButton();
 
         //list view declaration
         lv = (ListView) findViewById(R.id.lvListBreakdown);
@@ -95,6 +102,20 @@ public class admin_breakdown extends AppCompatActivity {
 
         RequestHandler.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
 
+    }
+
+    public void addListenerOnButton() {
+        ImageButton imagebtn1 = (ImageButton) findViewById(R.id.imageButtonItemBreakdown);
+        imagebtn1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent intent = new Intent
+                        (getApplicationContext(), admin_breakdown.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
