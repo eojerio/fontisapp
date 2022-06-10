@@ -21,7 +21,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -91,6 +95,7 @@ public class adminDeliveriesFragment extends Fragment {
     }
 
     public void generateFragmentDeliveries(){
+        DecimalFormat formatter = new DecimalFormat("#,###.00");
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_POPULATEADMIN, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -103,7 +108,14 @@ public class adminDeliveriesFragment extends Fragment {
 
                         JSONObject adminOBJ = array.getJSONObject(i);
 
-                        AdminOBJ prod = new AdminOBJ("₱" + adminOBJ.getString("prod_price"),adminOBJ.getString("first_name") + " " + adminOBJ.getString("last_name"), "Ordered on: " + adminOBJ.getString("prod_date"), adminOBJ.getString("prod_amt") + " Items", adminOBJ.getString("address"));
+                        String dateDB = String.valueOf(adminOBJ.getString("prod_date"));
+                        SimpleDateFormat dateParser = new SimpleDateFormat("yyyy-MM-dd");
+                        Date date = dateParser.parse(dateDB);
+
+                        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
+                        String dateHistory = dateFormatter.format(date);
+
+                        AdminOBJ prod = new AdminOBJ("₱" + formatter.format(Double.parseDouble(adminOBJ.getString("prod_price"))),adminOBJ.getString("first_name") + " " + adminOBJ.getString("last_name"), "Ordered on: " + dateHistory, adminOBJ.getString("prod_amt") + " Items", adminOBJ.getString("address"));
                         data.add(prod);
 
                         if (getActivity()!=null) {
@@ -115,7 +127,7 @@ public class adminDeliveriesFragment extends Fragment {
 
 
 
-                } catch (JSONException e) {
+                } catch (JSONException | ParseException e) {
                     e.printStackTrace();
                 }
             }

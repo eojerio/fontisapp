@@ -170,7 +170,7 @@ public class cartFragment extends Fragment {
 
                         final Date c = Calendar.getInstance().getTime();
 
-                        SimpleDateFormat df = new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
+                        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
                         final String formattedDate = df.format(c);
 
                         final String cart_userID = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());

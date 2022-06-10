@@ -122,7 +122,7 @@ public class AdminListAdapter extends ArrayAdapter<AdminOBJ> {
             public void onClick(View view) {
                 final Date c = Calendar.getInstance().getTime();
 
-                SimpleDateFormat df = new SimpleDateFormat("dd-M-yyyy", Locale.getDefault());
+                SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
                 final String formattedDate = df.format(c);
 
                 //method for generating history list from database

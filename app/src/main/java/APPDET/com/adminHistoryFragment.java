@@ -19,7 +19,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -89,6 +93,7 @@ public class adminHistoryFragment extends Fragment {
     }
 
     public void generateFragmentHistory(){
+        DecimalFormat formatter = new DecimalFormat("#,###.00");
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_POPULATEADMINHISTORY, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -101,7 +106,14 @@ public class adminHistoryFragment extends Fragment {
 
                         JSONObject adminHistoryOBJ = array.getJSONObject(i);
 
-                        AdminHistoryOBJ prod = new AdminHistoryOBJ("₱" + adminHistoryOBJ.getString("prod_price"),adminHistoryOBJ.getString("first_name") + " " + adminHistoryOBJ.getString("last_name"), "Delivered on: " + adminHistoryOBJ.getString("admin_prodDate"), adminHistoryOBJ.getString("prod_amt") + " Items", adminHistoryOBJ.getString("address"));
+                        String dateDB = String.valueOf(adminHistoryOBJ.getString("admin_prodDate"));
+                        SimpleDateFormat dateParser = new SimpleDateFormat("yyyy-MM-dd");
+                        Date date = dateParser.parse(dateDB);
+
+                        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
+                        String dateHistory = dateFormatter.format(date);
+
+                        AdminHistoryOBJ prod = new AdminHistoryOBJ("₱" + formatter.format(Double.parseDouble(adminHistoryOBJ.getString("prod_price"))),adminHistoryOBJ.getString("first_name") + " " + adminHistoryOBJ.getString("last_name"), "Delivered on: " + dateHistory, adminHistoryOBJ.getString("prod_amt") + " Items", adminHistoryOBJ.getString("address"));
                         data.add(prod);
 
                         if (getActivity()!=null) {
@@ -111,7 +123,7 @@ public class adminHistoryFragment extends Fragment {
                         }
                     }
 
-                } catch (JSONException e) {
+                } catch (JSONException | ParseException e) {
                     e.printStackTrace();
                 }
             }

@@ -25,7 +25,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -133,7 +136,11 @@ public class historyFragment extends Fragment {
 
     }
 
+
+
     public void generateHistoryList(){
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
+
         final String cart_userID = String.valueOf(SharedPreferenceManager.getInstance(getContext()).getUserID());
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_POPULATEHISTORY, new Response.Listener<String>() {
@@ -147,7 +154,15 @@ public class historyFragment extends Fragment {
 
                         JSONObject historyOBJ = array.getJSONObject(i);
 
-                        HistoryOBJ prod = new HistoryOBJ("₱" + formatter.format(Double.parseDouble(historyOBJ.getString("prod_price"))), historyOBJ.getString("prod_date"), historyOBJ.getString("prod_amt"), "drawable://" +  R.drawable.cart_history);
+                        //getting date and parsing it
+                        String dateDB = String.valueOf(historyOBJ.getString("prod_date"));
+                        SimpleDateFormat dateParser = new SimpleDateFormat("yyyy-MM-dd");
+                        Date date = dateParser.parse(dateDB);
+
+                        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
+                        String dateHistory = dateFormatter.format(date);
+
+                        HistoryOBJ prod = new HistoryOBJ("₱" + formatter.format(Double.parseDouble(historyOBJ.getString("prod_price"))), dateHistory, historyOBJ.getString("prod_amt"), "drawable://" +  R.drawable.cart_history);
 
                         data.add(prod);
                         if (getActivity()!=null){
@@ -156,7 +171,7 @@ public class historyFragment extends Fragment {
                         }
 
                     }
-                } catch (JSONException e) {
+                } catch (JSONException | ParseException e) {
                     e.printStackTrace();
                     Toast.makeText(getContext(), "JSON Error Occurred", Toast.LENGTH_SHORT).show();
                 }
