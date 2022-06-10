@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.008" />
 
     <ListView
-        android:id="@+id/lvListAdmin"
+        android:id="@+id/lvListAdminHistory"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="70dp"

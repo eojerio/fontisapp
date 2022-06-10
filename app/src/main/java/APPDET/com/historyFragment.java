@@ -122,9 +122,9 @@ public class historyFragment extends Fragment {
             public void run() {
                 //method for generating history list from database
                 generateHistoryList();
-                load.dismiss();
-            }
-        }, 300);
+                    load.dismiss();
+                }
+            }, 300);
 
 
 

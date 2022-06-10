@@ -220,13 +220,53 @@
             return $get;
         }
 
-        
+        //code for generating lsit view in admin breakdown details
         function populateAdminBreakdown($conn, $admin_historyprodID, $admin_cartuserID){
             $stmt = $conn->prepare("SELECT `admin_cartID` FROM `fontis_useradminbreakdown` WHERE `admin_historyprodID`=:admin_historyprodID AND `admin_cartuserID`=:admin_cartuserID");
             $stmt->bindParam(":admin_historyprodID", $admin_historyprodID);
             $stmt->bindParam(":admin_cartuserID", $admin_cartuserID);
             $stmt->execute();
             return $stmt->fetchAll();
+        }
+
+
+        //code for generating list view in history
+        public function adminDeliver($conn, $admin_historyprodID, $admin_userID, $admin_prodDate){
+            if($this->prodHistoryExist($conn, $admin_historyprodID, $admin_userID)){
+                return 0;
+            }else{
+                $stmt = $conn->prepare("INSERT INTO `fontis_useradminhistory` (`admin_historyprodID`,`admin_userID`,`admin_prodDate`) VALUES (:admin_historyprodID,:admin_userID,:admin_prodDate)");
+                $stmt->bindParam(":admin_historyprodID", $admin_historyprodID);
+                $stmt->bindParam(":admin_userID", $admin_userID);
+                $stmt->bindParam(":admin_prodDate", $admin_prodDate);
+
+                if($stmt->execute()){
+                    return 1;   
+                }else{
+                    return 2;
+                }
+            }
+        }
+
+        //code for checking duplicate register
+        private function prodHistoryExist($conn, $admin_historyprodID, $admin_userID){
+            $stmt = $conn->prepare("SELECT * FROM `fontis_useradminhistory` WHERE `admin_historyprodID`=:admin_historyprodID AND `admin_userID`=:admin_userID");
+            $stmt->bindParam(":admin_historyprodID", $admin_historyprodID);
+            $stmt->bindParam(":admin_userID", $admin_userID);
+            $stmt->execute();
+            $count = $stmt->fetchColumn(0);
+            
+            return $count > 0;
+        }
+
+        //CODE FOR POPULATING ADMIN HISTORY
+        public function populateAdminHistory($conn){
+            //query
+            $stmt = $conn->prepare("SELECT * FROM `fontis_useradminhistory`");
+            $stmt->execute();
+            $get = $stmt->fetchAll();
+
+            return $get;
         }
 
     }
