@@ -15,13 +15,15 @@
 
         <Button
             android:id="@+id/btnSaveAccount"
-            android:layout_width="106dp"
-            android:layout_height="66dp"
+            android:layout_width="107dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="12dp"
+            android:drawableLeft="@drawable/edit_profile"
             android:text="EDIT"
-            android:textSize="16sp"
+            android:textSize="10sp"
             app:backgroundTint="#378DB0"
+            app:iconTint="#FFFFFF"
             app:layout_constraintEnd_toStartOf="@+id/btnLogout"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -262,13 +264,15 @@
 
         <Button
             android:id="@+id/btnLogout"
-            android:layout_width="106dp"
-            android:layout_height="66dp"
+            android:layout_width="107dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="60dp"
+            android:drawableLeft="@drawable/logout_profile"
             android:text="LOGOUT"
-            android:textSize="16sp"
+            android:textSize="10sp"
             app:backgroundTint="#378DB0"
+            app:iconPadding="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNameAccount" />
 
