@@ -105,6 +105,7 @@ public class admin_breakdown extends AppCompatActivity {
     }
 
     public void addListenerOnButton() {
+
         ImageButton imagebtn1 = (ImageButton) findViewById(R.id.imageButtonItemBreakdown);
         imagebtn1.setOnClickListener(new View.OnClickListener() {
 
@@ -113,7 +114,8 @@ public class admin_breakdown extends AppCompatActivity {
 
                 Intent intent = new Intent
                         (getApplicationContext(), admin_breakdown.class);
-                startActivity(intent);
+                finish();
+
             }
         });
     }
