@@ -40,7 +40,7 @@ public class admin_breakdown extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_breakdown);
 
-        //previous
+        //previous adminbreakdown
         addListenerOnButton();
 
         //list view declaration
@@ -106,16 +106,12 @@ public class admin_breakdown extends AppCompatActivity {
 
     public void addListenerOnButton() {
 
-        ImageButton imagebtn1 = (ImageButton) findViewById(R.id.imageButtonItemBreakdown);
-        imagebtn1.setOnClickListener(new View.OnClickListener() {
+        ImageButton adminPrevious = (ImageButton) findViewById(R.id.imageButtonItemBreakdown);
+        adminPrevious.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-
-                Intent intent = new Intent
-                        (getApplicationContext(), admin_breakdown.class);
                 finish();
-
             }
         });
     }
