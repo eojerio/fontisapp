@@ -92,7 +92,7 @@ public class homeFragment extends Fragment {
 
     private static final String TAG= "HomeFrag";
 
-    //list of array int
+    //list of array int for images from drawables
     public int[] image = {R.drawable.prod1, R.drawable.prod2, R.drawable.prod3, R.drawable.prod4, R.drawable.prod5,
             R.drawable.prod6, R.drawable.prod7, R.drawable.prod8, R.drawable.prod9, R.drawable.prod10, R.drawable.prod11,
             R.drawable.prod12, R.drawable.prod13, R.drawable.prod14, R.drawable.prod15, R.drawable.prod16};
