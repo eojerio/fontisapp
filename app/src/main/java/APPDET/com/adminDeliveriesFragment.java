@@ -119,7 +119,7 @@ public class adminDeliveriesFragment extends Fragment {
                         data.add(prod);
 
                         if (getActivity()!=null) {
-                            // Inflate the layout for this fragment
+                            // Inflate the layout for this fragment test
                             AdminListAdapter arrayAdapter = new AdminListAdapter(getContext(), R.layout.adapter_adminview_layout, data);
                             lv.setAdapter(arrayAdapter);
                         }
