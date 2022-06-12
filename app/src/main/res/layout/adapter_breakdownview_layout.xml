@@ -43,16 +43,17 @@
             <TextView
                 android:id="@+id/tvProdNameBreakdown"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="60dp"
                 android:gravity="center|left"
                 android:text="Name"
+                android:textColor="#38649A"
                 android:textSize="20dp"
-                android:textColor="#38649A" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvProdDescBreakdown"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="100dp"
                 android:gravity="center|left"
                 android:text="Description"
                 android:textColor="#38649A"
